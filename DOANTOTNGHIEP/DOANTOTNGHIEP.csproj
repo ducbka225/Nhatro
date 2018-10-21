@@ -367,6 +367,8 @@
     <Content Include="Views\Layout\_LayoutNhatro.cshtml" />
     <Content Include="Views\Layout\_Menu.cshtml" />
     <Content Include="Views\Layout\_Header.cshtml" />
+    <Content Include="Views\Layout\_Banner_timkiem.cshtml" />
+    <Content Include="Views\Layout\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
