@@ -51,7 +51,7 @@ body {font-family: 'Open Sans', Tahoma, Arial, sans-serif;}
 }
 
 .header-top .header-top-user .user-login a:hover, .header-top .header-top-user .user-name a:hover {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .header-top .header-top-user .user-login, .header-top .header-top-user .user-name {
@@ -67,7 +67,7 @@ body {font-family: 'Open Sans', Tahoma, Arial, sans-serif;}
 }
 
 .header-top .header-top-user .user-register a:hover, .header-top .header-top-user .user-info>a:hover {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .header-top-user .menu-user-info {
@@ -88,7 +88,7 @@ body {font-family: 'Open Sans', Tahoma, Arial, sans-serif;}
 }
 
 .header-top-user .menu-user-info>li>a:hover {
-    background-color: #33cc66;
+    background-color: #0033ff;
     color: #FFF;
 }
 
@@ -126,7 +126,7 @@ body {font-family: 'Open Sans', Tahoma, Arial, sans-serif;}
 
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
     margin-top:-3px;
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .navbar-right {
@@ -141,7 +141,7 @@ body {font-family: 'Open Sans', Tahoma, Arial, sans-serif;}
 
 .navbar-header>a:hover {
     text-shadow: none;
-    color: #33cc66;
+    color: #0033ff;
     /*font-size: 24px;*/
 }
 
@@ -157,27 +157,27 @@ body {font-family: 'Open Sans', Tahoma, Arial, sans-serif;}
 
 .nav>li>i {
     font-size: 20px;
-    color: #33cc66;
+    color: #0033ff;
     padding-top: 15px;
     padding-right: 15px;
 }
 
 .navbar-nav>li>a:hover{
     color: #FFF;
-    background-color: #33cc66;
+    background-color: #0033ff;
 }
 
 .navbar-nav>li>a:focus{
     color: #FFF;
-    background-color: #33cc66;
+    background-color: #0033ff;
 }
 
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
-    background-color: #33cc66;
+    background-color: #0033ff;
 }
 
 .navbar-toggle .icon-bar {
-    background-color: #33cc66;
+    background-color: #0033ff;
 }
 
 /*End menu*/
@@ -234,7 +234,7 @@ body {font-family: 'Open Sans', Tahoma, Arial, sans-serif;}
 
 .title-article-menu-dropdow .media-heading a:hover {
     text-decoration: none;
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .dropdown-menu.columns-2 {
@@ -268,7 +268,7 @@ body {font-family: 'Open Sans', Tahoma, Arial, sans-serif;}
 
 .multi-column-dropdown li a:hover {
     text-decoration: none;
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .more-category-dropdow {padding-top: 10px;}
@@ -346,7 +346,7 @@ body {font-family: 'Open Sans', Tahoma, Arial, sans-serif;}
     padding: 6px 10px;
     top: -2px;
     font-size: 22px;
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .btn-select ul {
@@ -373,12 +373,12 @@ body {font-family: 'Open Sans', Tahoma, Arial, sans-serif;}
 }
 
 .btn-select ul li:hover {
-    background-color: #33cc66;
+    background-color: #0033ff;
     color: #FFF;
 }
 
 .btn-select ul li.selected {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .btn-select ul li.selected:hover {
@@ -737,7 +737,7 @@ input[type="radio"] .styled:checked + label::after {
     /*float: right;*/
     position: absolute;
     font-size: 24px;
-    color: #33cc66;
+    color: #0033ff;
     margin-top: -30px;
     margin-left: 80px;
 }
@@ -764,7 +764,7 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 .search-bar .btn-slide-search {
-    background: #33cc66;
+    background: #ff0047;
     color: #fff;
     border: none;
     border-radius: 0px;
@@ -785,7 +785,7 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 .search-bar .btn-advance-search {
-    background: #33cc66;
+    background: #0033ff;
     color: #fff;
     border: none;
     border-radius: 0px;
@@ -802,7 +802,7 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 .search-bar .group-title {
-    color: #33cc66;
+    color: #bccc33;
     font-weight: 600;
     font-size: 16px;
 }
@@ -877,7 +877,7 @@ input[type="radio"] .styled:checked + label::after {
 .extra-controls .input-price-title {
     margin-left: 13px;
     margin-right: 14px;
-    color: #33cc66;
+    color: #0033ff;
     font-weight: 600;
 }
 
@@ -942,8 +942,8 @@ input[type="radio"] .styled:checked + label::after {
 .nav-tabs { border-bottom: 2px solid #DDD; margin-right: 0px; }
     .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
     .nav-tabs > li > a { /*padding-left: 0px; padding-right: 30px;*/ font-size: 14px; font-weight: 600; border: none; color: #2e3339; }
-        .nav-tabs > li.active > a, .nav-tabs > li > a:hover { font-size: 14px; font-weight: 600; border: none; color: #33cc66 !important; background: transparent; }
-        .nav-tabs > li > a::after { content: ""; background: #33cc66; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+        .nav-tabs > li.active > a, .nav-tabs > li > a:hover { font-size: 14px; font-weight: 600; border: none; color: #0033ff !important; background: transparent; }
+        .nav-tabs > li > a::after { content: ""; background: #0033ff; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
     .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
 .tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
 .tab-pane { padding: 10px 0; padding-bottom: 20px; }
@@ -967,10 +967,6 @@ input[type="radio"] .styled:checked + label::after {
     margin-top: 5px;
 }
 
-.menu-tab-title span {
-    color: #33cc66;
-}
-
 .menu-tab-title i {
     font-size: 24px;
 }
@@ -982,7 +978,7 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 .menu-tab-title a:hover {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 /*Main Container*/
@@ -1023,11 +1019,11 @@ input[type="radio"] .styled:checked + label::after {
 .thumbnail-list .thumbnail .caption .title {font-size: 13px; overflow: hidden; margin-bottom: 5px; height: 45px;}
 .thumbnail-list .thumbnail .caption .title h2 {font-size: 14px;font-weight: 600;margin-top: 5px; margin-bottom: 0px; line-height: 1.42857143;}
 .thumbnail-list .thumbnail .caption .title h2 a {text-decoration: none; color: #FFF;}
-.thumbnail-list .thumbnail .caption .title h2 a:hover {color: #33cc66;}
+.thumbnail-list .thumbnail .caption .title h2 a:hover {color: #0033ff;}
 .thumbnail-list .thumbnail .caption .desc {font-size: 12px; font-weight: 600; margin-bottom: 2px; height: 18px; overflow: hidden;}
 .thumbnail-list .thumbnail .caption .extra {display: block; overflow: auto; font-size: 12px; color: #FFF; padding: 2px 0px; border-top: 1px solid #484C51;}
 .thumbnail-list .thumbnail .caption .extra .fa {margin-right: 5px;}
-.thumbnail-list .thumbnail .caption .extra a {color: #33cc66; text-decoration: none;}
+.thumbnail-list .thumbnail .caption .extra a {color: #bccc33; text-decoration: none;}
 .thumbnail-list .thumbnail .caption .extra a:hover {color: #FFF;}
 .thumbnail-list .thumbnail .overlay {position: absolute; left: 40%; top: 20%; visibility:hidden; opacity:0; transition:visibility 0s ease-in 0.1s,opacity 0.1s ease-in;}
 .thumbnail-list .thumbnail .overlay img {width: 50px; height: 50px; -webkit-transform: scale(0); -moz-transform: scale(0); -ms-transform: scale(0); -o-transform: scale(0); transform: scale(0); -webkit-backface-visibility: hidden; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
@@ -1053,7 +1049,7 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 .home-article-label a:hover {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .home-article-label h3 {
@@ -1065,13 +1061,13 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 .home-article-label span {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .home-article-label hr {
     margin-bottom: 0px;
     margin-top: 5px;
-    border-top: 1px solid #33cc66;
+    border-top: 1px solid #0033ff;
 }
 
 .home-article .thumb-big {
@@ -1154,7 +1150,7 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 .home-article .right .item a h2:hover, .home-article .left .thumb-big a h2:hover, .home-article .left .thumb-small a h2:hover {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 
@@ -1173,7 +1169,7 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 .sidebar .sidebar-article-label span {
-   color: #33cc66;
+   color: #0033ff;
 }
 
 .sidebar .sidebar-article-label h3 {
@@ -1196,11 +1192,11 @@ input[type="radio"] .styled:checked + label::after {
 .sidebar .sidebar-article-label hr {
     margin-bottom: 0px;
     margin-top: 2px;
-    border-top: 1px solid #33cc66;
+    border-top: 1px solid #0033ff;
 }
 
 .sidebar .sidebar-article-label a:hover {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .sidebar .sidebar-article-new {
@@ -1224,7 +1220,7 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 .sidebar .sidebar-article-new .sidebar-article-title h2:hover {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 
@@ -1261,7 +1257,7 @@ input[type="radio"] .styled:checked + label::after {
 
 .footer-top h3 {
     font-size: 18px;
-    color: #33cc66;
+    color: #0033ff;
     font-weight: 600;
 }
 
@@ -1276,7 +1272,7 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 .footer-top ul li a:hover {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .footer-top ul li h2 a {
@@ -1301,12 +1297,12 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 .footer .footer-tag p a:hover {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .footer-hr hr {
     margin-bottom: 10px;
-    border-top: 1px solid #33cc66;
+    border-top: 1px solid #0033ff;
 }
 
 .block-footer-bottom {
@@ -1362,7 +1358,7 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 #modal_auth .modal-content .tab-content .text-center-auth p a {
-    color: #33cc66;
+    color: #0033ff;
     font-weight: 600;
     text-decoration: none;
 }
@@ -1376,7 +1372,7 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 #modal_auth .modal-content .tab-content .btn-auth-submit {
-    background-color: #33cc66;
+    background-color: #0033ff;
     color: #FFF;
     font-weight: 600;
 }
@@ -1438,7 +1434,7 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 .login-page .btn-auth-submit {
-    background-color: #33cc66;
+    background-color: #0033ff;
     color: #FFF;
     font-weight: 600;
     margin-bottom: 50px;
@@ -1512,7 +1508,7 @@ Detail Css
 }
 
 .pt-breadcrumb .breadcrumb .active {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .room-list-category h3 {
@@ -1522,7 +1518,7 @@ Detail Css
 
 .room-list-category hr {
     margin-top: 0px;
-    border-color: #33cc66;
+    border-color: #0033ff;
 }
 
 /*.room-list-category .pull-right {
@@ -1582,11 +1578,11 @@ Detail Css
 }
 
 .room-list-category .pull-left a:hover {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .room-list-category .pull-left a h3 span {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .room-list {
@@ -1623,7 +1619,7 @@ Detail Css
 }
 
 .room-item .block-room-item-title a:hover {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .room-item .block-room-item-title {
@@ -1651,7 +1647,7 @@ Detail Css
 }
 
 .room-item-i .block-room-item-address span, .room-item-i .block-room-item-info span, .room-item-i .block-room-item-price span {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .room-item-i .block-room-item-info .item-info-vs {
@@ -1677,7 +1673,7 @@ Detail Css
 }
 
 .room-item-i .block-room-item-btn .btn-room-detail:hover, .room-item-i .block-room-item-btn .btn-room-save:hover {
-    background-color: #33cc66;
+    background-color: #0033ff;
     color: #FFF;
 }
 
@@ -1701,7 +1697,7 @@ Detail Css
     padding-top: 10px;
     font-weight: 600;
     font-size: 16px;
-    color: #FF0046;
+    color: #0033ff;
 }
 
 .advance-search .shr {
@@ -1709,7 +1705,7 @@ Detail Css
 }
 
 .advance-search .shr hr {
-    border-color: #33cc66;
+    border-color: #0033ff;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -1725,7 +1721,7 @@ Detail Css
 }
 
 .advance-search .title a span {
-    color: #33cc66;
+    color: #0033ff;
     margin-right: 10px;
     font-size: 18px;
 }
@@ -1804,7 +1800,7 @@ Detail Css
 }
 
 .advance-search .submit .btn-slide-search {
-    background: #33cc66;
+    background: #ff0047;
     color: #fff;
     border: none;
     border-radius: 0px;
@@ -1844,7 +1840,7 @@ Detail Css
 
 .room-detail .social .pull-right a {
     text-decoration: none;
-    color: #33cc66;
+    color: #0033ff;
     font-weight: 600;
     font-size: 14px;
 }
@@ -1872,7 +1868,7 @@ Detail Css
     text-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    background-color: #33cc66;
+    background-color: #0033ff;
     border-color: none;
     color: #FFF;
     border-radius: 0px;
@@ -1985,7 +1981,7 @@ Detail Css
 }
 
 .main-info .info-contact .contact-label a span {
-    color: #33cc66;
+    color: #0033ff;
     margin-right: 10px;
     font-size: 20px;
 }
@@ -1999,7 +1995,7 @@ Detail Css
 }
 
 .main-info .info-contact .chr hr {
-    border-color: #33cc66;
+    border-color: #0033ff;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -2018,11 +2014,11 @@ Detail Css
 }
 
 .main-info .info-contact .info-price a:hover {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .main-info .info-contact .info-price a:hover span {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 .main-info .info-contact .info-price a span {
@@ -2096,7 +2092,7 @@ Detail Css
 .main-info .info-feedback .btn-report-room, .main-info .info-feedback .btn-save-room, #modal-feed-back .modal-footer .btn-report-room {
     border: none;
     border-radius: 0px;
-    background-color: #33cc66;
+    background-color: #0033ff;
     padding: 6px 12px;
     margin-left: 12px;
 }
@@ -2183,7 +2179,7 @@ Detail Css
   font-size: 18px;
 }
 #sync2 .synced .item{
-    border-bottom: 4px solid #33cc66;
+    border-bottom: 4px solid #0033ff;
     /*margin-top: -10px;*/
 }
 
@@ -2250,7 +2246,7 @@ Detail Css
 }
 
 .user-panel-menu-item:hover {
-    background-color: #33cc66;
+    background-color: #0033ff;
 }
 
 .user-panel-menu-item:hover a {
@@ -2258,7 +2254,7 @@ Detail Css
 }
 
 .user-panel-menu-item.active {
-    background-color: #33cc66;
+    background-color: #0033ff;
 }
 
 .user-panel-menu-item.active a {
@@ -2301,7 +2297,7 @@ Detail Css
     .user-panel-main-container .nav-tabs > li.active > a, .user-panel-main-container .nav-tabs > li.active > a:focus, .user-panel-main-container .nav-tabs > li.active > a:hover { border-width: 0; }
     .user-panel-main-container .nav-tabs > li > a { border: none; color: #2e3339; }
         .user-panel-main-container .nav-tabs > li.active > a, .user-panel-main-container .nav-tabs > li > a:hover { border: none; color: #FF0046 !important; background: transparent; }
-        .user-panel-main-container .nav-tabs > li > a::after { content: ""; background: #FF0046; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+        .user-panel-main-container .nav-tabs > li > a::after { content: ""; background: #0033ff; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
     .user-panel-main-container .nav-tabs > li.active > a::after, .user-panel-main-container .nav-tabs > li:hover > a::after { transform: scale(1); }
 .user-panel-main-container .tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
 .user-panel-main-container .tab-pane { padding: 10px 0; }
@@ -2340,9 +2336,9 @@ Detail Css
 }
 
 .user-panel-main-container .tab-content .table td .btn {
-    background-color: #33cc66;
+    background-color: #0033ff;
     border-radius: 0px;
-    border-color: #33cc66;
+    border-color: #0033ff;
     color: #FFF;
     height: 20px;
     padding: 0px 12px;
@@ -2386,7 +2382,7 @@ Detail Css
 
 .user-panel-main-container .tab-content .btn {
     border-radius: 0px;
-    background-color: #33cc66;
+    background-color: #0033ff;
     color: #FFF;
 }
 
@@ -2585,7 +2581,7 @@ Detail Css
 
 .submit-room-main-content .btn-send-room {
     margin-top: 30px;
-    background: #33cc66;
+    background: #0033ff;
     color: #FFF;
     padding: 10px 30px;
     border: none;
@@ -2643,7 +2639,7 @@ Detail Css
 }
 
 .article-cateogry .item a h2:hover {
-    color: #33cc66;
+    color: #0033ff;
 }
 
 /*Pagination*/
@@ -2660,15 +2656,15 @@ Detail Css
 
 .pagination>li>a:hover {
     color: #FFF;
-    background-color: #33cc66;
-    border-color: #33cc66;
+    background-color: #0033ff;
+    border-color: #0033ff;
 }
 
 .pagination>li>a, .pagination>li>span {
-    color: #33cc66;
+    color: #0033ff;
 }
 
-.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus { background-color: #33cc66; border-color: #33cc66; color: #FFF;}
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus { background-color: #0033ff; border-color: #0033ff; color: #FFF;}
 
 .pagination>li>a, .pagination>li>span { border-radius: 50% !important;margin: 0 5px;}
 
@@ -2699,7 +2695,7 @@ Detail Css
 
 .article-detail .social .pull-right a {
     text-decoration: none;
-    color: #33cc66;
+    color: #0033ff;
     font-weight: 600;
     font-size: 14px;
 }
@@ -2717,7 +2713,7 @@ Detail Css
 }
 
 .article-hr hr  {
-    border-color: #33cc66;
+    border-color: #0033ff;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -2777,13 +2773,13 @@ Detail Css
 .article-detail .article-comment hr {
     margin-top: 0px;
     margin-bottom: 10px;
-    border-top: 1px solid #33cc66;
+    border-top: 1px solid #0033ff;
 }
 
 .article-detail .article-item-same-category hr {
     margin-top: 0px;
     margin-bottom: 10px;
-    border-top: 1px solid #33cc66;
+    border-top: 1px solid #0033ff;
 }
 
 .article-detail .same-category-item .article-item-a {
@@ -2810,7 +2806,7 @@ Detail Css
 }
 
 .article-detail .same-category-item .same-category-item-title:hover {
-    background-color: #33cc66;
+    background-color: #0033ff;
 }
 
 #systemAlert{

@@ -149,6 +149,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ChiTietController.cs" />
+    <Compile Include="Controllers\DangTinController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhongTroController.cs" />
     <Compile Include="Global.asax.cs">
@@ -373,6 +374,7 @@
     <Content Include="Views\Layout\_Footer.cshtml" />
     <Content Include="Views\PhongTro\PhongTro.cshtml" />
     <Content Include="Views\ChiTiet\ChiTiet.cshtml" />
+    <Content Include="Views\DangTin\DangTin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
