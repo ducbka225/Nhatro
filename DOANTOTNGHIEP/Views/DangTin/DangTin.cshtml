@@ -6,14 +6,14 @@
 
 <div class="container">
     <div class="row">
-        <script src="http://phongtot.vn/themes/client/js/fileuploader.js"></script>
-        <form id="form-validation" class="form" method="POST" action="http://phongtot.vn/xac-nhan-dang-tin" enctype="multipart/form-data" novalidate="novalidate">
+        <script src="#/themes/client/js/fileuploader.js"></script>
+        <form id="form-validation" class="form" method="POST" action="#/xac-nhan-dang-tin" enctype="multipart/form-data" novalidate="novalidate">
             <input type="hidden" name="_token" value="oZTfWcuCbtOwBIEtos7tpCT6fovSeuSzIa5d8GWV">
             <div class="row">
                 <div class="col-md-12 submit-room-breadcrumb">
                     <div class="pt-breadcrumb">
                         <ol class="breadcrumb">
-                            <li><a href="http://phongtot.vn">Trang chủ</a></li>
+                            <li><a href="#">Trang chủ</a></li>
                             <li class="active">Đăng tin</li>
                         </ol>
                     </div>
@@ -171,7 +171,7 @@
                                     <input multiple="multiple" type="file" name="file" style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0;">
                                     <span style="margin: 2px 7px 0px 0px; display: none;" class="pull-right" id="img-loading">
                                         <div class="col-md-4">
-                                            <img src="http://phongtot.vn/themes/client/img/loading-img.gif" class="img-responsive">
+                                            <img src="#/themes/client/img/loading-img.gif" class="img-responsive">
                                         </div>
                                     </span>
                                 </label>
@@ -1187,7 +1187,7 @@ $(document).ready(function(){
         var table = $(this).attr('name');
         if (key!='') {
             $.ajax({
-                url: 'http://phongtot.vn/dang-tin/data',
+                url: '#/dang-tin/data',
                 type: 'POST',
                 data: {key: key,table: table, _token: 'oZTfWcuCbtOwBIEtos7tpCT6fovSeuSzIa5d8GWV' },
                 dataType: 'json',
@@ -1255,7 +1255,7 @@ $(document).ready(function(){
         var link = $(this).parent().find('img').attr('src');
         $.ajax({
             type: 'POST',
-            url: "http://phongtot.vn/dang-tin/xoa-anh",
+            url: "#/dang-tin/xoa-anh",
             data: {_token: 'oZTfWcuCbtOwBIEtos7tpCT6fovSeuSzIa5d8GWV', location: 'host', path: link},
             dataType: 'json',
             success: function(res){

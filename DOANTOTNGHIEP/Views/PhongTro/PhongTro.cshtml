@@ -11,7 +11,7 @@
                 <div class="col-md-12 room-main-content">
                     <div class="pt-breadcrumb">
                         <ol class="breadcrumb">
-                            <li><a href="http://phongtot.vn">Trang chủ</a></li>
+                            <li><a href="#">Trang chủ</a></li>
                             <li class="active">Phòng trọ, nhà trọ</li>
                         </ol>
                     </div><div class="room-list-category">
@@ -19,18 +19,18 @@
                             <a href=""><h3><span>Phòng trọ, nhà trọ</span> <i class="fa fa-angle-right"></i></h3></a>
                         </div>
                         <div class="pull-right">
-                            <form id="order_form" class="form-inline form-oder-category" method="post" action="http://phongtot.vn/order">
+                            <form id="order_form" class="form-inline form-oder-category" method="post" action="#/order">
                                 <input type="hidden" name="_token" value="7GSbASzO7NQ8MKYGsTbABtkVYBe05nHbfcbqpIpb">
                                 <div class="form-group">
                                     <div class="btn btn-select btn-select-light">
                                         <span class="btn-select-value">Chọn thành phố</span>
                                         <span class="btn-select-arrow fa fa-angle-down"></span>
                                         <ul>
-                                            <li class="fill-target"><a style="text-decoration: none;" href="http://phongtot.vn/phong-tro-nha-tro?fill=1">Hà Nội</a></li>
-                                            <li class="fill-target"><a style="text-decoration: none;" href="http://phongtot.vn/phong-tro-nha-tro?fill=31">Hải Phòng</a></li>
-                                            <li class="fill-target"><a style="text-decoration: none;" href="http://phongtot.vn/phong-tro-nha-tro?fill=48">Đà Nẵng</a></li>
-                                            <li class="fill-target"><a style="text-decoration: none;" href="http://phongtot.vn/phong-tro-nha-tro?fill=79">Hồ Chí Minh</a></li>
-                                            <li class="fill-target"><a style="text-decoration: none;" href="http://phongtot.vn/phong-tro-nha-tro?fill=92">Cần Thơ</a></li>
+                                            <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=1">Hà Nội</a></li>
+                                            <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=31">Hải Phòng</a></li>
+                                            <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=48">Đà Nẵng</a></li>
+                                            <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=79">Hồ Chí Minh</a></li>
+                                            <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=92">Cần Thơ</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -86,11 +86,11 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="block-room-item-title">
-                                        <a href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
+                                        <a href="@Url.Action("ChiTiet", "ChiTiet")">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
                                     </div>
                                     <div class="col-md-3 room-item-thumbnail">
                                         <div class="row">
-                                            <a class="col-md-12 thumbnail room-item-main-img" href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">
+                                            <a class="col-md-12 thumbnail room-item-main-img" href="@Url.Action("ChiTiet", "ChiTiet")">
                                                 <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-thumb-3j8bp.jpg" alt="">
                                             </a>
                                             <!-- <div class="col-md-4 thumbnail">
@@ -126,8 +126,8 @@
                         <span>Hiên tại phòng mình đang cần thêm một bạn nam ở chung để share tiền phòng.Phòng rộng,thoáng mát,có g......</span>
                     </div> -->
                                         <div class="block-room-item-btn">
-                                            <a class="btn btn-room-detail" href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Xem chi tiết</a>
-                                            <a class="btn btn-room-save" _url="http://phongtot.vn/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="http://phongtot.vn/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
+                                            <a class="btn btn-room-detail" href="@Url.Action("ChiTiet", "ChiTiet")">Xem chi tiết</a>
+                                            <a class="btn btn-room-save" _url="#/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="#/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -138,11 +138,11 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="block-room-item-title">
-                                        <a href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
+                                        <a href="@Url.Action("ChiTiet", "ChiTiet")">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
                                     </div>
                                     <div class="col-md-3 room-item-thumbnail">
                                         <div class="row">
-                                            <a class="col-md-12 thumbnail room-item-main-img" href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">
+                                            <a class="col-md-12 thumbnail room-item-main-img" href="@Url.Action("ChiTiet", "ChiTiet")">
                                                 <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-thumb-3j8bp.jpg" alt="">
                                             </a>
                                             <!-- <div class="col-md-4 thumbnail">
@@ -178,8 +178,8 @@
                         <span>Hiên tại phòng mình đang cần thêm một bạn nam ở chung để share tiền phòng.Phòng rộng,thoáng mát,có g......</span>
                     </div> -->
                                         <div class="block-room-item-btn">
-                                            <a class="btn btn-room-detail" href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Xem chi tiết</a>
-                                            <a class="btn btn-room-save" _url="http://phongtot.vn/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="http://phongtot.vn/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
+                                            <a class="btn btn-room-detail" href="@Url.Action("ChiTiet", "ChiTiet")">Xem chi tiết</a>
+                                            <a class="btn btn-room-save" _url="#/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="#/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -190,11 +190,11 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="block-room-item-title">
-                                        <a href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
+                                        <a href="@Url.Action("ChiTiet", "ChiTiet")">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
                                     </div>
                                     <div class="col-md-3 room-item-thumbnail">
                                         <div class="row">
-                                            <a class="col-md-12 thumbnail room-item-main-img" href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">
+                                            <a class="col-md-12 thumbnail room-item-main-img" href="@Url.Action("ChiTiet", "ChiTiet")">
                                                 <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-thumb-3j8bp.jpg" alt="">
                                             </a>
                                             <!-- <div class="col-md-4 thumbnail">
@@ -230,8 +230,8 @@
                         <span>Hiên tại phòng mình đang cần thêm một bạn nam ở chung để share tiền phòng.Phòng rộng,thoáng mát,có g......</span>
                     </div> -->
                                         <div class="block-room-item-btn">
-                                            <a class="btn btn-room-detail" href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Xem chi tiết</a>
-                                            <a class="btn btn-room-save" _url="http://phongtot.vn/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="http://phongtot.vn/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
+                                            <a class="btn btn-room-detail" href="@Url.Action("ChiTiet", "ChiTiet")">Xem chi tiết</a>
+                                            <a class="btn btn-room-save" _url="#/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="#/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -242,16 +242,13 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="block-room-item-title">
-                                        <a href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
+                                        <a href="@Url.Action("ChiTiet", "ChiTiet")">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
                                     </div>
                                     <div class="col-md-3 room-item-thumbnail">
                                         <div class="row">
-                                            <a class="col-md-12 thumbnail room-item-main-img" href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">
+                                            <a class="col-md-12 thumbnail room-item-main-img" href="@Url.Action("ChiTiet", "ChiTiet")">
                                                 <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-thumb-3j8bp.jpg" alt="">
                                             </a>
-                                            <!-- <div class="col-md-4 thumbnail">
-                            <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-3j8bp.jpg" alt="Cần 1 bạn nam ở gh&eacute;p gần trường Đại học nghiệp thực phẩm">
-                        </div> -->
                                         </div>
                                     </div>
                                     <div class="col-md-9 room-item-i">
@@ -282,8 +279,8 @@
                         <span>Hiên tại phòng mình đang cần thêm một bạn nam ở chung để share tiền phòng.Phòng rộng,thoáng mát,có g......</span>
                     </div> -->
                                         <div class="block-room-item-btn">
-                                            <a class="btn btn-room-detail" href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Xem chi tiết</a>
-                                            <a class="btn btn-room-save" _url="http://phongtot.vn/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="http://phongtot.vn/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
+                                            <a class="btn btn-room-detail" href="@Url.Action("ChiTiet", "ChiTiet")">Xem chi tiết</a>
+                                            <a class="btn btn-room-save" _url="#/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="#/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -294,11 +291,11 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="block-room-item-title">
-                                        <a href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
+                                        <a href="@Url.Action("ChiTiet", "ChiTiet")">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
                                     </div>
                                     <div class="col-md-3 room-item-thumbnail">
                                         <div class="row">
-                                            <a class="col-md-12 thumbnail room-item-main-img" href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">
+                                            <a class="col-md-12 thumbnail room-item-main-img" href="@Url.Action("ChiTiet", "ChiTiet")">
                                                 <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-thumb-3j8bp.jpg" alt="">
                                             </a>
                                             <!-- <div class="col-md-4 thumbnail">
@@ -334,8 +331,8 @@
                         <span>Hiên tại phòng mình đang cần thêm một bạn nam ở chung để share tiền phòng.Phòng rộng,thoáng mát,có g......</span>
                     </div> -->
                                         <div class="block-room-item-btn">
-                                            <a class="btn btn-room-detail" href="http://phongtot.vn/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Xem chi tiết</a>
-                                            <a class="btn btn-room-save" _url="http://phongtot.vn/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="http://phongtot.vn/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
+                                            <a class="btn btn-room-detail" href="@Url.Action("ChiTiet", "ChiTiet")">Xem chi tiết</a>
+                                            <a class="btn btn-room-save" _url="#/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="#/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -363,7 +360,7 @@
                     </script>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="pull-right"><ul class="pagination"><li class="disabled"><span>«</span></li> <li class="active"><span>1</span></li><li><a href="http://phongtot.vn/phong-tro-nha-tro?page=2">2</a></li><li><a href="http://phongtot.vn/phong-tro-nha-tro?page=3">3</a></li><li><a href="http://phongtot.vn/phong-tro-nha-tro?page=4">4</a></li><li><a href="http://phongtot.vn/phong-tro-nha-tro?page=5">5</a></li><li><a href="http://phongtot.vn/phong-tro-nha-tro?page=6">6</a></li><li><a href="http://phongtot.vn/phong-tro-nha-tro?page=7">7</a></li><li><a href="http://phongtot.vn/phong-tro-nha-tro?page=8">8</a></li><li class="disabled"><span>...</span></li><li><a href="http://phongtot.vn/phong-tro-nha-tro?page=1128">1128</a></li><li><a href="http://phongtot.vn/phong-tro-nha-tro?page=1129">1129</a></li> <li><a href="http://phongtot.vn/phong-tro-nha-tro?page=2" rel="next">»</a></li></ul></div>
+                            <div class="pull-right"><ul class="pagination"><li class="disabled"><span>«</span></li> <li class="active"><span>1</span></li><li><a href="#/phong-tro-nha-tro?page=2">2</a></li><li><a href="#/phong-tro-nha-tro?page=3">3</a></li><li><a href="#/phong-tro-nha-tro?page=4">4</a></li><li><a href="#/phong-tro-nha-tro?page=5">5</a></li><li><a href="#/phong-tro-nha-tro?page=6">6</a></li><li><a href="#/phong-tro-nha-tro?page=7">7</a></li><li></li> <li><a href="#/phong-tro-nha-tro?page=2" rel="next">»</a></li></ul></div>
                         </div>
                     </div>
                 </div>
@@ -377,7 +374,7 @@
                             <a id="submit_search" href="javascript:void(0);"><span class="fa fa-search"></span></a>Tìm kiếm nâng cao
                         </div>
                         <div class="shr"><hr></div>
-                        <form class="form" id="search_form" action="http://phongtot.vn/tim-kiem" method="GET">
+                        <form class="form" id="search_form" action="#/tim-kiem" method="GET">
                             <div class="form-group tp">
                                 <a class="btn btn-select btn-select-light btn-tp">
                                     <input type="hidden" class="btn-select-input" id="province" name="province" value="">
@@ -478,100 +475,17 @@
             <div class="row">
                 <div class="col-md-12 sidebar-article-label">
                     <div class="pull-left">
-                        <a href="http://phongtot.vn/bai-viet"><h3><span>bài viết</span> mới</h3></a>
+                        <a href="#/bai-viet"><h3><span>bài viết</span> mới</h3></a>
                     </div>
                     <div class="pull-right">
-                        <a href="http://phongtot.vn/bai-viet"></a><h3>
-                            <a href="http://phongtot.vn/bai-viet">Xem thêm <i class="fa fa-angle-right"></i></a>
+                        <a href="#/bai-viet"></a><h3>
+                            <a href="#/bai-viet">Xem thêm <i class="fa fa-angle-right"></i></a>
                         </h3>
                     </div>
                     <div class="clearfix"></div>
                     <hr>
                 </div>
-                <div class="col-sm-6 col-md-12 sidebar-article-new">
-                    <a href="http://phongtot.vn/bai-viet">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <img class="img-responsive" src="http://media.phongtot.vn/xc5tx4cj/ngoi-nha-46m²-tuyet-dep-co-chi-phi-hoan-thien-480-trieu-dong-chang-trai-8x-xay-tang-vo_cover-573eddf84424b.jpg" alt="">
-                            </div>
-                            <div class="col-md-7 no-padding-left">
-                                <div class="sidebar-article-title">
-                                    <h2>Ngôi nhà 46m² tuyệt đẹp có chi phí hoàn thiện 480 triệu đồng chàng trai 8x xây tặng vợ</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-12 sidebar-article-new">
-                    <a href="http://phongtot.vn/bai-viet">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <img class="img-responsive" src="http://media.phongtot.vn/xc5tx4cj/y-tuong-kinh-doanh-nha-tro-ngoi-khong-moi-thang-kiem-tram-trieu_cover-573dcbc3ac6e2.jpg" alt="">
-                            </div>
-                            <div class="col-md-7 no-padding-left">
-                                <div class="sidebar-article-title">
-                                    <h2>Ý tưởng kinh doanh nhà trọ, ngồi không mỗi tháng kiếm trăm triệu?</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-12 sidebar-article-new">
-                    <a href="http://phongtot.vn/bai-viet">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <img class="img-responsive" src="http://media.phongtot.vn/xc5tx4cj/nhung-dieu-can-biet-khi-tim-phong-tro_cover-5714ad734268d.jpg" alt="">
-                            </div>
-                            <div class="col-md-7 no-padding-left">
-                                <div class="sidebar-article-title">
-                                    <h2>Những điều cần biết khi tìm phòng trọ</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-12 sidebar-article-new">
-                    <a href="http://phongtot.vn/bai-viet">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <img class="img-responsive" src="http://media.phongtot.vn/xc5tx4cj/thiet-ke-can-ho-‪‬173m2-cuc-dep-voi-chi-phi-chi-17-trieu-dong_cover-57018c103e17a.jpg" alt="">
-                            </div>
-                            <div class="col-md-7 no-padding-left">
-                                <div class="sidebar-article-title">
-                                    <h2>Thiết kế căn hộ ‪‬173m2 cực đẹp với chi phí chỉ 17 triệu đồng</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-12 sidebar-article-new">
-                    <a href="http://phongtot.vn/bai-viet">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <img class="img-responsive" src="http://media.phongtot.vn/xc5tx4cj/pham-huong-mac-gian-di-giao-luu-cung-sinh-vien_cover-57018a97e544c.jpg" alt="">
-                            </div>
-                            <div class="col-md-7 no-padding-left">
-                                <div class="sidebar-article-title">
-                                    <h2>Phạm Hương mặc giản dị giao lưu cùng sinh viên</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-12 sidebar-article-new">
-                    <a href="http://phongtot.vn/bai-viet">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <img class="img-responsive" src="http://media.phongtot.vn/xc5tx4cj/vi-sao-chon-nganh-hot-van-that-nghiep_cover-57017e8c0162e.jpg" alt="">
-                            </div>
-                            <div class="col-md-7 no-padding-left">
-                                <div class="sidebar-article-title">
-                                    <h2>Vì sao chọn ngành 'hot' vẫn thất nghiệp?</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                
             </div>
         </div>
     </div>

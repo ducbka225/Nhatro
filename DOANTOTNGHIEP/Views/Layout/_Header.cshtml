@@ -9,7 +9,7 @@
                     </a>
                 </div>
                 <div class="pull-right">
-                    <div class="header-top-avatar"><img class="img-responsive" src="~/Content/themes/client/img/avatar.png"></div>
+                    <div class="header-top-avatar"></div>
                     <div class="header-top-user">
                         <div class="user-login"><a class="load_modal_login" href="#tab_auth_login" data-toggle="modal" data-target="#modal_auth">Đăng nhập</a></div>
                         <div class="user-register load_modal_register"><a href="javascript: void(0);" data-toggle="modal" data-target="#modal_auth">Tạo tài khoản</a></div>
@@ -31,7 +31,7 @@
                                         </ul>
                                         <div class="tab-content">
                                             <div class="tab-pane fade in active" id="tab_auth_login">
-                                                <form class="form-horizontal frm-login-ajax1 frm-user-ajax" id="frm-login-ajax1" role="form" method="POST" action="http://phongtot.vn/dang-nhap">
+                                                <form class="form-horizontal frm-login-ajax1 frm-user-ajax" id="frm-login-ajax1" role="form" method="POST" action="#/dang-nhap">
                                                     <div class="hide alert alert-danger"></div>
                                                     <input type="hidden" name="_token" value="zmq7sKJMAIEeS6drjuIgLOKBJ9r9eyfb0T0wdDZx">
                                                     <input type="hidden" name="current_url" value="index.html">
@@ -60,8 +60,8 @@
                                                     <hr>
                                                     <div class="row">
                                                         <div class="col-md-12 text-center">
-                                                            <a href="https://www.facebook.com/v2.9/dialog/oauth?client_id=810519435625421&amp;redirect_uri=http%3A%2F%2Fphongtot.vn%2Fsocial%2Ffacebook%2F&amp;scope=email&amp;response_type=code&amp;state=d9nCLUjMCEzzwctkfjh0WcGiXzfD4ckDwDYdv8V2" class="btn btn-md btn-social btn-facebook"> <i class="fa fa-facebook"></i> Đăng nhập bằng Facebook </a>
-                                                            <a href="https://accounts.google.com/o/oauth2/auth?client_id=354105350296-kcsi32tpijp59eca2ii2edffr595ikbv.apps.googleusercontent.com&amp;redirect_uri=http%3A%2F%2Fphongtot.vn%2Fsocial%2Fgoogle&amp;scope=openid+profile+email&amp;response_type=code&amp;state=0jJoYcsWNSeJR3TfSfP0asAr5dKnQmxl080eBGmX" class="btn btn-md btn-social btn-google-plus"> <i class="fa fa-google-plus"></i> Đăng nhập bằng Google </a>
+                                                            <a href="#" class="btn btn-md btn-social btn-facebook"> <i class="fa fa-facebook"></i> Đăng nhập bằng Facebook </a>
+                                                            <a href="#" class="btn btn-md btn-social btn-google-plus"> <i class="fa fa-google-plus"></i> Đăng nhập bằng Google </a>
                                                         </div>
                                                     </div>
                                                     <hr>
@@ -73,7 +73,7 @@
                                                 </form>
                                             </div>
                                             <div class="tab-pane fade" id="tab_auth_register">
-                                                <form class="form-horizontal frm-user-ajax" id="frm-register-ajax" role="form" method="POST" action="http://phongtot.vn/dang-ky">
+                                                <form class="form-horizontal frm-user-ajax" id="frm-register-ajax" role="form" method="POST" action="#/dang-ky">
                                                     <div class="hide alert alert-danger"></div>
                                                     <input type="hidden" name="_token" value="zmq7sKJMAIEeS6drjuIgLOKBJ9r9eyfb0T0wdDZx">
                                                     <input type="hidden" name="current_url" value="index.html">
@@ -114,8 +114,8 @@
                                                 </form>
                                                 <hr>
                                                 <div class="text-center">
-                                                    <a href="https://www.facebook.com/v2.9/dialog/oauth?client_id=810519435625421&amp;redirect_uri=http%3A%2F%2Fphongtot.vn%2Fsocial%2Ffacebook%2F&amp;scope=email&amp;response_type=code&amp;state=tv27TR2jF6wwSCTAtRPkyeEeOBVBuQbbBHN4niC1" class="btn btn-md btn-social btn-facebook"> <i class="fa fa-facebook"></i> Đăng ký bằng Facebook </a>
-                                                    <a href="https://www.facebook.com/v2.9/dialog/oauth?client_id=810519435625421&amp;redirect_uri=http%3A%2F%2Fphongtot.vn%2Fsocial%2Ffacebook%2F&amp;scope=email&amp;response_type=code&amp;state=1zJnTOfgYjJbe0KI2duS8y9eaWXLC7wsRrq8tE25" class="btn btn-md btn-social btn-google-plus"> <i class="fa fa-google-plus"></i> Đăng ký bằng Google </a>
+                                                    <a href="#" class="btn btn-md btn-social btn-facebook"> <i class="fa fa-facebook"></i> Đăng ký bằng Facebook </a>
+                                                    <a href="#" class="btn btn-md btn-social btn-google-plus"> <i class="fa fa-google-plus"></i> Đăng ký bằng Google </a>
                                                 </div>
                                             </div>
                                         </div>
