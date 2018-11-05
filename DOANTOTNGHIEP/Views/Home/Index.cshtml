@@ -51,24 +51,23 @@
                                                         </div>
                                                         <div class="caption">
                                                             <div class="title">
-                                                                <h2><a href="@Url.Action("ChiTiet", "ChiTiet")">Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.</a></h2>
+                                                                <h2><a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})">@item.Title</a></h2>
                                                             </div>
                                                             <div class="extra">
                                                                 <div class="pull-left">
-                                                                    <a href="#"><span class="fa fa-map-marker"></span>@item.ProducType</a>
+                                                                    <a href="#"><span class="fa fa-map-marker"></span>@item.District</a>
                                                                 </div>
                                                                 <div class="pull-right">
-                                                                    <a href="#"><span class="fa fa-info"></span>125 m<sup>2</sup></a>
+                                                                    <a href="#"><span class="fa fa-info"></span>@item.Acreage m<sup>2</sup></a>
                                                                 </div>
                                                                 <div class="type">
-                                                                    <a href="#"><span class="fa fa-home"></span>Nh&agrave; nguy&ecirc;n căn</a>
+                                                                    <a href="#"><span class="fa fa-home"></span>@item.ProducType</a>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             }
-
 
                                         </div>
                                     </div>
@@ -82,7 +81,7 @@
                                             {
                                                 <div class="col-sm-6 col-md-4 thumbnail-item">
                                                     <div class="thumbnail">
-                                                        <a href="phong-tro-nha-tro/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien.html" title="cho thu&ecirc; ph&ograve;ng tầng 2 trong nh&agrave; nguy&ecirc;n căn mặt tiền">
+                                                        <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @pt.Id})">
                                                             <img src="~/Content/themes/client/img/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien-thumb-tf62l.jpg" alt="" class="cover img-reponsive">
                                                         </a>
                                                         <div class="room-item-price">
@@ -90,14 +89,14 @@
                                                         </div>
                                                         <div class="caption">
                                                             <div class="title">
-                                                                <h2><a href="phong-tro-nha-tro/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien.html">cho thu&ecirc; ph&ograve;ng tầng 2 trong nh&agrave; nguy&ecirc;n căn mặt tiền</a></h2>
+                                                                <h2><a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @pt.Id})">@pt.Title</a></h2>
                                                             </div>
                                                             <div class="extra">
                                                                 <div class="pull-left">
-                                                                    <a href="#"><span class="fa fa-map-marker"></span>@pt.ProducType</a>
+                                                                    <a href="#"><span class="fa fa-map-marker"></span>@pt.District</a>
                                                                 </div>
                                                                 <div class="pull-right">
-                                                                    <a href="#"><span class="fa fa-info"></span>6 m<sup>2</sup></a>
+                                                                    <a href="#"><span class="fa fa-info"></span>@pt.Acreage m<sup>2</sup></a>
                                                                 </div>
                                                                 <div class="type">
                                                                     <a href="#"><span class="fa fa-home"></span>@pt.ProducType</a>
@@ -120,7 +119,7 @@
                                             {
                                                 <div class="col-sm-6 col-md-4 thumbnail-item">
                                                     <div class="thumbnail">
-                                                        <a href="@Url.Action("ChiTiet", "ChiTiet")" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
+                                                        <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @nnc.Id})" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
                                                             <img src="~/Content/themes/client/img/cho-thue-nha-so-25b-ngach-106-ngo-goc-de-pho-minh-khai-ha-noi-thumb-ajyfm.jpg" alt="" class="cover img-reponsive">
                                                         </a>
                                                         <div class="room-item-price">
@@ -128,14 +127,14 @@
                                                         </div>
                                                         <div class="caption">
                                                             <div class="title">
-                                                                <h2><a href="@Url.Action("ChiTiet", "ChiTiet")">Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.</a></h2>
+                                                                <h2><a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @nnc.Id})">@nnc.Title</a></h2>
                                                             </div>
                                                             <div class="extra">
                                                                 <div class="pull-left">
-                                                                    <a href="#"><span class="fa fa-map-marker"></span>Ho&agrave;ng Mai</a>
+                                                                    <a href="#"><span class="fa fa-map-marker"></span>@nnc.District</a>
                                                                 </div>
                                                                 <div class="pull-right">
-                                                                    <a href="#"><span class="fa fa-info"></span>125 m<sup>2</sup></a>
+                                                                    <a href="#"><span class="fa fa-info"></span>@nnc.Acreage m<sup>2</sup></a>
                                                                 </div>
                                                                 <div class="type">
                                                                     <a href="#"><span class="fa fa-home"></span>@nnc.ProducType</a>
@@ -157,7 +156,7 @@
                                             {
                                                 <div class="col-sm-6 col-md-4 thumbnail-item">
                                                     <div class="thumbnail">
-                                                        <a href="van-phong/cho-thue-van-phong-thu-duc-gia-re.html" title="Cho Thu&ecirc; Văn Ph&ograve;ng Thủ Đức Gi&aacute; Rẻ">
+                                                        <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @vp.Id})">
                                                             <img src="~/Content/themes/client/img/cho-thue-van-phong-thu-duc-gia-re-thumb-enfrd.jpg" alt="" class="cover img-reponsive">
                                                         </a>
                                                         <div class="room-item-price">
@@ -165,14 +164,14 @@
                                                         </div>
                                                         <div class="caption">
                                                             <div class="title">
-                                                                <h2><a href="van-phong/cho-thue-van-phong-thu-duc-gia-re.html">Cho Thu&ecirc; Văn Ph&ograve;ng Thủ Đức Gi&aacute; Rẻ</a></h2>
+                                                                <h2><a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = vp.Id})">@vp.Title</a></h2>
                                                             </div>
                                                             <div class="extra">
                                                                 <div class="pull-left">
-                                                                    <a href="#"><span class="fa fa-map-marker"></span>Thủ Đức</a>
+                                                                    <a href="#"><span class="fa fa-map-marker"></span>@vp.District</a>
                                                                 </div>
                                                                 <div class="pull-right">
-                                                                    <a href="#"><span class="fa fa-info"></span>60 m<sup>2</sup></a>
+                                                                    <a href="#"><span class="fa fa-info"></span>@vp.Acreage m<sup>2</sup></a>
                                                                 </div>
                                                                 <div class="type">
                                                                     <a href="#"><span class="fa fa-home"></span>@vp.ProducType</a>
@@ -195,7 +194,7 @@
                                             {
                                                 <div class="col-sm-6 col-md-4 thumbnail-item">
                                                     <div class="thumbnail">
-                                                        <a href="chung-cu-can-ho/chinh-chu-cho-thue-nha-tai-tang-3-c5-tap-the-nghia-tan-vao-o-tu-1112018-1539660826pwbxk.html" title="Ch&iacute;nh chủ - Cho thu&ecirc; nh&agrave; tại Tầng 3 C5 Tập thể Nghĩa T&acirc;n v&agrave;o ở từ 1/11/2018">
+                                                        <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = cc.Id})">
                                                             <img src="~/Content/themes/client/img/chinh-chu-cho-thue-nha-tai-tang-3-c5-tap-the-nghia-tan-vao-o-tu-1112018-1539660826pwbxk-thumb-resized-pyuok.jpg" alt="" class="cover img-reponsive">
                                                         </a>
                                                         <div class="room-item-price">
@@ -203,14 +202,14 @@
                                                         </div>
                                                         <div class="caption">
                                                             <div class="title">
-                                                                <h2><a href="chung-cu-can-ho/chinh-chu-cho-thue-nha-tai-tang-3-c5-tap-the-nghia-tan-vao-o-tu-1112018-1539660826pwbxk.html">Ch&iacute;nh chủ - Cho thu&ecirc; nh&agrave; tại Tầng 3 C5 Tập thể Nghĩa T&acirc;n v&agrave;o ở từ 1/11/2018</a></h2>
+                                                                <h2><a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = cc.Id})">@cc.Title</a></h2>
                                                             </div>
                                                             <div class="extra">
                                                                 <div class="pull-left">
-                                                                    <a href="#"><span class="fa fa-map-marker"></span>Cầu Giấy</a>
+                                                                    <a href="#"><span class="fa fa-map-marker"></span>@cc.District</a>
                                                                 </div>
                                                                 <div class="pull-right">
-                                                                    <a href="#"><span class="fa fa-info"></span>32 m<sup>2</sup></a>
+                                                                    <a href="#"><span class="fa fa-info"></span>@cc.Acreage m<sup>2</sup></a>
                                                                 </div>
                                                                 <div class="type">
                                                                     <a href="#"><span class="fa fa-home"></span>@cc.ProducType</a>

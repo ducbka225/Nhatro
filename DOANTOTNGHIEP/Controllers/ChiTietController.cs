@@ -23,9 +23,9 @@ namespace DOANTOTNGHIEP.Controllers
                            join t in db.Transaction on p.Id equals t.IdProduct
                            join u in db.User on t.IdUser equals u.Id
                            where p.Id == ProductId
-                           select new ProductDetailsModel
+                           select new ProductDetailsModel()
                            {
-                               Id = p.Id,
+                               Id = pdt.Id,
                                Title = p.Title,
                                Acreage = p.Acreage,
                                Price = p.Price,

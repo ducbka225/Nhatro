@@ -13,12 +13,12 @@
                     <div class="pt-breadcrumb">
                         <ol class="breadcrumb">
                             <li><a href="#">Trang chủ</a></li>
-                            <li><a href="#"> @*@productDetail.ProducType*@ </a></li>
-                            <li class="active">Cần cho thuê CH CityGarden 3pn 145m2 full NT giấ 43tr/tháng </li>
+                            <li><a href="#"> @productDetail.ProducType </a></li>
+                            <li class="active">@productDetail.Title </li>
                         </ol>
                     </div><div class="room-detail">
                         <div class="title">
-                            <a href="javascript: void(0);"><h1>Cần cho thuê CH CityGarden 3pn 145m2 full NT giấ 43tr/tháng </h1></a>
+                            <a href="javascript: void(0);"><h1>@productDetail.Title </h1></a>
                         </div>
                         <div class="social">
                             <div class="pull-left facebook">
@@ -40,31 +40,31 @@
                                 <div class="col-md-8 left-info no-padding-right">
                                     <div class="address">
                                         <span class="btn info-label">Địa chỉ</span>
-                                        <a class="" href="">59 ngô tất tố, phường 21, quận bình thạnh</a>, <a class="" href="">Nguyễn Hới</a>
+                                        <a class="" href="#">@productDetail.LocationName</a>
                                     </div>
                                     <div class="size">
                                         <span class="btn info-label">Diện tích</span>
-                                        <a href="" class="btn info-data">@productDetail.Acreage m<sup>2</sup></a>
+                                        <a href="#" class="btn info-data">@productDetail.Acreage m<sup>2</sup></a>
                                         <span class="btn info-label">Loại phòng</span>
-                                        <a href="">Chung cư, căn hộ</a>
+                                        <a href="#">@productDetail.ProducType</a>
                                     </div>
                                     <div class="tang">
                                         <span class="btn info-label">Tầng số</span>
-                                        <a href="" class="btn info-data">8</a>
+                                        <a href="#" class="btn info-data">@productDetail.Floor</a>
                                         <span class="btn info-label">Vệ sinh</span>
-                                        <a href="" class="btn info-data">2</a>
+                                        <a href="#" class="btn info-data">@productDetail.Sanitary</a>
                                     </div>
                                     <div class="bed-room">
                                         <span class="btn info-label">Phòng ngủ</span>
-                                        <a href="" class="btn info-data">3</a>
+                                        <a href="" class="btn info-data">@productDetail.BedRoomNumber</a>
                                         <span class="btn info-label">Hướng nhà</span>
                                         <a href="">Đông nam</a>
                                     </div>
                                     <div class="type">
                                         <span class="btn info-label">Giá điện</span>
-                                        <a href="" class="btn info-data">Nhà nước quy định</a>
+                                        <a href="" class="btn info-data">@productDetail.PriceElectric</a>
                                         <span class="btn info-label">Giá nước</span>
-                                        <a href="">Nhà nước quy định</a>
+                                        <a href="">@productDetail.PriceWater</a>
                                     </div>
                                     <div class="type">
                                         <span class="btn info-label">Tiện ích</span>
@@ -85,13 +85,13 @@
                                     </div>
                                     <div class="chr"><hr></div>
                                     <div class="info-price">
-                                        <a href=""><span class="fa fa-unlock-alt"></span>43,000,000 Đ/tháng</a>
+                                        <a href=""><span class="fa fa-unlock-alt"></span>@productDetail.Price Đ/tháng</a>
                                     </div>
                                     <div class="info-boss">
-                                        <a href=""><span class="fa fa-user"></span>Phạm Tiến</a>
+                                        <a href=""><span class="fa fa-user"></span>@productDetail.UserName</a>
                                     </div>
                                     <div class="info-phone">
-                                        <a href=""><span class="fa fa-mobile-phone"></span>0333333333</a>
+                                        <a href=""><span class="fa fa-mobile-phone"></span>@productDetail.PhoneNumber</a>
                                     </div>
                                     <div class="info-feedback">
                                         <a class="btn btn-report-room clearfix" href="#tab_auth_login" data-toggle="modal" data-target="#modal_auth">Phản hồi tình trạng</a>
@@ -123,7 +123,7 @@
                                         <div class="clearfix"></div>
                                         <hr>
                                     </div>
-                                    <div class="dis-content">Tôi cần cho thuê lại căn hộ CityGarden&nbsp;<br>Loại CH : 3PN 145m2&nbsp;<br>Căn hộ được trang bị đầy đủ nội thất, quý khách chỉ cần dọn đồ vào ở ngay&nbsp;<br>Giá thuê: 43tr/tháng ( Thuê phí)&nbsp;<br>Liên hệ: 0902885055 (Huy)</div>
+                                    <div class="dis-content">@productDetail.Description</div>
                                 </div>
                             </div>
                         </div>
