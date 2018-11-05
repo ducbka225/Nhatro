@@ -19,13 +19,13 @@
                                             <a href="#tab_type_1" data-toggle="tab">Tất cả</a>
                                         </li>
                                         <li class="">
-                                            <a href="#tab_type_2" data-toggle="tab">Ph&ograve;ng trọ, nh&agrave; trọ</a>
+                                            <a href="#tab_type_2" data-toggle="tab">Phòng trọ, Nhà trọ</a>
                                         </li>
                                         <li class="">
-                                            <a href="#tab_type_3" data-toggle="tab">Nh&agrave; nguy&ecirc;n căn</a>
+                                            <a href="#tab_type_3" data-toggle="tab">Nhà nguyên căn</a>
                                         </li>
                                         <li class="">
-                                            <a href="#tab_type_4" data-toggle="tab">Văn ph&ograve;ng</a>
+                                            <a href="#tab_type_4" data-toggle="tab">Văn Phòng</a>
                                         </li>
                                         <li class="">
                                             <a href="#tab_type_5" data-toggle="tab">Chung cư, căn hộ</a>
@@ -34,591 +34,193 @@
                                 </div>
                             </div>
                             <div class="tab-content">
+                              
+                                @*Tất cả*@ 
                                 <div class="tab-pane active" id="tab_type_1">
                                     <div class="thumbnail-list">
                                         <div class="row block-item">
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="@Url.Action("ChiTiet", "ChiTiet")" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
-                                                        <img src="~/Content/themes/client/img/cho-thue-nha-so-25b-ngach-106-ngo-goc-de-pho-minh-khai-ha-noi-thumb-ajyfm.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">6,500,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="@Url.Action("ChiTiet", "ChiTiet")">Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.</a></h2>
+                                            @foreach (var item in ViewBag.ListAll)
+                                            {
+                                                <div class="col-sm-6 col-md-4 thumbnail-item">
+                                                    <div class="thumbnail">
+                                                        <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
+                                                            <img src="~/Content/themes/client/img/cho-thue-nha-so-25b-ngach-106-ngo-goc-de-pho-minh-khai-ha-noi-thumb-ajyfm.jpg" alt="" class="cover img-reponsive">
+                                                        </a>
+                                                        <div class="room-item-price">
+                                                            <a href="#">@item.Price /tháng</a>
                                                         </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Ho&agrave;ng Mai</a>
+                                                        <div class="caption">
+                                                            <div class="title">
+                                                                <h2><a href="@Url.Action("ChiTiet", "ChiTiet")">Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.</a></h2>
                                                             </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>125 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Nh&agrave; nguy&ecirc;n căn</a>
+                                                            <div class="extra">
+                                                                <div class="pull-left">
+                                                                    <a href="#"><span class="fa fa-map-marker"></span>@item.ProducType</a>
+                                                                </div>
+                                                                <div class="pull-right">
+                                                                    <a href="#"><span class="fa fa-info"></span>125 m<sup>2</sup></a>
+                                                                </div>
+                                                                <div class="type">
+                                                                    <a href="#"><span class="fa fa-home"></span>Nh&agrave; nguy&ecirc;n căn</a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="overlay">
-                <a href="#" title="">
-                    <img src="img/play.png">
-                </a>
-            </div> -->
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="@Url.Action("ChiTiet", "ChiTiet")" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
-                                                        <img src="~/Content/themes/client/img/cho-thue-nha-so-25b-ngach-106-ngo-goc-de-pho-minh-khai-ha-noi-thumb-ajyfm.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">6,500,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="@Url.Action("ChiTiet", "ChiTiet")">Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.</a></h2>
-                                                        </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Ho&agrave;ng Mai</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>125 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Nh&agrave; nguy&ecirc;n căn</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="overlay">
-                <a href="#" title="">
-                    <img src="img/play.png">
-                </a>
-            </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="@Url.Action("ChiTiet", "ChiTiet")" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
-                                                        <img src="~/Content/themes/client/img/cho-thue-nha-so-25b-ngach-106-ngo-goc-de-pho-minh-khai-ha-noi-thumb-ajyfm.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">6,500,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="@Url.Action("ChiTiet", "ChiTiet")">Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.</a></h2>
-                                                        </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Ho&agrave;ng Mai</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>125 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Nh&agrave; nguy&ecirc;n căn</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="overlay">
-                <a href="#" title="">
-                    <img src="img/play.png">
-                </a>
-            </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="@Url.Action("ChiTiet", "ChiTiet")" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
-                                                        <img src="~/Content/themes/client/img/cho-thue-nha-so-25b-ngach-106-ngo-goc-de-pho-minh-khai-ha-noi-thumb-ajyfm.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">6,500,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="@Url.Action("ChiTiet", "ChiTiet")">Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.</a></h2>
-                                                        </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Ho&agrave;ng Mai</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>125 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Nh&agrave; nguy&ecirc;n căn</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="overlay">
-                <a href="#" title="">
-                    <img src="img/play.png">
-                </a>
-            </div> -->
-                                                </div>
-                                            </div>
+                                            }
+
+
                                         </div>
                                     </div>
                                 </div>
+
+                                @*Phòng trọ*@
                                 <div class="tab-pane " id="tab_type_2">
                                     <div class="thumbnail-list">
                                         <div class="row block-item">
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="phong-tro-nha-tro/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien.html" title="cho thu&ecirc; ph&ograve;ng tầng 2 trong nh&agrave; nguy&ecirc;n căn mặt tiền">
-                                                        <img src="~/Content/themes/client/img/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien-thumb-tf62l.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">2,000,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="phong-tro-nha-tro/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien.html">cho thu&ecirc; ph&ograve;ng tầng 2 trong nh&agrave; nguy&ecirc;n căn mặt tiền</a></h2>
+                                            @foreach (var pt in ViewBag.NhaTro)
+                                            {
+                                                <div class="col-sm-6 col-md-4 thumbnail-item">
+                                                    <div class="thumbnail">
+                                                        <a href="phong-tro-nha-tro/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien.html" title="cho thu&ecirc; ph&ograve;ng tầng 2 trong nh&agrave; nguy&ecirc;n căn mặt tiền">
+                                                            <img src="~/Content/themes/client/img/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien-thumb-tf62l.jpg" alt="" class="cover img-reponsive">
+                                                        </a>
+                                                        <div class="room-item-price">
+                                                            <a href="#">@pt.Price /tháng</a>
                                                         </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Sơn Tr&agrave;</a>
+                                                        <div class="caption">
+                                                            <div class="title">
+                                                                <h2><a href="phong-tro-nha-tro/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien.html">cho thu&ecirc; ph&ograve;ng tầng 2 trong nh&agrave; nguy&ecirc;n căn mặt tiền</a></h2>
                                                             </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>6 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Ph&ograve;ng trọ, nh&agrave; trọ</a>
+                                                            <div class="extra">
+                                                                <div class="pull-left">
+                                                                    <a href="#"><span class="fa fa-map-marker"></span>@pt.ProducType</a>
+                                                                </div>
+                                                                <div class="pull-right">
+                                                                    <a href="#"><span class="fa fa-info"></span>6 m<sup>2</sup></a>
+                                                                </div>
+                                                                <div class="type">
+                                                                    <a href="#"><span class="fa fa-home"></span>@pt.ProducType</a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="overlay">
-                <a href="#" title="">
-                    <img src="img/play.png">
-                </a>
-            </div> -->
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="phong-tro-nha-tro/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien.html" title="cho thu&ecirc; ph&ograve;ng tầng 2 trong nh&agrave; nguy&ecirc;n căn mặt tiền">
-                                                        <img src="~/Content/themes/client/img/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien-thumb-tf62l.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">2,000,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="phong-tro-nha-tro/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien.html">cho thu&ecirc; ph&ograve;ng tầng 2 trong nh&agrave; nguy&ecirc;n căn mặt tiền</a></h2>
-                                                        </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Sơn Tr&agrave;</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>6 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Ph&ograve;ng trọ, nh&agrave; trọ</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="overlay">
-                <a href="#" title="">
-                    <img src="img/play.png">
-                </a>
-            </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="phong-tro-nha-tro/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien.html" title="cho thu&ecirc; ph&ograve;ng tầng 2 trong nh&agrave; nguy&ecirc;n căn mặt tiền">
-                                                        <img src="~/Content/themes/client/img/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien-thumb-tf62l.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">2,000,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="phong-tro-nha-tro/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien.html">cho thu&ecirc; ph&ograve;ng tầng 2 trong nh&agrave; nguy&ecirc;n căn mặt tiền</a></h2>
-                                                        </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Sơn Tr&agrave;</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>6 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Ph&ograve;ng trọ, nh&agrave; trọ</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="overlay">
-                <a href="#" title="">
-                    <img src="img/play.png">
-                </a>
-            </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="phong-tro-nha-tro/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien.html" title="cho thu&ecirc; ph&ograve;ng tầng 2 trong nh&agrave; nguy&ecirc;n căn mặt tiền">
-                                                        <img src="~/Content/themes/client/img/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien-thumb-tf62l.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">2,000,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="phong-tro-nha-tro/cho-thue-phong-tang-2-trong-nha-nguyen-can-mat-tien.html">cho thu&ecirc; ph&ograve;ng tầng 2 trong nh&agrave; nguy&ecirc;n căn mặt tiền</a></h2>
-                                                        </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Sơn Tr&agrave;</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>6 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Ph&ograve;ng trọ, nh&agrave; trọ</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="overlay">
-                <a href="#" title="">
-                    <img src="img/play.png">
-                </a>
-            </div> -->
-                                                </div>
-                                            </div>
+                                            }
+
                                         </div>
                                     </div>
                                 </div>
+
+                                @*Nhà nguyên căn*@
                                 <div class="tab-pane " id="tab_type_3">
                                     <div class="thumbnail-list">
                                         <div class="row block-item">
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="@Url.Action("ChiTiet", "ChiTiet")" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
-                                                        <img src="~/Content/themes/client/img/cho-thue-nha-so-25b-ngach-106-ngo-goc-de-pho-minh-khai-ha-noi-thumb-ajyfm.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">6,500,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="@Url.Action("ChiTiet", "ChiTiet")">Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.</a></h2>
+                                            @foreach (var nnc in ViewBag.NhaNguyencan)
+                                            {
+                                                <div class="col-sm-6 col-md-4 thumbnail-item">
+                                                    <div class="thumbnail">
+                                                        <a href="@Url.Action("ChiTiet", "ChiTiet")" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
+                                                            <img src="~/Content/themes/client/img/cho-thue-nha-so-25b-ngach-106-ngo-goc-de-pho-minh-khai-ha-noi-thumb-ajyfm.jpg" alt="" class="cover img-reponsive">
+                                                        </a>
+                                                        <div class="room-item-price">
+                                                            <a href="#">@nnc.Price Đ/tháng</a>
                                                         </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Ho&agrave;ng Mai</a>
+                                                        <div class="caption">
+                                                            <div class="title">
+                                                                <h2><a href="@Url.Action("ChiTiet", "ChiTiet")">Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.</a></h2>
                                                             </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>125 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Nh&agrave; nguy&ecirc;n căn</a>
+                                                            <div class="extra">
+                                                                <div class="pull-left">
+                                                                    <a href="#"><span class="fa fa-map-marker"></span>Ho&agrave;ng Mai</a>
+                                                                </div>
+                                                                <div class="pull-right">
+                                                                    <a href="#"><span class="fa fa-info"></span>125 m<sup>2</sup></a>
+                                                                </div>
+                                                                <div class="type">
+                                                                    <a href="#"><span class="fa fa-home"></span>@nnc.ProducType</a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="overlay">
-                <a href="#" title="">
-                    <img src="img/play.png">
-                </a>
-            </div> -->
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="@Url.Action("ChiTiet", "ChiTiet")" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
-                                                        <img src="~/Content/themes/client/img/cho-thue-nha-so-25b-ngach-106-ngo-goc-de-pho-minh-khai-ha-noi-thumb-ajyfm.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">6,500,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="@Url.Action("ChiTiet", "ChiTiet")">Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.</a></h2>
-                                                        </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Ho&agrave;ng Mai</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>125 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Nh&agrave; nguy&ecirc;n căn</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="overlay">
-                <a href="#" title="">
-                    <img src="img/play.png">
-                </a>
-            </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="@Url.Action("ChiTiet", "ChiTiet")" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
-                                                        <img src="~/Content/themes/client/img/cho-thue-nha-so-25b-ngach-106-ngo-goc-de-pho-minh-khai-ha-noi-thumb-ajyfm.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">6,500,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="@Url.Action("ChiTiet", "ChiTiet")">Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.</a></h2>
-                                                        </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Ho&agrave;ng Mai</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>125 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Nh&agrave; nguy&ecirc;n căn</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="overlay">
-                <a href="#" title="">
-                    <img src="img/play.png">
-                </a>
-            </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="@Url.Action("ChiTiet", "ChiTiet")" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
-                                                        <img src="~/Content/themes/client/img/cho-thue-nha-so-25b-ngach-106-ngo-goc-de-pho-minh-khai-ha-noi-thumb-ajyfm.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">6,500,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="@Url.Action("ChiTiet", "ChiTiet")">Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.</a></h2>
-                                                        </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Ho&agrave;ng Mai</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>125 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Nh&agrave; nguy&ecirc;n căn</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="overlay">
-                <a href="#" title="">
-                    <img src="img/play.png">
-                </a>
-            </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="@Url.Action("ChiTiet", "ChiTiet")" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
-                                                        <img src="~/Content/themes/client/img/cho-thue-nha-so-25b-ngach-106-ngo-goc-de-pho-minh-khai-ha-noi-thumb-ajyfm.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">6,500,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="@Url.Action("ChiTiet", "ChiTiet")">Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.</a></h2>
-                                                        </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Ho&agrave;ng Mai</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>125 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Nh&agrave; nguy&ecirc;n căn</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="overlay">
-                <a href="#" title="">
-                    <img src="img/play.png">
-                </a>
-            </div> -->
-                                                </div>
-                                            </div>
+                                            }
+
                                         </div>
                                     </div>
                                 </div>
+                                @*Văn phong*@
                                 <div class="tab-pane " id="tab_type_4">
                                     <div class="thumbnail-list">
                                         <div class="row block-item">
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="van-phong/cho-thue-van-phong-thu-duc-gia-re.html" title="Cho Thu&ecirc; Văn Ph&ograve;ng Thủ Đức Gi&aacute; Rẻ">
-                                                        <img src="~/Content/themes/client/img/cho-thue-van-phong-thu-duc-gia-re-thumb-enfrd.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">700,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="van-phong/cho-thue-van-phong-thu-duc-gia-re.html">Cho Thu&ecirc; Văn Ph&ograve;ng Thủ Đức Gi&aacute; Rẻ</a></h2>
-                                                        </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Thủ Đức</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>60 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Văn ph&ograve;ng</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="overlay">
-                                                        <a href="#" title="">
-                                                            <img src="img/play.png">
+                                            @foreach (var vp in ViewBag.VanPhong)
+                                            {
+                                                <div class="col-sm-6 col-md-4 thumbnail-item">
+                                                    <div class="thumbnail">
+                                                        <a href="van-phong/cho-thue-van-phong-thu-duc-gia-re.html" title="Cho Thu&ecirc; Văn Ph&ograve;ng Thủ Đức Gi&aacute; Rẻ">
+                                                            <img src="~/Content/themes/client/img/cho-thue-van-phong-thu-duc-gia-re-thumb-enfrd.jpg" alt="" class="cover img-reponsive">
                                                         </a>
-                                                    </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="van-phong/cho-thue-nha-nguyen-can-kdc-phu-thuan-4-x-18m-3-lau-gia-22trth.html" title="Cho thu&ecirc; nh&agrave; nguy&ecirc;n căn KDC Ph&uacute; Thuận 4 x 18m, 3 lầu, gi&aacute; 22tr/th">
-                                                        <img src="~/Content/themes/client/img/cho-thue-nha-nguyen-can-kdc-phu-thuan-4-x-18m-3-lau-gia-22trth-thumb-2crdr.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">22,000,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="van-phong/cho-thue-nha-nguyen-can-kdc-phu-thuan-4-x-18m-3-lau-gia-22trth.html">Cho thu&ecirc; nh&agrave; nguy&ecirc;n căn KDC Ph&uacute; Thuận 4 x 18m, 3 lầu, gi&aacute; 22tr/th</a></h2>
+                                                        <div class="room-item-price">
+                                                            <a href="#">@vp.Price Đ/tháng</a>
                                                         </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>7</a>
+                                                        <div class="caption">
+                                                            <div class="title">
+                                                                <h2><a href="van-phong/cho-thue-van-phong-thu-duc-gia-re.html">Cho Thu&ecirc; Văn Ph&ograve;ng Thủ Đức Gi&aacute; Rẻ</a></h2>
                                                             </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>80 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Văn ph&ograve;ng</a>
+                                                            <div class="extra">
+                                                                <div class="pull-left">
+                                                                    <a href="#"><span class="fa fa-map-marker"></span>Thủ Đức</a>
+                                                                </div>
+                                                                <div class="pull-right">
+                                                                    <a href="#"><span class="fa fa-info"></span>60 m<sup>2</sup></a>
+                                                                </div>
+                                                                <div class="type">
+                                                                    <a href="#"><span class="fa fa-home"></span>@vp.ProducType</a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="overlay">
-                                                        <a href="#" title="">
-                                                            <img src="img/play.png">
-                                                        </a>
-                                                    </div> -->
                                                 </div>
-                                            </div>
+                                            }
+
                                         </div>
                                     </div>
                                 </div>
+
+                                @*CHung cư*@
                                 <div class="tab-pane " id="tab_type_5">
                                     <div class="thumbnail-list">
                                         <div class="row block-item">
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="chung-cu-can-ho/chinh-chu-cho-thue-nha-tai-tang-3-c5-tap-the-nghia-tan-vao-o-tu-1112018-1539660826pwbxk.html" title="Ch&iacute;nh chủ - Cho thu&ecirc; nh&agrave; tại Tầng 3 C5 Tập thể Nghĩa T&acirc;n v&agrave;o ở từ 1/11/2018">
-                                                        <img src="~/Content/themes/client/img/chinh-chu-cho-thue-nha-tai-tang-3-c5-tap-the-nghia-tan-vao-o-tu-1112018-1539660826pwbxk-thumb-resized-pyuok.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">4,000,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="chung-cu-can-ho/chinh-chu-cho-thue-nha-tai-tang-3-c5-tap-the-nghia-tan-vao-o-tu-1112018-1539660826pwbxk.html">Ch&iacute;nh chủ - Cho thu&ecirc; nh&agrave; tại Tầng 3 C5 Tập thể Nghĩa T&acirc;n v&agrave;o ở từ 1/11/2018</a></h2>
-                                                        </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Cầu Giấy</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>32 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Chung cư, căn hộ</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="overlay">
-                                                        <a href="#" title="">
-                                                            <img src="img/play.png">
+                                            @foreach (var cc in ViewBag.ChungCu)
+                                            {
+                                                <div class="col-sm-6 col-md-4 thumbnail-item">
+                                                    <div class="thumbnail">
+                                                        <a href="chung-cu-can-ho/chinh-chu-cho-thue-nha-tai-tang-3-c5-tap-the-nghia-tan-vao-o-tu-1112018-1539660826pwbxk.html" title="Ch&iacute;nh chủ - Cho thu&ecirc; nh&agrave; tại Tầng 3 C5 Tập thể Nghĩa T&acirc;n v&agrave;o ở từ 1/11/2018">
+                                                            <img src="~/Content/themes/client/img/chinh-chu-cho-thue-nha-tai-tang-3-c5-tap-the-nghia-tan-vao-o-tu-1112018-1539660826pwbxk-thumb-resized-pyuok.jpg" alt="" class="cover img-reponsive">
                                                         </a>
-                                                    </div> -->
+                                                        <div class="room-item-price">
+                                                            <a href="#">@cc.Price Đ/tháng</a>
+                                                        </div>
+                                                        <div class="caption">
+                                                            <div class="title">
+                                                                <h2><a href="chung-cu-can-ho/chinh-chu-cho-thue-nha-tai-tang-3-c5-tap-the-nghia-tan-vao-o-tu-1112018-1539660826pwbxk.html">Ch&iacute;nh chủ - Cho thu&ecirc; nh&agrave; tại Tầng 3 C5 Tập thể Nghĩa T&acirc;n v&agrave;o ở từ 1/11/2018</a></h2>
+                                                            </div>
+                                                            <div class="extra">
+                                                                <div class="pull-left">
+                                                                    <a href="#"><span class="fa fa-map-marker"></span>Cầu Giấy</a>
+                                                                </div>
+                                                                <div class="pull-right">
+                                                                    <a href="#"><span class="fa fa-info"></span>32 m<sup>2</sup></a>
+                                                                </div>
+                                                                <div class="type">
+                                                                    <a href="#"><span class="fa fa-home"></span>@cc.ProducType</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="chung-cu-can-ho/cho-thue-can-ho-cao-cap-quan-5-ngan-han-chi-co-100ngay.html" title="CHO THU&Ecirc; CĂN HỘ CAO CẤP QUẬN 5 NGẮN HẠN CHỈ C&Oacute; 100$/NG&Agrave;Y ">
-                                                        <img src="~/Content/themes/client/img/cho-thue-can-ho-cao-cap-quan-5-ngan-han-chi-co-100ngay-thumb-pbfwz.jpg" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">2,300,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="chung-cu-can-ho/cho-thue-can-ho-cao-cap-quan-5-ngan-han-chi-co-100ngay.html">CHO THU&Ecirc; CĂN HỘ CAO CẤP QUẬN 5 NGẮN HẠN CHỈ C&Oacute; 100$/NG&Agrave;Y </a></h2>
-                                                        </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>5</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>78 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Chung cư, căn hộ</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="overlay">
-                                                        <a href="#" title="">
-                                                            <img src="img/play.png">
-                                                        </a>
-                                                    </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 thumbnail-item">
-                                                <div class="thumbnail">
-                                                    <a href="chung-cu-can-ho/cho-thue-can-ho-gan-cau-vuot-linh-xuan-lien-ke-kha-van-can-gia-re.html" title="Cho thu&ecirc; căn hộ gần cầu vượt linh xu&acirc;n liền kề kha vạn c&acirc;n gi&aacute; rẻ">
-                                                        <img src="~/Content/themes/client/img/cho-thue-can-ho-gan-cau-vuot-linh-xuan-lien-ke-kha-van-can-gia-re-thumb-dgmcx.png" alt="" class="cover img-reponsive">
-                                                    </a>
-                                                    <div class="room-item-price">
-                                                        <a href="#">3,500,000 Đ/tháng</a>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <div class="title">
-                                                            <h2><a href="chung-cu-can-ho/cho-thue-can-ho-gan-cau-vuot-linh-xuan-lien-ke-kha-van-can-gia-re.html">Cho thu&ecirc; căn hộ gần cầu vượt linh xu&acirc;n liền kề kha vạn c&acirc;n gi&aacute; rẻ</a></h2>
-                                                        </div>
-                                                        <div class="extra">
-                                                            <div class="pull-left">
-                                                                <a href="#"><span class="fa fa-map-marker"></span>Thủ Đức</a>
-                                                            </div>
-                                                            <div class="pull-right">
-                                                                <a href="#"><span class="fa fa-info"></span>50 m<sup>2</sup></a>
-                                                            </div>
-                                                            <div class="type">
-                                                                <a href="#"><span class="fa fa-home"></span>Chung cư, căn hộ</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="overlay">
-                                                        <a href="#" title="">
-                                                            <img src="img/play.png">
-                                                        </a>
-                                                    </div> -->
-                                                </div>
-                                            </div>
+                                            }
+
                                         </div>
                                     </div>
                                 </div>

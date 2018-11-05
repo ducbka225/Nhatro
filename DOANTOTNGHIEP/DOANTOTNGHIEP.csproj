@@ -46,10 +46,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -154,6 +160,62 @@
     <Compile Include="Controllers\PhongTroController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\District.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Image.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Location.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NeedFor.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NhaTroModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NhaTroModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NhaTroModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NhaTroModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NhaTroModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductDetails.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ProductDetailsModel.cs" />
+    <Compile Include="ViewModels\ProductModel.cs" />
+    <Compile Include="Models\ProductType.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Province.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Street.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Transaction.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -276,6 +338,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\NhaTroModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NhaTroModel.Context.cs</LastGenOutput>
+      <DependentUpon>NhaTroModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\NhaTroModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NhaTroModel.edmx</DependentUpon>
+      <LastGenOutput>NhaTroModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -344,6 +416,13 @@
     <Content Include="Content\themes\client\img\Thumbs.db" />
     <Content Include="Content\themes\client\js\wysibb\theme\fonts\wysibbiconfont-wb.eot" />
     <Content Include="Content\themes\client\js\wysibb\theme\fonts\wysibbiconfont-wb.ttf" />
+    <EntityDeploy Include="Models\NhaTroModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NhaTroModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NhaTroModel.edmx.diagram">
+      <DependentUpon>NhaTroModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -378,7 +457,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -392,6 +470,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "ChiTiet";
     Layout = "~/Views/Layout/_LayoutNhatro.cshtml";
+    var productDetail = ViewBag.Details;
 }
 
 <div class="container">
@@ -12,7 +13,7 @@
                     <div class="pt-breadcrumb">
                         <ol class="breadcrumb">
                             <li><a href="#">Trang chủ</a></li>
-                            <li><a href="#/chung-cu-can-ho">Chung cư, căn hộ</a></li>
+                            <li><a href="#"> @*@productDetail.ProducType*@ </a></li>
                             <li class="active">Cần cho thuê CH CityGarden 3pn 145m2 full NT giấ 43tr/tháng </li>
                         </ol>
                     </div><div class="room-detail">
@@ -43,7 +44,7 @@
                                     </div>
                                     <div class="size">
                                         <span class="btn info-label">Diện tích</span>
-                                        <a href="" class="btn info-data">145m<sup>2</sup></a>
+                                        <a href="" class="btn info-data">@productDetail.Acreage m<sup>2</sup></a>
                                         <span class="btn info-label">Loại phòng</span>
                                         <a href="">Chung cư, căn hộ</a>
                                     </div>
