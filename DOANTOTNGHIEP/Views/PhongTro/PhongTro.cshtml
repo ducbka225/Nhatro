@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "PhongTro";
     Layout = "~/Views/Layout/_LayoutNhatro.cshtml";
+    var ProductType = @ViewBag.ProductType;
 }
 
 <div class="container">
@@ -12,11 +13,11 @@
                     <div class="pt-breadcrumb">
                         <ol class="breadcrumb">
                             <li><a href="#">Trang chủ</a></li>
-                            <li class="active">Phòng trọ, nhà trọ</li>
+                            <li class="active">@ProductType.Name</li>
                         </ol>
                     </div><div class="room-list-category">
                         <div class="pull-left">
-                            <a href=""><h3><span>Phòng trọ, nhà trọ</span> <i class="fa fa-angle-right"></i></h3></a>
+                            <a href=""><h3><span>@ProductType.Name</span> <i class="fa fa-angle-right"></i></h3></a>
                         </div>
                         <div class="pull-right">
                             <form id="order_form" class="form-inline form-oder-category" method="post" action="#/order">
@@ -82,263 +83,57 @@
                         });
                     </script>
                     <div class="room-list">
-                        <div class="room-item">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="block-room-item-title">
-                                        <a href="@Url.Action("ChiTiet", "ChiTiet")">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
-                                    </div>
-                                    <div class="col-md-3 room-item-thumbnail">
-                                        <div class="row">
-                                            <a class="col-md-12 thumbnail room-item-main-img" href="@Url.Action("ChiTiet", "ChiTiet")">
-                                                <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-thumb-3j8bp.jpg" alt="">
-                                            </a>
-                                            <!-- <div class="col-md-4 thumbnail">
-                            <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-3j8bp.jpg" alt="Cần 1 bạn nam ở gh&eacute;p gần trường Đại học nghiệp thực phẩm">
-                        </div> -->
+                        @foreach (var item in @ViewBag.Product)
+                        {
+                            <div class="room-item">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="block-room-item-title">
+                                            <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
                                         </div>
-                                    </div>
-                                    <div class="col-md-9 room-item-i">
-                                        <div class="block-room-item-address">
-                                            <span>Địa chỉ: </span>
-                                            <a>
-                                                118/89 Nguyễn Đỗ Cung,Quận Tân Phú,TPHCM
-                                                Nguyễn Đỗ Cung - Tây Thạnh - Tân Phú - Hồ Chí Minh
-                                            </a>
-                                        </div>
-                                        <div class="block-room-item-info">
-                                            <div class="pull-left">
-                                                <span>Diện tích: </span><a>30m2</a>
-                                            </div>
-                                            <div class="pull-right item-info-date">
-                                                <a>
-                                                    18 giờ trước
+                                        <div class="col-md-3 room-item-thumbnail">
+                                            <div class="row">
+                                                <a class="col-md-12 thumbnail room-item-main-img" href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})">
+                                                    <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-thumb-3j8bp.jpg" alt="">
                                                 </a>
                                             </div>
-                                            <div class="item-info-vs">
-                                                <span>Vệ sinh: </span><a>Khép kín</a>
-                                            </div>
                                         </div>
-                                        <div class="block-room-item-price">
-                                            <span>Giá cả: </span><a>570,000 Đ/tháng</a>
-                                        </div>
-                                        <!-- <div class="block-room-item-des">
-                        <span>Hiên tại phòng mình đang cần thêm một bạn nam ở chung để share tiền phòng.Phòng rộng,thoáng mát,có g......</span>
-                    </div> -->
-                                        <div class="block-room-item-btn">
-                                            <a class="btn btn-room-detail" href="@Url.Action("ChiTiet", "ChiTiet")">Xem chi tiết</a>
-                                            <a class="btn btn-room-save" _url="#/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="#/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="room-item">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="block-room-item-title">
-                                        <a href="@Url.Action("ChiTiet", "ChiTiet")">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
-                                    </div>
-                                    <div class="col-md-3 room-item-thumbnail">
-                                        <div class="row">
-                                            <a class="col-md-12 thumbnail room-item-main-img" href="@Url.Action("ChiTiet", "ChiTiet")">
-                                                <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-thumb-3j8bp.jpg" alt="">
-                                            </a>
-                                            <!-- <div class="col-md-4 thumbnail">
-                            <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-3j8bp.jpg" alt="Cần 1 bạn nam ở gh&eacute;p gần trường Đại học nghiệp thực phẩm">
-                        </div> -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9 room-item-i">
-                                        <div class="block-room-item-address">
-                                            <span>Địa chỉ: </span>
-                                            <a>
-                                                118/89 Nguyễn Đỗ Cung,Quận Tân Phú,TPHCM
-                                                Nguyễn Đỗ Cung - Tây Thạnh - Tân Phú - Hồ Chí Minh
-                                            </a>
-                                        </div>
-                                        <div class="block-room-item-info">
-                                            <div class="pull-left">
-                                                <span>Diện tích: </span><a>30m2</a>
-                                            </div>
-                                            <div class="pull-right item-info-date">
+                                        <div class="col-md-9 room-item-i">
+                                            <div class="block-room-item-address">
+                                                <span>Địa chỉ: </span>
                                                 <a>
-                                                    18 giờ trước
+                                                    @item.District
                                                 </a>
                                             </div>
-                                            <div class="item-info-vs">
-                                                <span>Vệ sinh: </span><a>Khép kín</a>
+                                            <div class="block-room-item-info">
+                                                <div class="pull-left">
+                                                    <span>Diện tích: </span><a>@item.Acreage m2</a>
+                                                </div>
+                                                <div class="pull-right item-info-date">
+                                                    <a>
+                                                        18 giờ trước
+                                                    </a>
+                                                </div>
+                                                <div class="item-info-vs">
+                                                    <span>Vệ sinh: </span><a>Khép kín</a>
+                                                </div>
+                                            </div>
+                                            <div class="block-room-item-price">
+                                                <span>Giá cả: </span><a> @item.Price Đ/tháng</a>
+                                            </div>
+
+                                            <div class="block-room-item-btn">
+                                                <a class="btn btn-room-detail" href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})">Xem chi tiết</a>
+                                                <a class="btn btn-room-save" _url="#/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="#/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
                                             </div>
                                         </div>
-                                        <div class="block-room-item-price">
-                                            <span>Giá cả: </span><a>570,000 Đ/tháng</a>
-                                        </div>
-                                        <!-- <div class="block-room-item-des">
-                        <span>Hiên tại phòng mình đang cần thêm một bạn nam ở chung để share tiền phòng.Phòng rộng,thoáng mát,có g......</span>
-                    </div> -->
-                                        <div class="block-room-item-btn">
-                                            <a class="btn btn-room-detail" href="@Url.Action("ChiTiet", "ChiTiet")">Xem chi tiết</a>
-                                            <a class="btn btn-room-save" _url="#/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="#/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
-                                        </div>
+                                        <div class="clearfix"></div>
                                     </div>
-                                    <div class="clearfix"></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="room-item">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="block-room-item-title">
-                                        <a href="@Url.Action("ChiTiet", "ChiTiet")">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
-                                    </div>
-                                    <div class="col-md-3 room-item-thumbnail">
-                                        <div class="row">
-                                            <a class="col-md-12 thumbnail room-item-main-img" href="@Url.Action("ChiTiet", "ChiTiet")">
-                                                <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-thumb-3j8bp.jpg" alt="">
-                                            </a>
-                                            <!-- <div class="col-md-4 thumbnail">
-                            <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-3j8bp.jpg" alt="Cần 1 bạn nam ở gh&eacute;p gần trường Đại học nghiệp thực phẩm">
-                        </div> -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9 room-item-i">
-                                        <div class="block-room-item-address">
-                                            <span>Địa chỉ: </span>
-                                            <a>
-                                                118/89 Nguyễn Đỗ Cung,Quận Tân Phú,TPHCM
-                                                Nguyễn Đỗ Cung - Tây Thạnh - Tân Phú - Hồ Chí Minh
-                                            </a>
-                                        </div>
-                                        <div class="block-room-item-info">
-                                            <div class="pull-left">
-                                                <span>Diện tích: </span><a>30m2</a>
-                                            </div>
-                                            <div class="pull-right item-info-date">
-                                                <a>
-                                                    18 giờ trước
-                                                </a>
-                                            </div>
-                                            <div class="item-info-vs">
-                                                <span>Vệ sinh: </span><a>Khép kín</a>
-                                            </div>
-                                        </div>
-                                        <div class="block-room-item-price">
-                                            <span>Giá cả: </span><a>570,000 Đ/tháng</a>
-                                        </div>
-                                        <!-- <div class="block-room-item-des">
-                        <span>Hiên tại phòng mình đang cần thêm một bạn nam ở chung để share tiền phòng.Phòng rộng,thoáng mát,có g......</span>
-                    </div> -->
-                                        <div class="block-room-item-btn">
-                                            <a class="btn btn-room-detail" href="@Url.Action("ChiTiet", "ChiTiet")">Xem chi tiết</a>
-                                            <a class="btn btn-room-save" _url="#/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="#/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="room-item">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="block-room-item-title">
-                                        <a href="@Url.Action("ChiTiet", "ChiTiet")">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
-                                    </div>
-                                    <div class="col-md-3 room-item-thumbnail">
-                                        <div class="row">
-                                            <a class="col-md-12 thumbnail room-item-main-img" href="@Url.Action("ChiTiet", "ChiTiet")">
-                                                <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-thumb-3j8bp.jpg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9 room-item-i">
-                                        <div class="block-room-item-address">
-                                            <span>Địa chỉ: </span>
-                                            <a>
-                                                118/89 Nguyễn Đỗ Cung,Quận Tân Phú,TPHCM
-                                                Nguyễn Đỗ Cung - Tây Thạnh - Tân Phú - Hồ Chí Minh
-                                            </a>
-                                        </div>
-                                        <div class="block-room-item-info">
-                                            <div class="pull-left">
-                                                <span>Diện tích: </span><a>30m2</a>
-                                            </div>
-                                            <div class="pull-right item-info-date">
-                                                <a>
-                                                    18 giờ trước
-                                                </a>
-                                            </div>
-                                            <div class="item-info-vs">
-                                                <span>Vệ sinh: </span><a>Khép kín</a>
-                                            </div>
-                                        </div>
-                                        <div class="block-room-item-price">
-                                            <span>Giá cả: </span><a>570,000 Đ/tháng</a>
-                                        </div>
-                                        <!-- <div class="block-room-item-des">
-                        <span>Hiên tại phòng mình đang cần thêm một bạn nam ở chung để share tiền phòng.Phòng rộng,thoáng mát,có g......</span>
-                    </div> -->
-                                        <div class="block-room-item-btn">
-                                            <a class="btn btn-room-detail" href="@Url.Action("ChiTiet", "ChiTiet")">Xem chi tiết</a>
-                                            <a class="btn btn-room-save" _url="#/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="#/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="room-item">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="block-room-item-title">
-                                        <a href="@Url.Action("ChiTiet", "ChiTiet")">Cần 1 bạn nam ở ghép gần trường Đại học nghiệp thực phẩm</a>
-                                    </div>
-                                    <div class="col-md-3 room-item-thumbnail">
-                                        <div class="row">
-                                            <a class="col-md-12 thumbnail room-item-main-img" href="@Url.Action("ChiTiet", "ChiTiet")">
-                                                <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-thumb-3j8bp.jpg" alt="">
-                                            </a>
-                                            <!-- <div class="col-md-4 thumbnail">
-                            <img class="img-reponsive" src="http://media.phongtot.vn/xc5tx4cj/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham-3j8bp.jpg" alt="Cần 1 bạn nam ở gh&eacute;p gần trường Đại học nghiệp thực phẩm">
-                        </div> -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9 room-item-i">
-                                        <div class="block-room-item-address">
-                                            <span>Địa chỉ: </span>
-                                            <a>
-                                                118/89 Nguyễn Đỗ Cung,Quận Tân Phú,TPHCM
-                                                Nguyễn Đỗ Cung - Tây Thạnh - Tân Phú - Hồ Chí Minh
-                                            </a>
-                                        </div>
-                                        <div class="block-room-item-info">
-                                            <div class="pull-left">
-                                                <span>Diện tích: </span><a>30m2</a>
-                                            </div>
-                                            <div class="pull-right item-info-date">
-                                                <a>
-                                                    18 giờ trước
-                                                </a>
-                                            </div>
-                                            <div class="item-info-vs">
-                                                <span>Vệ sinh: </span><a>Khép kín</a>
-                                            </div>
-                                        </div>
-                                        <div class="block-room-item-price">
-                                            <span>Giá cả: </span><a>570,000 Đ/tháng</a>
-                                        </div>
-                                        <!-- <div class="block-room-item-des">
-                        <span>Hiên tại phòng mình đang cần thêm một bạn nam ở chung để share tiền phòng.Phòng rộng,thoáng mát,có g......</span>
-                    </div> -->
-                                        <div class="block-room-item-btn">
-                                            <a class="btn btn-room-detail" href="@Url.Action("ChiTiet", "ChiTiet")">Xem chi tiết</a>
-                                            <a class="btn btn-room-save" _url="#/luu-tin-ajax/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham" href="#/luu-tin/phong-tro-nha-tro/can-1-ban-nam-o-ghep-gan-truong-dai-hoc-nghiep-thuc-pham">Lưu tin</a>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
+                        }
+
+
                     </div>
                     <script type="text/javascript">
                         $(document).ready(function() {

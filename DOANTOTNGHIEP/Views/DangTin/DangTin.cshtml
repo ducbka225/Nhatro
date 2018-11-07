@@ -27,11 +27,11 @@
                     <div class="checkbox checkbox-success">
                         <ul>
                             <li>
-                                <input type="radio" name="needed" id="radio_needed_lease" value="Cho thuê">
+                                <input type="radio" name="needed" id="radio_needed_lease" value="1">
                                 <label for="radio_needed_lease"> Cho Thuê</label>
                             </li>
                             <li>
-                                <input type="radio" name="needed" id="radio_needed_share" value="Ở ghép">
+                                <input type="radio" name="needed" id="radio_needed_share" value="2">
                                 <label for="radio_needed_share"> Ở ghép</label>
                             </li>
                         </ul>
@@ -56,7 +56,7 @@
                         <div class="form-group">
                             <div class="control-label">Số điện thoại</div>
                             <div>
-                                <input type="text" name="phone" class="form-control" value="">
+                                <input type="text" id="phone" name="phone" class="form-control" value="">
                                 <span class="help-block"></span>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                                 <div>
                                     <div class="control-label">Giá</div>
                                     <div class="input-group">
-                                        <input type="text" name="price" class="form-control money-input" data-thousands="," data-decimal="." data-precision="0">
+                                        <input type="text" name="price" id="price" class="form-control money-input" data-thousands="," data-decimal="." data-precision="0">
                                         <span class="input-group-addon">đ/tháng</span>
                                     </div>
                                     <span class="help-block"></span>
@@ -77,7 +77,7 @@
                                 <div>
                                     <div class="control-label">Diện tích</div>
                                     <div class="input-group">
-                                        <input type="text" name="acreage" value="" class="form-control" placeholder="nhập số, viết liền">
+                                        <input type="text" name="acreage" id="acreage" value="" class="form-control" placeholder="nhập số, viết liền">
                                         <span class="input-group-addon">M<sup>2</sup></span>
                                         <span class="help-block"></span>
                                     </div>
@@ -91,13 +91,13 @@
                                 <div class="form-group">
                                     <div class="control-label">Tỉnh/Thành phố</div>
                                     <div>
-                                        <select name="province_id" class="form-control address_input" size="1">
+                                        <select name="province_id" id="province" class="form-control address_input" size="1">
                                             <option value="">Chọn</option>
                                             <option value="1">Hà Nội</option>
-                                            <option value="31">Hải Phòng</option>
-                                            <option value="48">Đà Nẵng</option>
-                                            <option value="79">Hồ Chí Minh</option>
-                                            <option value="92">Cần Thơ</option>
+                                            <option value="2">Hải Phòng</option>
+                                            <option value="3">Hồ Chí Minh</option>
+                                            <option value="4">Bắc Giang</option>
+                                            <option value="5">Đã Nẵng</option>
                                         </select>
                                         <span class="help-block"></span>
                                     </div>
@@ -145,7 +145,7 @@
                                 <div class="form-group">
                                     <div class="control-label">Địa chỉ cụ thể</div>
                                     <div>
-                                        <input type="text" name="detail" class="form-control address_input" value="">
+                                        <input type="text"  id="addressDetails" name="detail" class="form-control address_input" value="">
                                         <span class="help-block"></span>
                                     </div>
                                 </div>
@@ -307,67 +307,6 @@
                     <div id="price_group" class="form-group price-elec-water-input">
                         <div class="elec elec_set"></div>
                         <div class="water water_set"></div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="submit-info-title">Tiện ích của phòng</div>
-                    <div class="form-group room-option">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="dexe" value="Chỗ để xe">
-                                    <label for="dexe"> Chỗ để xe </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="sanphoi" value="Sân phơi">
-                                    <label for="sanphoi"> Sân phơi </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="bep" value="Thang máy">
-                                    <label for="bep"> Thang máy </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="internet" value="Internet">
-                                    <label for="internet"> Internet </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="dieuhoa" value="Điều hòa">
-                                    <label for="dieuhoa"> Điều hòa </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="nonglanh" value="Bình nóng lạnh">
-                                    <label for="nonglanh"> Bình nóng lạnh </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="maygiat" value="Máy giặt">
-                                    <label for="maygiat"> Máy giặt </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="tulanh" value="Truyền hình cáp">
-                                    <label for="tulanh"> TH cáp </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="tivi" value="Tivi">
-                                    <label for="tivi"> Tivi </label>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

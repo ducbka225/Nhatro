@@ -20,8 +20,6 @@ namespace DOANTOTNGHIEP.Controllers
                            join dt in db.District on s.IdDistrict equals dt.Id
                            join pdt in db.ProductDetails on p.Id equals pdt.IdProduct
                            join l in db.Location on p.IdLocation equals l.Id
-                           join t in db.Transaction on p.Id equals t.IdProduct
-                           join u in db.User on t.IdUser equals u.Id
                            where p.Id == ProductId
                            select new ProductDetailsModel()
                            {
@@ -42,8 +40,8 @@ namespace DOANTOTNGHIEP.Controllers
                                PriceElectric = pdt.PriceElectric,
                                PriceWater = pdt.PriceWater,
                                BedRoomNumber = pdt.BedRoomNumber,
-                               UserName = u.LoginId,
-                               PhoneNumber = u.Phone,                             
+                               UserName = p.Owner,
+                               PhoneNumber = p.Phone,                             
                            }).FirstOrDefault();
             ViewBag.Details = details;
             return View();

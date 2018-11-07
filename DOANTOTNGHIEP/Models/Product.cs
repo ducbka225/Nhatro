@@ -34,6 +34,8 @@ namespace DOANTOTNGHIEP.Models
         public Nullable<int> IdNeedFor { get; set; }
         public Nullable<int> IdStreet { get; set; }
         public Nullable<int> IdLocation { get; set; }
+        public string Owner { get; set; }
+        public Nullable<int> Phone { get; set; }
     
         public virtual ICollection<Image> Image { get; set; }
         public virtual Location Location { get; set; }
