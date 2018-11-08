@@ -215,10 +215,12 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\DistrictModel.cs" />
     <Compile Include="ViewModels\ProductDetailsModel.cs" />
     <Compile Include="ViewModels\ProductModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ProductTypeModel.cs" />
+    <Compile Include="ViewModels\StreetModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

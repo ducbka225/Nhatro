@@ -3,7 +3,6 @@
     ViewBag.Title = "DangTin";
     Layout = "~/Views/Layout/_LayoutNhatro.cshtml";
 }
-
 <div class="container">
     <div class="row">
         <script src="#/themes/client/js/fileuploader.js"></script>
@@ -107,7 +106,7 @@
                                 <div class="form-group">
                                     <div class="control-label">Quận/Huyện</div>
                                     <div>
-                                        <select name="district_id" class="form-control address_input" size="1">
+                                        <select name="district_id" id="district" class="form-control address_input" size="1">
                                             <option value="">Chọn Tỉnh/Thành trước</option>
                                         </select>
                                         <span class="help-block"></span>
@@ -145,7 +144,7 @@
                                 <div class="form-group">
                                     <div class="control-label">Địa chỉ cụ thể</div>
                                     <div>
-                                        <input type="text"  id="addressDetails" name="detail" class="form-control address_input" value="">
+                                        <input type="text" id="addressDetails" name="detail" class="form-control address_input" value="">
                                         <span class="help-block"></span>
                                     </div>
                                 </div>
@@ -184,29 +183,6 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
-                    <div class="col-md-6">
-                        <div class="submit-room-des">
-                            <div class="submit-info-title validate-require">Mô tả chi tiết</div>
-                            </div>
-                    </div>
-                    <div class="col-md-6 gmaps-group">
-                        <div class="submit-room-map">
-                            <div class="submit-info-title">Kéo thả vị trí trên bản đồ để chỉnh địa điểm chính xác hơn</div>
-                            <fieldset class="gllpLatlonPicker" id="_MAP_3086">
-                                <input type="hidden" class="gllpSearchField" value="">
-                                <input type="hidden" class="gllpSearchButton btn-success" value="Tìm vị trí">
-                                <!-- <br/><br/> -->
-                                <div class="gllpMap" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div style="overflow: hidden;"></div><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: none;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div></div></div><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"></div></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; opacity: 0; touch-action: none; left: -14px; top: -43px; z-index: 0;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" usemap="#gmimap0" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"><map name="gmimap0" id="gmimap0"><area log="miw" coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75" shape="poly" title="Drag this Marker" style="cursor: pointer; touch-action: none;"></map></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" frameborder="0" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;" src="about:blank"></iframe></div></div></div>
-                                <!-- <br/>
-                                lat/lon: -->
-                                <input type="hidden" name="location[N]" class="gllpLatitude" value="21.0029317912212212">
-                                <!-- / -->
-                                <input type="hidden" name="location[E]" class="gllpLongitude" value="105.820226663232323">
-                                <!-- zoom: --> <input type="hidden" class="gllpZoom" value="15">
-                                <input type="hidden" class="gllpUpdateButton" value="update map">
-                            </fieldset>
-                        </div>
-                    </div>
                     <div class="col-md-12 submit-btn-room">
                         <a id="submit_form" class="btn btn-send-room" href="javascript:void(0);"><span class="fa fa-send"></span>Đăng tin</a>
                     </div>
@@ -227,7 +203,7 @@
                                 <div class="tang">
                                     <div class="control-label">Tầng</div>
                                     <div>
-                                        <select name="floor" class="form-control" size="1">
+                                        <select name="floor" id="floor" class="form-control" size="1">
                                             <option value="Chưa xác định">Chọn..</option>
                                             <option value="1">Tầng 1</option>
                                             <option value="2">Tầng 2</option>
@@ -251,7 +227,7 @@
                                 <div class="vs">
                                     <div class="control-label">Vệ sinh</div>
                                     <div>
-                                        <select name="wc" class="form-control" size="1">
+                                        <select name="wc" id="wc" class="form-control" size="1">
                                             <option value="Chưa xác định">Chọn..</option>
                                             <option value="Khép kín">Khép kín</option>
                                             <option value="Chung">Chung</option>
@@ -266,7 +242,7 @@
                     <div class="form-group people-in">
                         <div class="submit-info-title">Số người ở tối đa</div>
                         <div>
-                            <select name="per_room" class="form-control" size="1">
+                            <select name="per_room" id="numberPeople" class="form-control" size="1">
                                 <option value="Chưa xác định">Chọn..</option>
                                 <option value="1">1 người</option>
                                 <option value="2">2 người</option>
@@ -285,629 +261,55 @@
                     <div class="form-group price-elec-water">
                         <div class="elec">
                             <div class="submit-info-title">Giá điện</div>
-                            <select name="elec_set" class="form-control price_set" for="elec_price_extention" size="1">
-                                <option value="Chưa xác định">Chọn..</option>
-                                <option value="Nhà nước quy định">Giá nhà nước quy định</option>
-                                <option value="Theo đầu người">Giá theo đầu người</option>
-                                <option value="Chủ nhà quy định">Giá chủ nhà quy định</option>
-                                <option value="Chưa xác định">Giá chưa xác định</option>
-                            </select>
+                            <input type="number" name="name" id="priceElectric" class="form-control price_set" value="" />
                         </div>
                         <div class="water">
                             <div class="submit-info-title">Giá nước</div>
-                            <select name="water_set" class="form-control price_set" for="water_price_extention" size="1">
-                                <option value="Chưa xác định">Chọn..</option>
-                                <option value="Nhà nước quy định">Giá nhà nước quy định</option>
-                                <option value="Theo đầu người">Giá theo đầu người</option>
-                                <option value="Chủ nhà quy định">Giá chủ nhà quy định</option>
-                                <option value="Chưa xác định">Giá chưa xác định</option>
-                            </select>
+                            <input type="number" name="name" id="priceWater" class="form-control price_set" value="" />
                         </div>
                     </div>
                     <div id="price_group" class="form-group price-elec-water-input">
                         <div class="elec elec_set"></div>
                         <div class="water water_set"></div>
+                    </div>
+                    <div class="submit-room-des">
+                        <div class="submit-info-title validate-require">Mô tả chi tiết</div>
+                        <textarea id="description" rows="5" cols="60"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="submit-room-map">
+                        <div class="submit-info-title">Kéo thả vị trí trên bản đồ để chỉnh địa điểm chính xác hơn</div>
+                        <fieldset class="gllpLatlonPicker" id="_MAP_3086">
+                            <input type="hidden" class="gllpSearchField" value="">
+                            <input type="hidden" class="gllpSearchButton btn-success" value="Tìm vị trí">
+                            <!-- <br/><br/> -->
+                            <div class="gllpMap" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div style="overflow: hidden;"></div><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: none;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div></div></div><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"></div></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; opacity: 0; touch-action: none; left: -14px; top: -43px; z-index: 0;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" usemap="#gmimap0" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"><map name="gmimap0" id="gmimap0"><area log="miw" coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75" shape="poly" title="Drag this Marker" style="cursor: pointer; touch-action: none;"></map></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" frameborder="0" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;" src="about:blank"></iframe></div></div></div>
+                            <!-- <br/>
+                            lat/lon: -->
+                            <input type="hidden" name="location[N]" class="gllpLatitude" value="21.0029317912212212">
+                            <!-- / -->
+                            <input type="hidden" name="location[E]" class="gllpLongitude" value="105.820226663232323">
+                            <!-- zoom: --> <input type="hidden" class="gllpZoom" value="15">
+                            <input type="hidden" class="gllpUpdateButton" value="update map">
+                        </fieldset>
                     </div>
                 </div>
             </div>
             <div id="room-detail-2">
                 <div class="col-md-12">
                     <div class="list-type-title">
-                        <ul><li class="li-label">Thông tin bổ sung <span> Nhà riêng</span></li></ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group tang-vs">
-                        <div class="tang">
-                            <div class="submit-info-title">Số Tầng</div>
-                            <div>
-                                <select name="floor_per_room" class="form-control" size="1">
-                                    <option value="Chưa xác định">Chọn..</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="Chưa xác định">Chưa xác định</option>
-                                </select>
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                        <div class="vs">
-                            <div class="submit-info-title">Số Phòng Vệ sinh</div>
-                            <div>
-                                <select name="wc_per_room" class="form-control" size="1">
-                                    <option value="Chưa xác định">Chọn..</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="Chưa xác định">Chưa xác định</option>
-                                </select>
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group bedroom-huong">
-                        <div class="bedroom">
-                            <div class="submit-info-title">Số phòng ngủ</div>
-                            <div>
-                                <select name="bed_per_room" class="form-control" size="1">
-                                    <option value="Chưa xác định">Chọn..</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="Chưa xác định">Chưa xác định</option>
-                                </select>
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                        <div class="huong">
-                            <div class="submit-info-title">Hướng nhà</div>
-                            <div>
-                                <select name="direction" class="form-control" size="1">
-                                    <option value="Chưa xác định">Chọn..</option>
-                                    <option value="Đông">Đông</option>
-                                    <option value="Đông bắc">Đông bắc</option>
-                                    <option value="Đông nam">Đông nam</option>
-                                    <option value="Bắc">Bắc</option>
-                                    <option value="Tây">Tây</option>
-                                    <option value="Tây bắc">Tây bắc</option>
-                                    <option value="Tây nam">Tây nam</option>
-                                    <option value="Nam">Nam</option>
-                                    <option value="Chưa xác định">Chưa xác định</option>
-                                </select>
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="submit-info-title">Tiện nghi sẵn có</div>
-                    <div class="form-group room-option">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="dexe" value="Chỗ để xe">
-                                    <label for="dexe"> Chỗ để xe </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="sanphoi" value="Sân phơi">
-                                    <label for="sanphoi"> Sân phơi </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="bep" value="Thang máy">
-                                    <label for="bep"> Thang máy </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="internet" value="Internet">
-                                    <label for="internet"> Internet </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="dieuhoa" value="Điều hòa">
-                                    <label for="dieuhoa"> Điều hòa </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="nonglanh" value="Bình nóng lạnh">
-                                    <label for="nonglanh"> Bình nóng lạnh </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="maygiat" value="Máy giặt">
-                                    <label for="maygiat"> Máy giặt </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="tulanh" value="Truyền hình cáp">
-                                    <label for="tulanh"> TH cáp </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="tivi" value="Tivi">
-                                    <label for="tivi"> Tivi </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="room-detail-6">
-                <div class="col-md-12">
-                    <div class="list-type-title">
-                        <ul><li class="li-label">Thông tin bổ sung <span> Căn hộ, Chung cư</span></li></ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group tang-vs">
-                        <div class="tang">
-                            <div class="submit-info-title">Số người ở tối đa</div>
-                            <div>
-                                <select name="per_room" class="form-control" size="1">
-                                    <option value="Chưa xác định">Chọn..</option>
-                                    <option value="1">1 người</option>
-                                    <option value="2">2 người</option>
-                                    <option value="3">3 người</option>
-                                    <option value="4">4 người</option>
-                                    <option value="5">5 người</option>
-                                    <option value="6">6 người</option>
-                                    <option value="7">7 người</option>
-                                    <option value="8">8 người</option>
-                                    <option value="9">9 người</option>
-                                    <option value="Chưa xác định">Chưa xác định</option>
-                                </select>
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                        <div class="vs">
-                            <div class="submit-info-title">Số Phòng Vệ sinh</div>
-                            <div>
-                                <select name="wc_per_room" class="form-control" size="1">
-                                    <option value="Chưa xác định">Chọn..</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="Chưa xác định">Chưa xác định</option>
-                                </select>
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group bedroom-huong">
-                        <div class="bedroom">
-                            <div class="submit-info-title">Số phòng ngủ</div>
-                            <div>
-                                <select name="bed_per_room" class="form-control" size="1">
-                                    <option value="Chưa xác định">Chọn..</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="Chưa xác định">Chưa xác định</option>
-                                </select>
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                        <div class="huong">
-                            <div class="submit-info-title">Hướng nhà</div>
-                            <div>
-                                <select name="direction" class="form-control" size="1">
-                                    <option value="Chưa xác định">Chọn..</option>
-                                    <option value="Đông">Đông</option>
-                                    <option value="Đông bắc">Đông bắc</option>
-                                    <option value="Đông nam">Đông nam</option>
-                                    <option value="Bắc">Bắc</option>
-                                    <option value="Tây">Tây</option>
-                                    <option value="Tây bắc">Tây bắc</option>
-                                    <option value="Tây nam">Tây nam</option>
-                                    <option value="Nam">Nam</option>
-                                    <option value="Chưa xác định">Chưa xác định</option>
-                                </select>
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group price-elec-water">
-                        <div class="elec">
-                            <div class="submit-info-title">Giá điện</div>
-                            <select name="elec_set" class="form-control price_set" for="elec_price_extention" size="1">
-                                <option value="Chưa xác định">Chọn..</option>
-                                <option value="Nhà nước quy định">Giá nhà nước quy định</option>
-                                <option value="Theo đầu người">Giá theo đầu người</option>
-                                <option value="Chủ nhà quy định">Giá chủ nhà quy định</option>
-                                <option value="Chưa xác định">Giá chưa xác định</option>
-                            </select>
-                        </div>
-                        <div class="water">
-                            <div class="submit-info-title">Giá nước</div>
-                            <select name="water_set" class="form-control price_set" for="water_price_extention" size="1">
-                                <option value="Chưa xác định">Chọn..</option>
-                                <option value="Nhà nước quy định">Giá nhà nước quy định</option>
-                                <option value="Theo đầu người">Giá theo đầu người</option>
-                                <option value="Chủ nhà quy định">Giá chủ nhà quy định</option>
-                                <option value="Chưa xác định">Giá chưa xác định</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div id="price_group" class="form-group price-elec-water-input">
-                        <div class="elec elec_set"></div>
-                        <div class="water water_set"></div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <div class="control-label">Tầng</div>
-                        <div>
-                            <input type="text" name="floor" class="form-control" value="">
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <div class="submit-info-title">Tiện nghi sẵn có</div>
-                    <div class="form-group room-option">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="dexe" value="Chỗ để xe">
-                                    <label for="dexe"> Chỗ để xe </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="sanphoi" value="Sân phơi">
-                                    <label for="sanphoi"> Sân phơi </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="bep" value="Thang máy">
-                                    <label for="bep"> Thang máy </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="internet" value="Internet">
-                                    <label for="internet"> Internet </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="dieuhoa" value="Điều hòa">
-                                    <label for="dieuhoa"> Điều hòa </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="nonglanh" value="Bình nóng lạnh">
-                                    <label for="nonglanh"> Bình nóng lạnh </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="maygiat" value="Máy giặt">
-                                    <label for="maygiat"> Máy giặt </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="tulanh" value="Truyền hình cáp">
-                                    <label for="tulanh"> TH cáp </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="tivi" value="Tivi">
-                                    <label for="tivi"> Tivi </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="room-detail-3">
-                <div class="col-md-12">
-                    <div class="list-type-title">
-                        <ul><li class="li-label">Thông tin bổ sung <span> Nhà mặt phố</span></li></ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group tang-vs">
-                        <div class="tang">
-                            <div class="submit-info-title">Số Tầng</div>
-                            <div>
-                                <select name="floor_per_room" class="form-control" size="1">
-                                    <option value="Chưa xác định">Chọn..</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="Chưa xác định">Chưa xác định</option>
-                                </select>
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                        <div class="vs">
-                            <div class="submit-info-title">Số Phòng Vệ sinh</div>
-                            <div>
-                                <select name="wc_per_room" class="form-control" size="1">
-                                    <option value="Chưa xác định">Chọn..</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="Chưa xác định">Chưa xác định</option>
-                                </select>
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group bedroom-huong">
-                        <div class="bedroom">
-                            <div class="submit-info-title">Số phòng ngủ</div>
-                            <div>
-                                <select name="bed_per_room" class="form-control" size="1">
-                                    <option value="Chưa xác định">Chọn..</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="Chưa xác định">Chưa xác định</option>
-                                </select>
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                        <div class="huong">
-                            <div class="submit-info-title">Hướng nhà</div>
-                            <div>
-                                <select name="direction" class="form-control" size="1">
-                                    <option value="Chưa xác định">Chọn..</option>
-                                    <option value="Đông">Đông</option>
-                                    <option value="Đông bắc">Đông bắc</option>
-                                    <option value="Đông nam">Đông nam</option>
-                                    <option value="Bắc">Bắc</option>
-                                    <option value="Tây">Tây</option>
-                                    <option value="Tây bắc">Tây bắc</option>
-                                    <option value="Tây nam">Tây nam</option>
-                                    <option value="Nam">Nam</option>
-                                    <option value="Chưa xác định">Chưa xác định</option>
-                                </select>
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="submit-info-title">Tiện nghi sẵn có</div>
-                    <div class="form-group room-option">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="dexe" value="Chỗ để xe">
-                                    <label for="dexe"> Chỗ để xe </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="sanphoi" value="Sân phơi">
-                                    <label for="sanphoi"> Sân phơi </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="bep" value="Thang máy">
-                                    <label for="bep"> Thang máy </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="internet" value="Internet">
-                                    <label for="internet"> Internet </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="dieuhoa" value="Điều hòa">
-                                    <label for="dieuhoa"> Điều hòa </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="nonglanh" value="Bình nóng lạnh">
-                                    <label for="nonglanh"> Bình nóng lạnh </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="maygiat" value="Máy giặt">
-                                    <label for="maygiat"> Máy giặt </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="tulanh" value="Truyền hình cáp">
-                                    <label for="tulanh"> TH cáp </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="tivi" value="Tivi">
-                                    <label for="tivi"> Tivi </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="room-detail-7">
-                <div class="col-md-12">
-                    <div class="list-type-title">
-                        <ul><li class="li-label">Thông tin bổ sung <span> Cửa hàng, Ki ốt</span></li></ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group price-elec-water">
-                        <div class="elec">
-                            <div class="submit-info-title">Giá điện</div>
-                            <select name="elec_set" class="form-control price_set" for="elec_price_extention" size="1">
-                                <option value="Chưa xác định">Chọn..</option>
-                                <option value="Nhà nước quy định">Giá nhà nước quy định</option>
-                                <option value="Theo đầu người">Giá theo đầu người</option>
-                                <option value="Chủ nhà quy định">Giá chủ nhà quy định</option>
-                                <option value="Chưa xác định">Giá chưa xác định</option>
-                            </select>
-                        </div>
-                        <div class="water">
-                            <div class="submit-info-title">Giá nước</div>
-                            <select name="water_set" class="form-control price_set" for="water_price_extention" size="1">
-                                <option value="Chưa xác định">Chọn..</option>
-                                <option value="Nhà nước quy định">Giá nhà nước quy định</option>
-                                <option value="Theo đầu người">Giá theo đầu người</option>
-                                <option value="Chủ nhà quy định">Giá chủ nhà quy định</option>
-                                <option value="Chưa xác định">Giá chưa xác định</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div id="price_group" class="form-group price-elec-water-input">
-                        <div class="elec elec_set"></div>
-                        <div class="water water_set"></div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="submit-info-title">Tiện nghi sẵn có</div>
-                    <div class="form-group room-option">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="dexe" value="Chỗ để xe">
-                                    <label for="dexe"> Chỗ để xe </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="sanphoi" value="Sân phơi">
-                                    <label for="sanphoi"> Sân phơi </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="bep" value="Thang máy">
-                                    <label for="bep"> Thang máy </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="internet" value="Internet">
-                                    <label for="internet"> Internet </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="dieuhoa" value="Điều hòa">
-                                    <label for="dieuhoa"> Điều hòa </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="nonglanh" value="Bình nóng lạnh">
-                                    <label for="nonglanh"> Bình nóng lạnh </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="maygiat" value="Máy giặt">
-                                    <label for="maygiat"> Máy giặt </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="tulanh" value="Truyền hình cáp">
-                                    <label for="tulanh"> TH cáp </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="tivi" value="Tivi">
-                                    <label for="tivi"> Tivi </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="room-detail-4">
-                <div class="col-md-12">
-                    <div class="list-type-title">
-                        <ul><li class="li-label">Thông tin bổ sung <span> Văn Phòng</span></li></ul>
+                        <ul><li class="li-label">Thông tin bổ sung <span> Nhà trọ, Phòng trọ</span></li></ul>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <div class="bedroom">
-                                    <div class="submit-info-title">Tầng</div>
+                                <div class="tang">
+                                    <div class="control-label">Tầng</div>
                                     <div>
-                                        <select name="floor" class="form-control" size="1">
+                                        <select name="floor" id="floor" class="form-control" size="1">
                                             <option value="Chưa xác định">Chọn..</option>
                                             <option value="1">Tầng 1</option>
                                             <option value="2">Tầng 2</option>
@@ -928,19 +330,13 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <div class="huong">
-                                    <div class="submit-info-title">Hướng phòng</div>
+                                <div class="vs">
+                                    <div class="control-label">Vệ sinh</div>
                                     <div>
-                                        <select name="direction" class="form-control" size="1">
+                                        <select name="wc" id="wc" class="form-control" size="1">
                                             <option value="Chưa xác định">Chọn..</option>
-                                            <option value="Đông">Đông</option>
-                                            <option value="Đông bắc">Đông bắc</option>
-                                            <option value="Đông nam">Đông nam</option>
-                                            <option value="Bắc">Bắc</option>
-                                            <option value="Tây">Tây</option>
-                                            <option value="Tây bắc">Tây bắc</option>
-                                            <option value="Tây nam">Tây nam</option>
-                                            <option value="Nam">Nam</option>
+                                            <option value="Khép kín">Khép kín</option>
+                                            <option value="Chung">Chung</option>
                                             <option value="Chưa xác định">Chưa xác định</option>
                                         </select>
                                         <span class="help-block"></span>
@@ -949,48 +345,484 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group people-in">
+                        <div class="submit-info-title">Số người ở tối đa</div>
+                        <div>
+                            <select name="per_room" id="numberPeople" class="form-control" size="1">
+                                <option value="Chưa xác định">Chọn..</option>
+                                <option value="1">1 người</option>
+                                <option value="2">2 người</option>
+                                <option value="3">3 người</option>
+                                <option value="4">4 người</option>
+                                <option value="5">5 người</option>
+                                <option value="6">6 người</option>
+                                <option value="7">7 người</option>
+                                <option value="8">8 người</option>
+                                <option value="9">9 người</option>
+                                <option value="Chưa xác định">Chưa xác định</option>
+                            </select>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group price-elec-water">
+                        <div class="elec">
+                            <div class="submit-info-title">Giá điện</div>
+                            <input type="number" name="name" id="priceElectric" class="form-control price_set" value="" />
+                        </div>
+                        <div class="water">
+                            <div class="submit-info-title">Giá nước</div>
+                            <input type="number" name="name" id="priceWater" class="form-control price_set" value="" />
+                        </div>
+                    </div>
+                    <div id="price_group" class="form-group price-elec-water-input">
+                        <div class="elec elec_set"></div>
+                        <div class="water water_set"></div>
+                    </div>
+                    <div class="submit-room-des">
+                        <div class="submit-info-title validate-require">Mô tả chi tiết</div>
+                        <textarea id="description" rows="5" cols="60"></textarea>
+                    </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="submit-info-title">Tiện ích của phòng</div>
-                    <div class="form-group room-option">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="dexe" value="Chỗ để xe">
-                                    <label for="dexe"> Chỗ để xe </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="sanphoi" value="Điều hòa">
-                                    <label for="sanphoi"> Điều hòa </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="bep" value="Phòng cháy chữa cháy">
-                                    <label for="bep"> PCCC </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="internet" value="Internet">
-                                    <label for="internet"> Internet </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="dieuhoa" value="Nội thất">
-                                    <label for="dieuhoa"> Nội thất </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="checkbox checkbox-success">
-                                    <input type="checkbox" name="convenient[]" id="nonglanh" value="Thang máy">
-                                    <label for="nonglanh"> Thang máy </label>
+                    <div class="submit-room-map">
+                        <div class="submit-info-title">Kéo thả vị trí trên bản đồ để chỉnh địa điểm chính xác hơn</div>
+                        <fieldset class="gllpLatlonPicker" id="_MAP_3086">
+                            <input type="hidden" class="gllpSearchField" value="">
+                            <input type="hidden" class="gllpSearchButton btn-success" value="Tìm vị trí">
+                            <!-- <br/><br/> -->
+                            <div class="gllpMap" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div style="overflow: hidden;"></div><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: none;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div></div></div><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"></div></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; opacity: 0; touch-action: none; left: -14px; top: -43px; z-index: 0;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" usemap="#gmimap0" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"><map name="gmimap0" id="gmimap0"><area log="miw" coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75" shape="poly" title="Drag this Marker" style="cursor: pointer; touch-action: none;"></map></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" frameborder="0" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;" src="about:blank"></iframe></div></div></div>
+                            <!-- <br/>
+                            lat/lon: -->
+                            <input type="hidden" name="location[N]" class="gllpLatitude" value="21.0029317912212212">
+                            <!-- / -->
+                            <input type="hidden" name="location[E]" class="gllpLongitude" value="105.820226663232323">
+                            <!-- zoom: --> <input type="hidden" class="gllpZoom" value="15">
+                            <input type="hidden" class="gllpUpdateButton" value="update map">
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div id="room-detail-6">
+                <div class="col-md-12">
+                    <div class="list-type-title">
+                        <ul><li class="li-label">Thông tin bổ sung <span> Nhà trọ, Phòng trọ</span></li></ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="tang">
+                                    <div class="control-label">Tầng</div>
+                                    <div>
+                                        <select name="floor" id="floor" class="form-control" size="1">
+                                            <option value="Chưa xác định">Chọn..</option>
+                                            <option value="1">Tầng 1</option>
+                                            <option value="2">Tầng 2</option>
+                                            <option value="3">Tầng 3</option>
+                                            <option value="4">Tầng 4</option>
+                                            <option value="5">Tầng 5</option>
+                                            <option value="6">Tầng 6</option>
+                                            <option value="7">Tầng 7</option>
+                                            <option value="8">Tầng 8</option>
+                                            <option value="9">Tầng 9</option>
+                                            <option value="10">Tầng 10</option>
+                                            <option value="Chưa xác định">Chưa xác định</option>
+                                        </select>
+                                        <span class="help-block"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="vs">
+                                    <div class="control-label">Vệ sinh</div>
+                                    <div>
+                                        <select name="wc" id="wc" class="form-control" size="1">
+                                            <option value="Chưa xác định">Chọn..</option>
+                                            <option value="Khép kín">Khép kín</option>
+                                            <option value="Chung">Chung</option>
+                                            <option value="Chưa xác định">Chưa xác định</option>
+                                        </select>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group people-in">
+                        <div class="submit-info-title">Số người ở tối đa</div>
+                        <div>
+                            <select name="per_room" id="numberPeople" class="form-control" size="1">
+                                <option value="Chưa xác định">Chọn..</option>
+                                <option value="1">1 người</option>
+                                <option value="2">2 người</option>
+                                <option value="3">3 người</option>
+                                <option value="4">4 người</option>
+                                <option value="5">5 người</option>
+                                <option value="6">6 người</option>
+                                <option value="7">7 người</option>
+                                <option value="8">8 người</option>
+                                <option value="9">9 người</option>
+                                <option value="Chưa xác định">Chưa xác định</option>
+                            </select>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group price-elec-water">
+                        <div class="elec">
+                            <div class="submit-info-title">Giá điện</div>
+                            <input type="number" name="name" id="priceElectric" class="form-control price_set" value="" />
+                        </div>
+                        <div class="water">
+                            <div class="submit-info-title">Giá nước</div>
+                            <input type="number" name="name" id="priceWater" class="form-control price_set" value="" />
+                        </div>
+                    </div>
+                    <div id="price_group" class="form-group price-elec-water-input">
+                        <div class="elec elec_set"></div>
+                        <div class="water water_set"></div>
+                    </div>
+                    <div class="submit-room-des">
+                        <div class="submit-info-title validate-require">Mô tả chi tiết</div>
+                        <textarea id="description" rows="5" cols="60"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="submit-room-map">
+                        <div class="submit-info-title">Kéo thả vị trí trên bản đồ để chỉnh địa điểm chính xác hơn</div>
+                        <fieldset class="gllpLatlonPicker" id="_MAP_3086">
+                            <input type="hidden" class="gllpSearchField" value="">
+                            <input type="hidden" class="gllpSearchButton btn-success" value="Tìm vị trí">
+                            <!-- <br/><br/> -->
+                            <div class="gllpMap" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div style="overflow: hidden;"></div><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: none;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div></div></div><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"></div></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; opacity: 0; touch-action: none; left: -14px; top: -43px; z-index: 0;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" usemap="#gmimap0" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"><map name="gmimap0" id="gmimap0"><area log="miw" coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75" shape="poly" title="Drag this Marker" style="cursor: pointer; touch-action: none;"></map></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" frameborder="0" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;" src="about:blank"></iframe></div></div></div>
+                            <!-- <br/>
+                            lat/lon: -->
+                            <input type="hidden" name="location[N]" class="gllpLatitude" value="21.0029317912212212">
+                            <!-- / -->
+                            <input type="hidden" name="location[E]" class="gllpLongitude" value="105.820226663232323">
+                            <!-- zoom: --> <input type="hidden" class="gllpZoom" value="15">
+                            <input type="hidden" class="gllpUpdateButton" value="update map">
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div id="room-detail-3">
+                <div class="col-md-12">
+                    <div class="list-type-title">
+                        <ul><li class="li-label">Thông tin bổ sung <span> Nhà trọ, Phòng trọ</span></li></ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="tang">
+                                    <div class="control-label">Tầng</div>
+                                    <div>
+                                        <select name="floor" id="floor" class="form-control" size="1">
+                                            <option value="Chưa xác định">Chọn..</option>
+                                            <option value="1">Tầng 1</option>
+                                            <option value="2">Tầng 2</option>
+                                            <option value="3">Tầng 3</option>
+                                            <option value="4">Tầng 4</option>
+                                            <option value="5">Tầng 5</option>
+                                            <option value="6">Tầng 6</option>
+                                            <option value="7">Tầng 7</option>
+                                            <option value="8">Tầng 8</option>
+                                            <option value="9">Tầng 9</option>
+                                            <option value="10">Tầng 10</option>
+                                            <option value="Chưa xác định">Chưa xác định</option>
+                                        </select>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="vs">
+                                    <div class="control-label">Vệ sinh</div>
+                                    <div>
+                                        <select name="wc" id="wc" class="form-control" size="1">
+                                            <option value="Chưa xác định">Chọn..</option>
+                                            <option value="Khép kín">Khép kín</option>
+                                            <option value="Chung">Chung</option>
+                                            <option value="Chưa xác định">Chưa xác định</option>
+                                        </select>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group people-in">
+                        <div class="submit-info-title">Số người ở tối đa</div>
+                        <div>
+                            <select name="per_room" id="numberPeople" class="form-control" size="1">
+                                <option value="Chưa xác định">Chọn..</option>
+                                <option value="1">1 người</option>
+                                <option value="2">2 người</option>
+                                <option value="3">3 người</option>
+                                <option value="4">4 người</option>
+                                <option value="5">5 người</option>
+                                <option value="6">6 người</option>
+                                <option value="7">7 người</option>
+                                <option value="8">8 người</option>
+                                <option value="9">9 người</option>
+                                <option value="Chưa xác định">Chưa xác định</option>
+                            </select>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group price-elec-water">
+                        <div class="elec">
+                            <div class="submit-info-title">Giá điện</div>
+                            <input type="number" name="name" id="priceElectric" class="form-control price_set" value="" />
+                        </div>
+                        <div class="water">
+                            <div class="submit-info-title">Giá nước</div>
+                            <input type="number" name="name" id="priceWater" class="form-control price_set" value="" />
+                        </div>
+                    </div>
+                    <div id="price_group" class="form-group price-elec-water-input">
+                        <div class="elec elec_set"></div>
+                        <div class="water water_set"></div>
+                    </div>
+                    <div class="submit-room-des">
+                        <div class="submit-info-title validate-require">Mô tả chi tiết</div>
+                        <textarea id="description" rows="5" cols="60"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="submit-room-map">
+                        <div class="submit-info-title">Kéo thả vị trí trên bản đồ để chỉnh địa điểm chính xác hơn</div>
+                        <fieldset class="gllpLatlonPicker" id="_MAP_3086">
+                            <input type="hidden" class="gllpSearchField" value="">
+                            <input type="hidden" class="gllpSearchButton btn-success" value="Tìm vị trí">
+                            <!-- <br/><br/> -->
+                            <div class="gllpMap" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div style="overflow: hidden;"></div><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: none;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div></div></div><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"></div></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; opacity: 0; touch-action: none; left: -14px; top: -43px; z-index: 0;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" usemap="#gmimap0" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"><map name="gmimap0" id="gmimap0"><area log="miw" coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75" shape="poly" title="Drag this Marker" style="cursor: pointer; touch-action: none;"></map></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" frameborder="0" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;" src="about:blank"></iframe></div></div></div>
+                            <!-- <br/>
+                            lat/lon: -->
+                            <input type="hidden" name="location[N]" class="gllpLatitude" value="21.0029317912212212">
+                            <!-- / -->
+                            <input type="hidden" name="location[E]" class="gllpLongitude" value="105.820226663232323">
+                            <!-- zoom: --> <input type="hidden" class="gllpZoom" value="15">
+                            <input type="hidden" class="gllpUpdateButton" value="update map">
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div id="room-detail-7">
+                <div class="col-md-12">
+                    <div class="list-type-title">
+                        <ul><li class="li-label">Thông tin bổ sung <span> Nhà trọ, Phòng trọ</span></li></ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="tang">
+                                    <div class="control-label">Tầng</div>
+                                    <div>
+                                        <select name="floor" id="floor" class="form-control" size="1">
+                                            <option value="Chưa xác định">Chọn..</option>
+                                            <option value="1">Tầng 1</option>
+                                            <option value="2">Tầng 2</option>
+                                            <option value="3">Tầng 3</option>
+                                            <option value="4">Tầng 4</option>
+                                            <option value="5">Tầng 5</option>
+                                            <option value="6">Tầng 6</option>
+                                            <option value="7">Tầng 7</option>
+                                            <option value="8">Tầng 8</option>
+                                            <option value="9">Tầng 9</option>
+                                            <option value="10">Tầng 10</option>
+                                            <option value="Chưa xác định">Chưa xác định</option>
+                                        </select>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="vs">
+                                    <div class="control-label">Vệ sinh</div>
+                                    <div>
+                                        <select name="wc" id="wc" class="form-control" size="1">
+                                            <option value="Chưa xác định">Chọn..</option>
+                                            <option value="Khép kín">Khép kín</option>
+                                            <option value="Chung">Chung</option>
+                                            <option value="Chưa xác định">Chưa xác định</option>
+                                        </select>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group people-in">
+                        <div class="submit-info-title">Số người ở tối đa</div>
+                        <div>
+                            <select name="per_room" id="numberPeople" class="form-control" size="1">
+                                <option value="Chưa xác định">Chọn..</option>
+                                <option value="1">1 người</option>
+                                <option value="2">2 người</option>
+                                <option value="3">3 người</option>
+                                <option value="4">4 người</option>
+                                <option value="5">5 người</option>
+                                <option value="6">6 người</option>
+                                <option value="7">7 người</option>
+                                <option value="8">8 người</option>
+                                <option value="9">9 người</option>
+                                <option value="Chưa xác định">Chưa xác định</option>
+                            </select>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group price-elec-water">
+                        <div class="elec">
+                            <div class="submit-info-title">Giá điện</div>
+                            <input type="number" name="name" id="priceElectric" class="form-control price_set" value="" />
+                        </div>
+                        <div class="water">
+                            <div class="submit-info-title">Giá nước</div>
+                            <input type="number" name="name" id="priceWater" class="form-control price_set" value="" />
+                        </div>
+                    </div>
+                    <div id="price_group" class="form-group price-elec-water-input">
+                        <div class="elec elec_set"></div>
+                        <div class="water water_set"></div>
+                    </div>
+                    <div class="submit-room-des">
+                        <div class="submit-info-title validate-require">Mô tả chi tiết</div>
+                        <textarea id="description" rows="5" cols="60"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="submit-room-map">
+                        <div class="submit-info-title">Kéo thả vị trí trên bản đồ để chỉnh địa điểm chính xác hơn</div>
+                        <fieldset class="gllpLatlonPicker" id="_MAP_3086">
+                            <input type="hidden" class="gllpSearchField" value="">
+                            <input type="hidden" class="gllpSearchButton btn-success" value="Tìm vị trí">
+                            <!-- <br/><br/> -->
+                            <div class="gllpMap" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div style="overflow: hidden;"></div><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: none;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div></div></div><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"></div></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; opacity: 0; touch-action: none; left: -14px; top: -43px; z-index: 0;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" usemap="#gmimap0" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"><map name="gmimap0" id="gmimap0"><area log="miw" coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75" shape="poly" title="Drag this Marker" style="cursor: pointer; touch-action: none;"></map></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" frameborder="0" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;" src="about:blank"></iframe></div></div></div>
+                            <!-- <br/>
+                            lat/lon: -->
+                            <input type="hidden" name="location[N]" class="gllpLatitude" value="21.0029317912212212">
+                            <!-- / -->
+                            <input type="hidden" name="location[E]" class="gllpLongitude" value="105.820226663232323">
+                            <!-- zoom: --> <input type="hidden" class="gllpZoom" value="15">
+                            <input type="hidden" class="gllpUpdateButton" value="update map">
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div id="room-detail-4">
+                <div class="col-md-12">
+                    <div class="list-type-title">
+                        <ul><li class="li-label">Thông tin bổ sung <span> Nhà trọ, Phòng trọ</span></li></ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="tang">
+                                    <div class="control-label">Tầng</div>
+                                    <div>
+                                        <select name="floor" id="floor" class="form-control" size="1">
+                                            <option value="Chưa xác định">Chọn..</option>
+                                            <option value="1">Tầng 1</option>
+                                            <option value="2">Tầng 2</option>
+                                            <option value="3">Tầng 3</option>
+                                            <option value="4">Tầng 4</option>
+                                            <option value="5">Tầng 5</option>
+                                            <option value="6">Tầng 6</option>
+                                            <option value="7">Tầng 7</option>
+                                            <option value="8">Tầng 8</option>
+                                            <option value="9">Tầng 9</option>
+                                            <option value="10">Tầng 10</option>
+                                            <option value="Chưa xác định">Chưa xác định</option>
+                                        </select>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="vs">
+                                    <div class="control-label">Vệ sinh</div>
+                                    <div>
+                                        <select name="wc" id="wc" class="form-control" size="1">
+                                            <option value="Chưa xác định">Chọn..</option>
+                                            <option value="Khép kín">Khép kín</option>
+                                            <option value="Chung">Chung</option>
+                                            <option value="Chưa xác định">Chưa xác định</option>
+                                        </select>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group people-in">
+                        <div class="submit-info-title">Số người ở tối đa</div>
+                        <div>
+                            <select name="per_room" id="numberPeople" class="form-control" size="1">
+                                <option value="Chưa xác định">Chọn..</option>
+                                <option value="1">1 người</option>
+                                <option value="2">2 người</option>
+                                <option value="3">3 người</option>
+                                <option value="4">4 người</option>
+                                <option value="5">5 người</option>
+                                <option value="6">6 người</option>
+                                <option value="7">7 người</option>
+                                <option value="8">8 người</option>
+                                <option value="9">9 người</option>
+                                <option value="Chưa xác định">Chưa xác định</option>
+                            </select>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group price-elec-water">
+                        <div class="elec">
+                            <div class="submit-info-title">Giá điện</div>
+                            <input type="number" name="name" id="priceElectric" class="form-control price_set" value="" />
+                        </div>
+                        <div class="water">
+                            <div class="submit-info-title">Giá nước</div>
+                            <input type="number" name="name" id="priceWater" class="form-control price_set" value="" />
+                        </div>
+                    </div>
+                    <div id="price_group" class="form-group price-elec-water-input">
+                        <div class="elec elec_set"></div>
+                        <div class="water water_set"></div>
+                    </div>
+                    <div class="submit-room-des">
+                        <div class="submit-info-title validate-require">Mô tả chi tiết</div>
+                        <textarea id="description" rows="5" cols="60"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="submit-room-map">
+                        <div class="submit-info-title">Kéo thả vị trí trên bản đồ để chỉnh địa điểm chính xác hơn</div>
+                        <fieldset class="gllpLatlonPicker" id="_MAP_3086">
+                            <input type="hidden" class="gllpSearchField" value="">
+                            <input type="hidden" class="gllpSearchButton btn-success" value="Tìm vị trí">
+                            <!-- <br/><br/> -->
+                            <div class="gllpMap" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div style="overflow: hidden;"></div><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: none;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div></div></div><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -254, -245);"></div></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; opacity: 0; touch-action: none; left: -14px; top: -43px; z-index: 0;"><img alt="" src="http://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" usemap="#gmimap0" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"><map name="gmimap0" id="gmimap0"><area log="miw" coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75" shape="poly" title="Drag this Marker" style="cursor: pointer; touch-action: none;"></map></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" frameborder="0" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;" src="about:blank"></iframe></div></div></div>
+                            <!-- <br/>
+                            lat/lon: -->
+                            <input type="hidden" name="location[N]" class="gllpLatitude" value="21.0029317912212212">
+                            <!-- / -->
+                            <input type="hidden" name="location[E]" class="gllpLongitude" value="105.820226663232323">
+                            <!-- zoom: --> <input type="hidden" class="gllpZoom" value="15">
+                            <input type="hidden" class="gllpUpdateButton" value="update map">
+                        </fieldset>
                     </div>
                 </div>
             </div>
@@ -1064,151 +896,112 @@
             </div>
         </div>
         <script type="text/javascript">
-$(document).ready(function(){
+            $(document).ready(function () {
 
-    $('body').on('change', '[name="needed"]', function(e){
-        if ($(this).val().length>0) {
-            $('#step-3').fadeOut();
-            $('#step-2').fadeOut(300);
-            $('#step-2').html($('.'+$(this).attr('id')).html());
-            $('#step-2').fadeIn(700);
-        }
-    });
-    // setTimeout(function(){$('[name="type"]').change();}, 200);
-    $('body').on('change', '[name="type_id"]', function(e){
-        e.preventDefault;
-        $('#step-3').fadeIn(700);
-        google.maps.event.trigger(window,'resize',{});
-        $('#additional-row').fadeOut(300);
-        $('#additional-row').html($('#room-detail-'+$(this).val()).html());
-        $('#additional-row').fadeIn(500);
-    });
-    $('#form-validation').on('submit',function(e){
-        $('#upload-error').html('');
-        if($('[name="images[]"]').length == 0){
-            $('#upload-error').html('<div class="alert alert-warning"><a href="javascript:void(0);" class="btn-xs btn-danger remove-alert"><i class="fa fa-times"></i></a> Chưa upload ảnh');
-            $('[name="file"]').trigger( "focus" );
-            e.preventDefault();
-        }
-        var price = $('[name="price"]').val();
-        if (price.length < 7) {
-            $('[name="price"]').parents('.form-group').addClass('has-error');
-            $('[name="price"]').trigger( "focus" );
-            $('[name="price"]').parent().parent().find('.help-block').text('Giá phải lớn hơn 100,000 đ');
-            e.preventDefault();
-        }else{
-            $('[name="price"]').parents('.form-group').removeClass('has-error');
-            $('[name="price"]').parents('.form-group').find('.help-block').text('');
-        }
-    });
-    $('#submit_form').on('click', function(){
-        $('#form-validation').submit();
-    });
-    setTimeout(function(){$('.price_set').change();}, 200);
-    $('body').on('change', '.price_set', function(e){
-        id = $(this).attr('name');
-        if ($(this).val() == 'Theo đầu người' || $(this).val() == 'Chủ nhà quy định') {
-            $('.'+id).html($('#'+id).html());
-        }else{
-            $('.'+id).html('');
-        }
-        class_change = $(this).attr('for');
-        if ($(this).val() == 'Theo đầu người') {
-            $('.'+class_change).text('Nghìn/người');
-        }else{
-            $('.'+class_change).text('Nghìn/số');
-        }
-    });
-    // setTimeout(function(){$('.address_input').change();}, 200);
-    $('body').on('change', '.address_input', function(e){
-        e.preventDefault;
-        var key = $(this).val();
-        var table = $(this).attr('name');
-        if (key!='') {
-            $.ajax({
-                url: '#/dang-tin/data',
-                type: 'POST',
-                data: {key: key,table: table, _token: 'oZTfWcuCbtOwBIEtos7tpCT6fovSeuSzIa5d8GWV' },
-                dataType: 'json',
-                success: function(result){
-                    if (table == 'district_id') {
-                        $.each (result, function (_key, item){
-                            var html = '<select name="'+_key+'_id" class="form-control address_input">'+'<option value="">Chọn..</option>';
-                            $.each (item, function (k, _name){
-                                var value = _name['id'];
-                                var name = _name['name'];
-                                html +=  '<option value="'+value+'">'+name+'</option>';
-                            });
-                            html += '</select>';
-                            $('[name="'+_key+'_id"]').html(html);
-                        });
-                    }else{
-                        var html = '<select name="district_id" class="form-control address_input">'+'<option value="">Chọn..</option>';
-                        $.each (result, function (key, item){
-                            var value = item['id'];
-                            var name = item['name'];
-                            html +=  '<option value="'+value+'">'+name+'</option>';
-                        });
-                        html += '</select>';
-                        $('[name="district_id"]').html(html);
-                        $('[name="ward_id"]').html('<option value="">Chọn Quận/huyện trước</option>');
-                        $('[name="street_id"]').html('<option value="">Chọn Quận/huyện trước</option>');
+                $('body').on('change', '[name="needed"]', function (e) {
+                    if ($(this).val().length > 0) {
+                        $('#step-3').fadeOut();
+                        $('#step-2').fadeOut(300);
+                        $('#step-2').html($('.' + $(this).attr('id')).html());
+                        $('#step-2').fadeIn(700);
                     }
-                }
-            });
-        }
-        if(key=='' && table=='province'){
-            $('[name="district"]').html('<option value="">Chọn Tỉnh/Thành trước</option>');
-            $('[name="ward"]').html('<option value="">Chọn Quận/huyện trước</option>');
-            $('[name="street"]').html('<option value="">Chọn Quận/huyện trước</option>');
-        }
-        if(key=='' && table=='district'){
-            $('[name="ward"]').html('<option value="">Chọn Quận/huyện trước</option>');
-            $('[name="street"]').html('<option value="">Chọn Quận/huyện trước</option>');
-        }
-    });
-    $('body').on('change', '.address_input', function(e){
-        var province = $('[name="province_id"]').find('[value="'+$('[name="province_id"]').val()+'"]').text();
-        var district = $('[name="district_id"]').find('[value="'+$('[name="district_id"]').val()+'"]').text()+' - ';
-        var ward = $('[name="ward_id"]').find('[value="'+$('[name="ward_id"]').val()+'"]').text()+' - ';
-        var street = $('[name="street_id"]').find('[value="'+$('[name="street_id"]').val()+'"]').text()+' - ';
-        var detail = '';
-        if($('[name="province_id"]').val() == ""){ province = 'Việt nam';}
-        if($('[name="district_id"]').val() == ""){ district = '';}
-        if($('[name="ward_id"]').val() == ""){ ward = ''; detail = '';}else{detail = $('[name="detail"]').val()+' '; }
-        if($('[name="street_id"]').val() == ""){ street = '';}else{ ward = ''; detail = $('[name="detail"]').val()+' '; }
-        $('.gllpSearchField').val(detail+street+ward+district+province);
-        $( ".gllpSearchButton" ).trigger( "click" );
-    });
+                });
+                // setTimeout(function(){$('[name="type"]').change();}, 200);
+                $('body').on('change', '[name="type_id"]', function (e) {
+                    e.preventDefault;
+                    $('#step-3').fadeIn(700);
+                    google.maps.event.trigger(window, 'resize', {});
+                    $('#additional-row').fadeOut(300);
+                    $('#additional-row').html($('#room-detail-' + $(this).val()).html());
+                    $('#additional-row').fadeIn(500);
+                });
+                $('#submit_form').on('click', function () {
+                    $('#form-validation').submit();
+                });
+                setTimeout(function () { $('.price_set').change(); }, 200);
+                $('body').on('change', '.price_set', function (e) {
+                    id = $(this).attr('name');
+                    if ($(this).val() == 'Theo đầu người' || $(this).val() == 'Chủ nhà quy định') {
+                        $('.' + id).html($('#' + id).html());
+                    } else {
+                        $('.' + id).html('');
+                    }
+                    class_change = $(this).attr('for');
+                    if ($(this).val() == 'Theo đầu người') {
+                        $('.' + class_change).text('Nghìn/người');
+                    } else {
+                        $('.' + class_change).text('Nghìn/số');
+                    }
+                });
+                // get district by province
+                $('#province').on('change', function () {
+                    var provinceid = $(this).val();
+                    $('#district').html('<option value>Loading...</option>');
+                    $('#district').attr('disabled', 'true');
+                    $.ajax({
+                        url: '/DangTin/GetDistrict/',
+                        type: 'GET',
+                        data: { provinceid: provinceid },
+                        success: function (response) {                       
+                            $('#district').removeAttr('disabled');
+                            $('#district').html('<option value>Chọn</option>');  
+                            $.each(response, function (i, item) {
+                                $('#district').append('<option value="' + item.Id + '">' + item.Name + '</option>');
+                            });
+                        },
+                        error: function (x, t, m) {
+                            $('#province').val('');
+                            $('#district').html('<option value> Chon Tinh truoc  </option>');
+                        },
+                    });
+                });
 
-    $('body').on('click', '.remove-alert', function(e){
-        e.preventDefault();
-        $('#upload-error').html('');
-    });
-    $('body').on('click', '.image-del', function(e){
-        e.preventDefault();
-        if (!confirm('Bạn có chắc chắn muốn xóa ảnh này không ?')) {
-            return false;
-        }
-        var i = $(this);
-        var link = $(this).parent().find('img').attr('src');
-        $.ajax({
-            type: 'POST',
-            url: "#/dang-tin/xoa-anh",
-            data: {_token: 'oZTfWcuCbtOwBIEtos7tpCT6fovSeuSzIa5d8GWV', location: 'host', path: link},
-            dataType: 'json',
-            success: function(res){
-                if (res.status) {
-                    i.parent().remove();
-                } else {
-                    alert(res.msg);
-                }
-            },
-            error: function(err){},
-        });
-    });
-});
+                // get street by district
+                $('#district').on('change', function () {
+                    var districid = $(this).val();
+                    $('#street_id').html('<option value>Loading...</option>');
+                    $('#street_id').attr('disabled', 'true');
+                    $.ajax({
+                        url: '/DangTin/GetStreet/',
+                        type: 'GET',
+                        data: { districtId: districid },
+                        success: function (response) {
+                            $('#street_id').removeAttr('disabled');
+                            $('#street_id').html('<option value>Chọn</option>');
+                            $.each(response, function (i, item) {
+                                $('#street_id').append('<option value="' + item.Id + '">' + item.Name + '</option>');
+                            });
+                        },
+                        error: function (x, t, m) {
+                            $('#district').val('');
+                            $('#street_id').html('<option value> Chọn quận/huyện trước  </option>');
+                        },
+                    });
+                });
+
+                // get street by district
+                $('#district').on('change', function () {
+                    var districtId = $(this).val();
+                    $('#street').html('<option value>Loading...</option>');
+                    $('#street').attr('disabled', 'true');
+                    $.ajax({
+                        url: '/DangTin/GetStreet/',
+                        type: 'GET',
+                        data: { districtId: districtId },
+                        success: function (response) {
+                            $('#street').removeAttr('disabled');
+                            $('#street').html('<option value>Chọn</option>');
+                            $.each(response, function (i, item) {
+                                $('#street').append('<option value="' + item.Id + '">' + item.Name + '</option>');
+                            });
+                        },
+                        error: function (x, t, m) {
+                            $('#district').val('');
+                            $('#street').html('<option value> Chọn quận/huyện trước  </option>');
+                        },
+                    });
+                });
+            });
         </script>
     </div>
 </div>
-
