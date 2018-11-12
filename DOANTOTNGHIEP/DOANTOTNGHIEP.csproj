@@ -154,10 +154,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\ChiTietController.cs" />
     <Compile Include="Controllers\DangTinController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhongTroController.cs" />
+    <Compile Include="Controllers\ThanhToanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -215,6 +217,7 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\DangTinModel.cs" />
     <Compile Include="ViewModels\DistrictModel.cs" />
     <Compile Include="ViewModels\ProductDetailsModel.cs" />
     <Compile Include="ViewModels\ProductModel.cs" />
@@ -251,6 +254,7 @@
     <Content Include="Content\themes\client\fonts\open-sans\Semibold\OpenSans-Semibold9f1e.svg" />
     <Content Include="Content\themes\client\img\ads-3-min.png" />
     <Content Include="Content\themes\client\img\ads-4-min.png" />
+    <Content Include="Content\themes\client\img\avarta.jpg" />
     <Content Include="Content\themes\client\img\avatar.png" />
     <Content Include="Content\themes\client\img\ban-can-ho-chung-cu-tsq-euroland-124m-3-phong-ngu-kem-noi-that-gia-23-trieum2-thumb-u8lyx.jpg" />
     <Content Include="Content\themes\client\img\ban-lo-goc-mt-pham-hung-830tr-nen-co-so-tho-cu-100-lh-01217679322-thumb-qwjd5.jpg" />
@@ -457,9 +461,11 @@
     <Content Include="Views\PhongTro\PhongTro.cshtml" />
     <Content Include="Views\ChiTiet\ChiTiet.cshtml" />
     <Content Include="Views\DangTin\DangTin.cshtml" />
+    <Content Include="Views\ThanhToan\ThanhToan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Auth\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

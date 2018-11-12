@@ -8,16 +8,44 @@
                         <h2 style="float: left"> <span>NHATRO.BK</span></h2>
                     </a>
                 </div>
-                <div class="pull-right">
-                    <div class="header-top-avatar"></div>
-                    <div class="header-top-user">
-                        <div class="user-login"><a class="load_modal_login" href="#tab_auth_login" data-toggle="modal" data-target="#modal_auth">Đăng nhập</a></div>
-                        <div class="user-register load_modal_register"><a href="javascript: void(0);" data-toggle="modal" data-target="#modal_auth">Tạo tài khoản</a></div>
+
+                @if (Session["UserName"] != null)
+                {
+                    <div class="pull-right">
+                        <div class="header-top-avatar"><img class="img-responsive" src="~/Content/themes/client/img/avarta.jpg"></div>
+                        <div class="header-top-user">
+                            <div class="user-name">
+                                <a href="#"> @Session["UserName"] </a>
+                            </div>
+                            <div class="dropdown user-info">
+                                <a href="javascript: void(0);" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Thông tin tài khoản <b class="caret"></b></a>
+                                <ul class="dropdown-menu dropdown-menu-right menu-user-info" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Trang cá nhân</a></li>
+                                    <li><a href="#">Tin đã đăng</a></li>
+                                    <li><a href="#">Tin đã lưu</a></li>
+                                    <li><a href="@Url.Action("Logout", "Auth")" id="logout">Đăng xuất</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="pull-right">
-                    <a class="btn btn-submit-room load_modal_login" href="@Url.Action("DangTin", "DangTin")">Đăng tin</a>
-                </div>
+
+                    <div class="pull-right">
+                        <a class="btn btn-submit-room load_modal_login" href="@Url.Action("DangTin", "DangTin")">Đăng tin</a>
+                    </div>
+                }
+
+                else
+                {
+                    <div class="pull-right">
+                        <div class="header-top-avatar"></div>
+                        <div class="header-top-user">
+                            <div class="user-login"><a class="load_modal_login" href="#tab_auth_login" data-toggle="modal" data-target="#modal_auth">Đăng nhập</a></div>
+                            <div class="user-register load_modal_register"><a href="javascript: void(0);" data-toggle="modal" data-target="#modal_auth">Tạo tài khoản</a></div>
+                        </div>
+                    </div>
+                }
+
+
                 <div class="modal fade" id="modal_auth" tabindex="-1" role="dialog" aria-labelledby="login_modal_label" aria-hidden="true">
                     <div class="modal-dialog modal-md">
                         <div class="modal-content">
@@ -25,27 +53,26 @@
                                 <div class="col-md-12">
                                     <div class="modal_auth_wrap">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
                                         <ul class="nav nav-tabs no-margin">
                                             <li id="li_login" class="active"><a href="#tab_auth_login" data-toggle="tab">ĐĂNG NHẬP</a></li>
                                             <li id="li_register"><a href="#tab_auth_register" data-toggle="tab">ĐĂNG KÝ</a></li>
                                         </ul>
                                         <div class="tab-content">
                                             <div class="tab-pane fade in active" id="tab_auth_login">
-                                                <form class="form-horizontal frm-login-ajax1 frm-user-ajax" id="frm-login-ajax1" role="form" method="POST" action="#/dang-nhap">
+                                                <form class="form-horizontal frm-login-ajax1 frm-user-ajax" id="frm-login-ajax1">
                                                     <div class="hide alert alert-danger"></div>
-                                                    <input type="hidden" name="_token" value="zmq7sKJMAIEeS6drjuIgLOKBJ9r9eyfb0T0wdDZx">
-                                                    <input type="hidden" name="current_url" value="index.html">
                                                     <div class="form-group">
                                                         <label for="email" class="col-sm-3 col-md-3 control-label">Email</label>
                                                         <div class="col-sm-8 col-md-8">
-                                                            <input type="email" class="form-control" name="email" id="email" placeholder="Địa chỉ email ..." value="">
+                                                            <input type="email" class="form-control" id="email" placeholder="Địa chỉ email ..." value="">
                                                             <span class="help-block"></span>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="password" class="col-sm-3 col-md-3 control-label">Mật khẩu</label>
                                                         <div class="col-sm-8 col-md-8">
-                                                            <input type="password" name="password" class="form-control" id="password" placeholder="Mật khẩu ...">
+                                                            <input type="password" class="form-control" id="password" placeholder="Mật khẩu ...">
                                                             <span class="help-block"></span>
                                                         </div>
                                                     </div>
@@ -53,7 +80,7 @@
                                                         <label class="col-sm-3 col-md-3 control-label"></label>
                                                         <div class="col-sm-8 col-md-8">
                                                             <div class="pull-left help-block"><input type="checkbox" name="remember"> Ghi nhớ đăng nhập</div>
-                                                            <div class="pull-right"><button type="submit" class="btn btn-auth-submit">Đăng nhập</button></div>
+                                                            <div class="pull-right"> <input type="button" id="login" class="btn btn-auth-submit" value="Đăng Nhập" /></div>
                                                         </div>
                                                     </div>
                                                     <div class="clearfix"></div>
@@ -65,36 +92,36 @@
                                                         </div>
                                                     </div>
                                                     <hr>
-                                                    <div class="row">
-                                                        <div class="text-center text-center-auth">
-                                                            <p><a class="btn btn-link" href="index.html">Khôi phục mật khẩu</a> để tìm lại mật khẩu</p>
-                                                        </div>
-                                                    </div>
                                                 </form>
                                             </div>
                                             <div class="tab-pane fade" id="tab_auth_register">
-                                                <form class="form-horizontal frm-user-ajax" id="frm-register-ajax" role="form" method="POST" action="#/dang-ky">
+                                                <form class="form-horizontal frm-user-ajax" id="frm-register-ajax" role="form" method="POST">
                                                     <div class="hide alert alert-danger"></div>
-                                                    <input type="hidden" name="_token" value="zmq7sKJMAIEeS6drjuIgLOKBJ9r9eyfb0T0wdDZx">
-                                                    <input type="hidden" name="current_url" value="index.html">
                                                     <div class="form-group">
                                                         <label for="txt_fullname" class="col-sm-4 control-label">Tên hiển thị</label>
                                                         <div class="col-sm-6">
-                                                            <input type="text" name="name" class="form-control" id="name" placeholder="Tên hiển thị ..." value="">
+                                                            <input type="text" class="form-control" id="name" placeholder="Tên hiển thị ..." value="">
+                                                            <span class="help-block"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="txt_fullname" class="col-sm-4 control-label">Số Điện Thoại</label>
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="phone" placeholder="Số điện thoại ..." value="">
                                                             <span class="help-block"></span>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="txt_email" class="col-sm-4 control-label">Email</label>
                                                         <div class="col-sm-6">
-                                                            <input type="email" name="email" class="form-control" id="email" placeholder="Email ..." value="">
+                                                            <input type="email" name="email" class="form-control" id="emaildk" placeholder="Email ..." value="">
                                                             <span class="help-block"></span>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="txt_password" class="col-sm-4 control-label">Mật khẩu</label>
                                                         <div class="col-sm-6">
-                                                            <input type="password" name="password" class="form-control" id="password" placeholder="Mật khẩu ...">
+                                                            <input type="password" name="password" class="form-control" id="passworddk" placeholder="Mật khẩu ...">
                                                             <span class="help-block"></span>
                                                         </div>
                                                     </div>
@@ -108,7 +135,7 @@
 
                                                     <div class="form-group">
                                                         <div class="col-sm-offset-4 col-sm-8">
-                                                            <button type="submit" class="btn btn-auth-submit">Đăng ký tài khoản</button>
+                                                            <input type="button" id="signup" class="btn btn-auth-submit" name="name" value="Đăng ký tài khoản" />
                                                         </div>
                                                     </div>
                                                 </form>
@@ -127,19 +154,122 @@
                     </div>
                 </div>
                 <script type="text/javascript">
-                        $('body').on('click', '.load_modal_login', function (e) {
-                            $('#li_register').removeClass('active');
-                            $('#li_login').addClass('active');
-                            $('#tab_auth_register').removeClass('in active');
-                            $('#tab_auth_login').addClass('in active');
-                        });
-                        $('body').on('click', '.load_modal_register', function (e) {
-                            $('#li_login').removeClass('active');
-                            $('#li_register').addClass('active');
-                            $('#tab_auth_login').removeClass('in active');
-                            $('#tab_auth_register').addClass('in active');
-                        });
+                    $('body').on('click', '.load_modal_login', function (e) {
+                        $('#li_register').removeClass('active');
+                        $('#li_login').addClass('active');
+                        $('#tab_auth_register').removeClass('in active');
+                        $('#tab_auth_login').addClass('in active');
+                    });
+                    $('body').on('click', '.load_modal_register', function (e) {
+                        $('#li_login').removeClass('active');
+                        $('#li_register').addClass('active');
+                        $('#tab_auth_login').removeClass('in active');
+                        $('#tab_auth_register').addClass('in active');
+                    });
                 </script>
+
+                @*Login*@
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#login').click(function () {
+                            var email = $('#email').val();
+                            var password = $('#password').val();
+
+                            if (email.length == 0) {
+                                alert("Vui lòng nhập Email!");
+
+                            }
+
+                            if (password.length == 0) {
+                                alert("Vui lòng nhập PassWord!");
+                            }
+                            if (email.length != 0 && password.length != 0) {
+                                $.ajax({
+                                    type: 'POST',
+                                    url: "/Auth/Login/",
+                                    contentType: "application/json; charset=utf-8",
+                                    dataType: "json",
+                                    data: JSON.stringify({
+                                        email: $('#email').val(),
+                                        password: $('#password').val()
+                                    })
+                                }).success(function (response) {
+                                    if (response == true) {
+                                        window.location.href = '/Home/Index'
+                                    }
+                                    else {
+                                        alert("Email Hoặc PassWord Không Chính xác!");
+                                    }
+                                }).error(function () {
+                                    alert("Lỗi serve!");
+                                    window.location.reload();
+                                });
+                            }
+
+                        });
+
+                        $("#signup").click(function () {
+                            var name = $("#name").val();
+                            var phone = $("#phone").val();
+                            var email = $('#emaildk').val();
+                            var password = $('#passworddk').val();
+                            var repassword = $("#password_confirmation").val();
+
+                            if (name.length == 0) {
+                                alert("Vui lòng nhập Tên!");
+
+                            }
+
+                            if (phone.length == 0) {
+                                alert("Vui lòng nhập Tên!");
+
+                            }
+
+                            if (email.length == 0) {
+                                alert("Vui lòng nhập Email!");
+
+                            }
+
+                            if (password.length == 0) {
+                                alert("Vui lòng nhập PassWord!");
+                            }
+
+                            if (repassword.length == 0) {
+                                alert("Vui lòng nhập lại password");
+                            }
+
+                            if (email.length != 0 && password.length != 0) {
+                                $.ajax({
+                                    type: 'POST',
+                                    url: "/Auth/SignUp/",
+                                    contentType: "application/json; charset=utf-8",
+                                    dataType: "json",
+                                    data: JSON.stringify({
+                                        LoginId: name,
+                                        Phone: phone,
+                                        Email: email,
+                                        Password: password
+                                    })
+                                }).success(function (response) {
+                                    if (response.result == true && response.checkEmail == true) {
+                                        alert("Đăng Ký thành Công!");
+                                    }
+                                    else if (response.checkEmail == false) {
+                                        alert("Email đã tồn tại");
+                                    }
+                                    else {
+                                        alert("Đăng ký Thất bại");
+                                    }
+                                }).error(function () {
+                                    alert("Lỗi serve!");
+                                    window.location.reload();
+                                });
+                            }
+                        });
+
+                    });
+                </script>
+
             </div>
         </div>
     </div>

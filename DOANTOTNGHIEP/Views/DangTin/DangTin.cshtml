@@ -48,14 +48,14 @@
                         <div class="form-group">
                             <div class="control-label">Tiêu đề</div>
                             <div>
-                                <input type="text" id="title" name="title" class="form-control" value="">
+                                <input type="text" id="title" class="form-control" value="">
                                 <span class="help-block"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="control-label">Số điện thoại</div>
                             <div>
-                                <input type="text" id="phone" name="phone" class="form-control" value="">
+                                <input type="text" id="phonenumber" class="form-control" value="">
                                 <span class="help-block"></span>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                                 <div>
                                     <div class="control-label">Giá</div>
                                     <div class="input-group">
-                                        <input type="text" name="price" id="price" class="form-control money-input" data-thousands="," data-decimal="." data-precision="0">
+                                        <input type="text" id="price" class="form-control money-input" data-thousands="," data-decimal="." data-precision="0">
                                         <span class="input-group-addon">đ/tháng</span>
                                     </div>
                                     <span class="help-block"></span>
@@ -76,7 +76,7 @@
                                 <div>
                                     <div class="control-label">Diện tích</div>
                                     <div class="input-group">
-                                        <input type="text" name="acreage" id="acreage" value="" class="form-control" placeholder="nhập số, viết liền">
+                                        <input type="text" id="acreage" value="" class="form-control" placeholder="nhập số, viết liền">
                                         <span class="input-group-addon">M<sup>2</sup></span>
                                         <span class="help-block"></span>
                                     </div>
@@ -261,11 +261,11 @@
                     <div class="form-group price-elec-water">
                         <div class="elec">
                             <div class="submit-info-title">Giá điện</div>
-                            <input type="number" name="name" id="priceElectric" class="form-control price_set" value="" />
+                            <input type="number" id="priceElectric" class="form-control price_set" value="" />
                         </div>
                         <div class="water">
                             <div class="submit-info-title">Giá nước</div>
-                            <input type="number" name="name" id="priceWater" class="form-control price_set" value="" />
+                            <input type="number" id="priceWater" class="form-control price_set" value="" />
                         </div>
                     </div>
                     <div id="price_group" class="form-group price-elec-water-input">
@@ -942,9 +942,9 @@
                         url: '/DangTin/GetDistrict/',
                         type: 'GET',
                         data: { provinceid: provinceid },
-                        success: function (response) {                       
+                        success: function (response) {
                             $('#district').removeAttr('disabled');
-                            $('#district').html('<option value>Chọn</option>');  
+                            $('#district').html('<option value>Chọn</option>');
                             $.each(response, function (i, item) {
                                 $('#district').append('<option value="' + item.Id + '">' + item.Name + '</option>');
                             });
@@ -999,6 +999,79 @@
                             $('#district').val('');
                             $('#street').html('<option value> Chọn quận/huyện trước  </option>');
                         },
+                    });
+                });
+
+                //Đăng tin
+                $('#submit_form').click(function () {
+                    var need = $("input[name='needed']:checked").val();
+                    var type = $("input[name='type_id']:checked").val();
+                    var title = $("#title").val();
+                    var phone = $("#phonenumber").val();
+                    var price = $("#price").val();
+                    var acreage = $("#acreage").val();
+                    var province = $('#province').val();
+                    var district = $('#district').val();
+                    var street = $('#street').val();
+                    var addressDetails = $('#addressDetails').val();
+                    var floor = $('#floor').val();
+                    var wc = $('#wc').val();
+                    var numberPeople = $('#numberPeople').val();
+                    var priceElectric = $('#priceElectric').val();
+                    var priceWater = $('#priceWater').val();
+                    var description = $('#description').val();
+
+                    if (title.length == 0) {
+                        alert('Vui long nhập tiêu đề');
+                    }
+
+                    if (phone.length == 0) {
+                        alert('Vui long nhập Số điện thoại');
+                    }
+
+                    if (price.length == 0) {
+                        alert('Vui long nhập giá');
+                    }
+
+                    if (addressDetails.length == 0) {
+                        alert('Vui long nhập Địa chỉ');
+                    }
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "/DangTin/DangTin/",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify({
+                            need: need,
+                            type: type,
+                            title: title,
+                            phone: phone,
+                            price: price,
+                            acreage: acreage,
+                            province: province,
+                            district: district,
+                            street: street,
+                            addressDetails: addressDetails,
+                            floor: floor,
+                            wc: wc,
+                            numberPeople: numberPeople,
+                            priceElectric: priceElectric,
+                            priceWater: priceWater,
+                            description: description
+
+                        })
+                    }).success(function (response) {
+                        if (response.result == true) {
+                            alert("Đăng Ký thành Công!");
+                        }
+
+                        else {
+                            alert("Đăng ký Thất bại");
+                        }
+                    }).error(function () {
+                        alert("Lỗi serve!");
+                        window.location.reload();
                     });
                 });
             });

@@ -42,5 +42,56 @@ namespace DOANTOTNGHIEP.Controllers
                               }).ToList();
             return Json(dataResult, JsonRequestBehavior.AllowGet);
         }
+
+        // đăng tin
+        [HttpPost]
+        public JsonResult DangTin(DangTinModel item)
+        {
+            var User = Session["UserName"].ToString();
+            var result = false;
+            if (ModelState.IsValid)
+            {
+                //save in Location
+                Location location = new Location();
+                location.Name = item.addressDetails;
+                db.Location.Add(location);
+                db.SaveChanges();
+
+                var _idlocation = location.Id;
+
+                // save in Product
+                Product product = new Product();
+                product.IdLocation = _idlocation;
+                product.IdNeedFor = item.need;
+                product.IdProductType = item.type;
+                product.IdStreet = item.street;
+                product.Acreage = item.acreage;
+                product.Phone = item.phone;
+                product.Owner = User;
+                product.Title = item.title;
+                product.Price = item.price;
+                product.CreatedDate = DateTime.Now;
+                db.Product.Add(product);
+                db.SaveChanges();
+
+                var _idProduct = product.Id;
+
+                // save in ProductDetail
+                ProductDetails productDetails = new ProductDetails();
+                productDetails.IdProduct = _idProduct;
+                productDetails.PeopleNum = item.numberPeople;
+                productDetails.PriceElectric = item.priceElectric;
+                productDetails.PriceWater = item.priceWater;
+                productDetails.Floor = item.floor;
+                productDetails.Sanitary = item.wc;
+                productDetails.Description = item.description;
+                db.ProductDetails.Add(productDetails);
+                db.SaveChanges();
+
+                result = true;
+            }
+
+            return Json(new { result }, JsonRequestBehavior.AllowGet);
+        }
     }
 }
