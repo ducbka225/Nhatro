@@ -14,6 +14,11 @@ namespace DOANTOTNGHIEP.Controllers
         // GET: DangTin
         public ActionResult DangTin()
         {
+            var User = Session["UserName"].ToString();
+            if(User == null)
+            {
+                RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
@@ -89,6 +94,7 @@ namespace DOANTOTNGHIEP.Controllers
                 db.SaveChanges();
 
                 result = true;
+               // RedirectToAction("ThanhToan", "ThanhToan", new { @Idproduct = _idProduct });
             }
 
             return Json(new { result }, JsonRequestBehavior.AllowGet);

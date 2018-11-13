@@ -184,7 +184,7 @@
                     </div>
                     <div class="clearfix"></div>
                     <div class="col-md-12 submit-btn-room">
-                        <a id="submit_form" class="btn btn-send-room" href="javascript:void(0);"><span class="fa fa-send"></span>Đăng tin</a>
+                        <a id="submit_form" class="btn btn-send-room" href=""><span class="fa fa-send"></span>Đăng tin</a>
                     </div>
                 </div>
             </div>
@@ -915,9 +915,6 @@
                     $('#additional-row').html($('#room-detail-' + $(this).val()).html());
                     $('#additional-row').fadeIn(500);
                 });
-                $('#submit_form').on('click', function () {
-                    $('#form-validation').submit();
-                });
                 setTimeout(function () { $('.price_set').change(); }, 200);
                 $('body').on('change', '.price_set', function (e) {
                     id = $(this).attr('name');
@@ -1063,7 +1060,7 @@
                         })
                     }).success(function (response) {
                         if (response.result == true) {
-                            alert("Đăng Ký thành Công!");
+                            window.location.href = '/ThanhToan/ThanhToan'
                         }
 
                         else {

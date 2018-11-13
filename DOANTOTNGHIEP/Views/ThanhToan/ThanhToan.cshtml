@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "DangTin";
     Layout = "~/Views/Layout/_LayoutNhatro.cshtml";
+
+    var user = @ViewBag.User;
 }
 <div class="container" style="margin-top: 20px;">
     <div class="group_fields_body col-md-8">
@@ -130,11 +132,11 @@
                 <tbody>
                     <tr>
                         <td>Bạn đang có:</td>
-                        <td>10.000đ</td>
+                        <td>@user.Balance đ</td>
                     </tr>
                     <tr>
                         <td>Đơn giá:</td>
-                        <td class="js-package-price"></td>
+                        <td class="js-package-price"></td> 
                     </tr>
                     <tr>
                         <td>Số ngày:</td>
@@ -147,7 +149,7 @@
                     <tr>
                         <td>Thành tiền:</td>
                         <td>
-                            <span style="font-size: 20px; font-weight: bold; color: #F90;" class="js-package-grand-total">-</span>
+                            <span style="font-size: 20px; font-weight: bold; color: #F90;" class="js-package-grand-total">- </span> <span style="font-size: 20px; font-weight: bold; color: #F90;" class="">đ</span>
                         </td>
                     </tr>
                 </tbody>
@@ -159,122 +161,156 @@
 </div>
 
 <script>
-    $("#byweek").hide();
-    $("#bymonth").hide();
-    $("#package_time").on('change', function () {
-        var data = $("#package_time").val();
-        if (data == 'week') {
-            $("#byday").hide();
-            $("#bymonth").hide();
-            $("#byweek").show();
-        }
+    $(document).ready(function () {
+        $("#byweek").hide();
+        $("#bymonth").hide();
+        $("#package_time").on('change', function () {
+            var data = $("#package_time").val();
+            if (data == 'week') {
+                $("#byday").hide();
+                $("#bymonth").hide();
+                $("#byweek").show();
+            }
 
-        if (data == 'month') {
-            $("#byday").hide();
-            $("#byweek").hide();
-            $("#bymonth").show();
-        }
+            if (data == 'month') {
+                $("#byday").hide();
+                $("#byweek").hide();
+                $("#bymonth").show();
+            }
 
-        if (data == 'day') {
-            $("#byday").show();
-            $("#byweek").hide();
-            $("#bymonth").hide();
-        }        
-    });
+            if (data == 'day') {
+                $("#byday").show();
+                $("#byweek").hide();
+                $("#bymonth").hide();
+            }
+        });
 
-    $("#package_id, #package_time, #total_day, #total_week, #total_month").on('change', function () {
-        var value = $("#package_id").val();
-        var data = $("#package_time").val();
-        var pricebyday = $("#total_day").val();
-        var pricebyweek = $("#total_week").val();
-        var pricebymonth = $("#total_month").val();
-        var price = 0;
-        var totalprice = 0;
-        var day = 0;
-        if (value == 0 && data == 'day') {
-            totalprice = 2000 * pricebyday;
-            price = 2000;
-            day = pricebyday;
-        }
-        else if (value == 0 && data == 'week') {
-            totalprice = 12000 * pricebyweek;
-            price = 12000;
-            day = 7 * pricebyday;
-        }
-        else if (value == 0 && data == 'month') {
-            totalprice = 48000 * pricebymonth;
-            price = 48000;
-            day = 30 * pricebymonth;
-        }
-        else if (value == 1 && data == 'day') {
-            totalprice = 50000 * pricebyday;
-            price = 50000;
-            day = pricebyday;
-        }
-        else if (value == 1 && data == 'week') {
-            totalprice = 315000 * pricebyweek;
-            price = 315000;
-            day = 7 * pricebyday;
-        }
-        else if (value == 1 && data == 'month') {
-            totalprice = 1200000 * pricebymonth;
-            price = 1200000;
-            day = 30 * pricebymonth;
-        }
+        $("#package_id, #package_time, #total_day, #total_week, #total_month").on('change', function () {
+            var value = $("#package_id").val();
+            var data = $("#package_time").val();
+            var pricebyday = $("#total_day").val();
+            var pricebyweek = $("#total_week").val();
+            var pricebymonth = $("#total_month").val();
+            var price = 0;
+            var totalprice = 0;
+            var day = 0;
+            if (value == 0 && data == 'day') {
+                totalprice = 2000 * pricebyday;
+                price = 2000;
+                day = 1 * pricebyday;
+            }
+            else if (value == 0 && data == 'week') {
+                totalprice = 12000 * pricebyweek;
+                price = 12000;
+                day = 7 * pricebyweek;
+            }
+            else if (value == 0 && data == 'month') {
+                totalprice = 48000 * pricebymonth;
+                price = 48000;
+                day = 30 * pricebymonth;
+            }
+            else if (value == 1 && data == 'day') {
+                totalprice = 50000 * pricebyday;
+                price = 50000;
+                day = 1 * pricebyday;
+            }
+            else if (value == 1 && data == 'week') {
+                totalprice = 315000 * pricebyweek;
+                price = 315000;
+                day = 7 * pricebyweek;
+            }
+            else if (value == 1 && data == 'month') {
+                totalprice = 1200000 * pricebymonth;
+                price = 1200000;
+                day = 30 * pricebymonth;
+            }
 
-        else if (value == 2 && data == 'day') {
-            totalprice = 10000 * pricebyday;
-            price = 10000;
-            day = pricebyday;
-        }
-        else if (value == 2 && data == 'week') {
-            totalprice = 63000 * pricebyweek;
-            price = 63000;
-            day = 7 * pricebyday;
-        }
-        else if (value == 2 && data == 'month') {
-            totalprice = 240000 * pricebymonth;
-            price = 240000
-            day = 30 * pricebymonth;
-        }
-        else {
-            price = 0;
-            totalprice = 0;
-            day = 0;
-        }
+            else if (value == 2 && data == 'day') {
+                totalprice = 10000 * pricebyday;
+                price = 10000;
+                day = 1 * pricebyday;
+            }
+            else if (value == 2 && data == 'week') {
+                totalprice = 63000 * pricebyweek;
+                price = 63000;
+                day = 7 * pricebyweek;
+            }
+            else if (value == 2 && data == 'month') {
+                totalprice = 240000 * pricebymonth;
+                price = 240000
+                day = 30 * pricebymonth;
+            }
+            else {
+                price = 0;
+                totalprice = 0;
+                day = 0;
+            }
 
 
-        $(".js-package-price").empty();
-        $(".js-package-price").append(price + " đ");
+            $(".js-package-price").empty();
+            $(".js-package-price").append(price);
 
-        $(".js-package-grand-total").empty();
-        $(".js-package-grand-total").append(totalprice + " đ");
+            $(".js-package-grand-total").empty();
+            $(".js-package-grand-total").append(totalprice);
 
-        $(".js-package-days").empty();
-        $(".js-package-days").append(day + " Ngày");
+            $(".js-package-days").empty();
+            $(".js-package-days").append(day + " Ngày");
 
-        var today = new Date();
-        today.setDate(today.getDate() + day);
+            var today = new Date(Date.now());
+            today.setDate(today.getDate() + day);
 
-        var dd = today.getDate();
-        var mm = today.getMonth() + 1; //January is 0!
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
 
-        var yyyy = today.getFullYear();
-        if (dd < 10) {
-            dd = '0' + dd;
-        }
-        if (mm < 10) {
-            mm = '0' + mm;
-        }
-        var today = dd + '/' + mm + '/' + yyyy;
+            var yyyy = today.getFullYear();
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+            var today = dd + '/' + mm + '/' + yyyy;
 
+            $(".js-package-deadline").empty();
+            $(".js-package-deadline").append(today);
+
+
+        }); 
         
+        // click button
+        $("#thanhtoan").click(function () {
+            var ExpireDate = $(".js-package-deadline").html();
+            var TotalPrice = $(".js-package-grand-total").html();
+            var UserId = @user.Id;
+            if (@user.Balance < TotalPrice ) {
+                alert('Tài Khoản bạn không đủ');
+            }
 
-        $(".js-package-deadline").empty();
-        $(".js-package-deadline").append(today);
-    
+            $.ajax({
+                type: 'POST',
+                url: "/ThanhToan/PostThanhToan/",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({
+                    ExpireDate: ExpireDate,
+                    TotalPrice: TotalPrice,
+                    UserId: UserId,
+                })
+            }).success(function (response) {
+                if (response.result == true) {
+                    alert("Thành Công!");
+                    window.location.href = '/Home/Index';
+                }
 
-    });
+                else {
+                    alert("Thất Bại");
+                }
+            }).error(function () {
+                alert("Lỗi serve!");
+                window.location.reload();
+            });
+        });
+    })
 
    
 
