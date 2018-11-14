@@ -282,6 +282,7 @@
             var ExpireDate = $(".js-package-deadline").html();
             var TotalPrice = $(".js-package-grand-total").html();
             var UserId = @user.Id;
+            var IsLevel = $("#package_id").val();
             if (@user.Balance < TotalPrice ) {
                 alert('Tài Khoản bạn không đủ');
             }
@@ -295,6 +296,7 @@
                     ExpireDate: ExpireDate,
                     TotalPrice: TotalPrice,
                     UserId: UserId,
+                    IsLevel: IsLevel,
                 })
             }).success(function (response) {
                 if (response.result == true) {

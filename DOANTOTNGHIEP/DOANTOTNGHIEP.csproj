@@ -219,6 +219,7 @@
     </Compile>
     <Compile Include="ViewModels\DangTinModel.cs" />
     <Compile Include="ViewModels\DistrictModel.cs" />
+    <Compile Include="ViewModels\Picture.cs" />
     <Compile Include="ViewModels\ProductDetailsModel.cs" />
     <Compile Include="ViewModels\ProductModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -466,6 +467,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\" />
     <Folder Include="Views\Auth\" />
   </ItemGroup>
   <ItemGroup>

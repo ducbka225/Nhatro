@@ -2,6 +2,7 @@
 using DOANTOTNGHIEP.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -97,6 +98,23 @@ namespace DOANTOTNGHIEP.Controllers
                // RedirectToAction("ThanhToan", "ThanhToan", new { @Idproduct = _idProduct });
             }
 
+            return Json(new { result }, JsonRequestBehavior.AllowGet);
+        }
+
+        //Upload image
+        [HttpPost]
+        public JsonResult Upload()
+        {
+            var result = true;
+            foreach(var file in Request.Files)
+            {
+                if(file.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
+                    file.SaveAs(path);
+                }
+            }
             return Json(new { result }, JsonRequestBehavior.AllowGet);
         }
     }

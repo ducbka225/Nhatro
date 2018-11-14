@@ -159,20 +159,7 @@
                             <div id="image-group">
                                 <label for="summary">
                                     <div class="control-label">Ảnh chi tiết của phòng </div>
-                                    <a href="javascript: void(0);" class="btn btn-xs btn-primary pull-right" id="attachment-uploads">
-                                        <div class="qq-uploader">
-                                            <div class="qq-upload-button btn" style="position: relative; overflow: hidden; direction: ltr;">
-                                                <span class="glyphicon glyphicon-cloud-upload"></span>
-                                                Tải lên
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <input multiple="multiple" type="file" name="file" style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0;">
-                                    <span style="margin: 2px 7px 0px 0px; display: none;" class="pull-right" id="img-loading">
-                                        <div class="col-md-4">
-                                            <img src="#/themes/client/img/loading-img.gif" class="img-responsive">
-                                        </div>
-                                    </span>
+                                    <input type='file' multiple id='fileUpload' name="files[]" data-url="@Url.Action("Upload","Dangtin")" />
                                 </label>
                                 <div id="upload-error"></div>
                                 <div class="clearfix"><p></p></div>
@@ -1069,6 +1056,18 @@
                     }).error(function () {
                         alert("Lỗi serve!");
                         window.location.reload();
+                    });
+                });
+
+                // Upload
+                $(function () {
+                    $('#fileUpload').fileupload({
+                        dataType: 'json',
+                        done: function (e, data) {
+                            $.each(data.result.files, function (index, file) {
+                                $('<p/>').text(file.name).appendTo(document.body);
+                            });
+                        }
                     });
                 });
             });

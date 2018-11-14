@@ -33,49 +33,28 @@ namespace DOANTOTNGHIEP.Controllers
 
         // thanh toán
         [HttpPost]
-        public JsonResult DangTin(DangTinModel item)
+        public JsonResult PostThanhToan(DateTime ExpireDate, float TotalPrice, int UserId, int IsLevel)
         {
-            var User = Session["UserName"].ToString();
+
             var result = false;
+            var product = db.Product.OrderByDescending(p => p.Id).FirstOrDefault();
             if (ModelState.IsValid)
             {
-                //save in Location
-                Location location = new Location();
-                location.Name = item.addressDetails;
-                db.Location.Add(location);
+                //save in Transaction
+                Transaction transaction = new Transaction();
+                transaction.CreatedDate = DateTime.Now;
+                transaction.ExpireDate = ExpireDate;
+                transaction.TotalPrice = TotalPrice;
+                transaction.IdProduct = product.Id;
+                transaction.IdUser = UserId;
+                db.Transaction.Add(transaction);
                 db.SaveChanges();
 
-                var _idlocation = location.Id;
-
-                // save in Product
-                Product product = new Product();
-                product.IdLocation = _idlocation;
-                product.IdNeedFor = item.need;
-                product.IdProductType = item.type;
-                product.IdStreet = item.street;
-                product.Acreage = item.acreage;
-                product.Phone = item.phone;
-                product.Owner = User;
-                product.Title = item.title;
-                product.Price = item.price;
-                product.CreatedDate = DateTime.Now;
-                db.Product.Add(product);
+                // save in product
+                Product productsave = product;
+                productsave.IsActive = 1;
+                productsave.IsLevel = IsLevel;
                 db.SaveChanges();
-
-                var _idProduct = product.Id;
-
-                // save in ProductDetail
-                ProductDetails productDetails = new ProductDetails();
-                productDetails.IdProduct = _idProduct;
-                productDetails.PeopleNum = item.numberPeople;
-                productDetails.PriceElectric = item.priceElectric;
-                productDetails.PriceWater = item.priceWater;
-                productDetails.Floor = item.floor;
-                productDetails.Sanitary = item.wc;
-                productDetails.Description = item.description;
-                db.ProductDetails.Add(productDetails);
-                db.SaveChanges();
-
                 result = true;
                 // RedirectToAction("ThanhToan", "ThanhToan", new { @Idproduct = _idProduct });
             }
