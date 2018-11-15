@@ -6,176 +6,177 @@
 <div class="container">
     <div class="row">
         <script src="#/themes/client/js/fileuploader.js"></script>
-        <form id="form-validation" class="form" method="POST" action="#/xac-nhan-dang-tin" enctype="multipart/form-data" novalidate="novalidate">
-            <input type="hidden" name="_token" value="oZTfWcuCbtOwBIEtos7tpCT6fovSeuSzIa5d8GWV">
-            <div class="row">
-                <div class="col-md-12 submit-room-breadcrumb">
-                    <div class="pt-breadcrumb">
-                        <ol class="breadcrumb">
-                            <li><a href="#">Trang chủ</a></li>
-                            <li class="active">Đăng tin</li>
-                        </ol>
-                    </div>
+        <input type="hidden" name="_token" value="oZTfWcuCbtOwBIEtos7tpCT6fovSeuSzIa5d8GWV">
+        <div class="row">
+            <div class="col-md-12 submit-room-breadcrumb">
+                <div class="pt-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="#">Trang chủ</a></li>
+                        <li class="active">Đăng tin</li>
+                    </ol>
                 </div>
             </div>
-            <div class="col-md-2 no-padding-vertical submit-room-main-content">
-                <div class="submit-list-type">
-                    <div class="list-type-title">
-                        <ul><li class="li-label">Bước 1 Chọn Nhu Cầu</li></ul>
-                    </div>
-                    <div class="checkbox checkbox-success">
-                        <ul>
-                            <li>
-                                <input type="radio" name="needed" id="radio_needed_lease" value="1">
-                                <label for="radio_needed_lease"> Cho Thuê</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="needed" id="radio_needed_share" value="2">
-                                <label for="radio_needed_share"> Ở ghép</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="step-2" class="submit-list-type" style="display: none;">
-                </div>
-            </div>
-            <div id="step-3" class="col-md-10 no-padding-right submit-room-main-content" style="display: none;">
+        </div>
+        <div class="col-md-2 no-padding-vertical submit-room-main-content">
+            <div class="submit-list-type">
                 <div class="list-type-title">
-                    <ul><li class="li-label">Bước 3 Nhập Thông Tin Chi Tiết</li></ul>
+                    <ul><li class="li-label">Bước 1 Chọn Nhu Cầu</li></ul>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="checkbox checkbox-success">
+                    <ul>
+                        <li>
+                            <input type="radio" name="needed" id="radio_needed_lease" value="1">
+                            <label for="radio_needed_lease"> Cho Thuê</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="needed" id="radio_needed_share" value="2">
+                            <label for="radio_needed_share"> Ở ghép</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="step-2" class="submit-list-type" style="display: none;">
+            </div>
+        </div>
+        <div id="step-3" class="col-md-10 no-padding-right submit-room-main-content" style="display: none;">
+            <div class="list-type-title">
+                <ul><li class="li-label">Bước 3 Nhập Thông Tin Chi Tiết</li></ul>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="control-label">Tiêu đề</div>
+                        <div>
+                            <input type="text" id="title" class="form-control" value="">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label">Số điện thoại</div>
+                        <div>
+                            <input type="text" id="phonenumber" class="form-control" value="">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 no-padding-left">
                         <div class="form-group">
-                            <div class="control-label">Tiêu đề</div>
                             <div>
-                                <input type="text" id="title" class="form-control" value="">
+                                <div class="control-label">Giá</div>
+                                <div class="input-group">
+                                    <input type="text" id="price" class="form-control money-input" data-thousands="," data-decimal="." data-precision="0">
+                                    <span class="input-group-addon">đ/tháng</span>
+                                </div>
                                 <span class="help-block"></span>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-6 no-padding-right">
                         <div class="form-group">
-                            <div class="control-label">Số điện thoại</div>
                             <div>
-                                <input type="text" id="phonenumber" class="form-control" value="">
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 no-padding-left">
-                            <div class="form-group">
-                                <div>
-                                    <div class="control-label">Giá</div>
-                                    <div class="input-group">
-                                        <input type="text" id="price" class="form-control money-input" data-thousands="," data-decimal="." data-precision="0">
-                                        <span class="input-group-addon">đ/tháng</span>
-                                    </div>
+                                <div class="control-label">Diện tích</div>
+                                <div class="input-group">
+                                    <input type="text" id="acreage" value="" class="form-control" placeholder="nhập số, viết liền">
+                                    <span class="input-group-addon">M<sup>2</sup></span>
                                     <span class="help-block"></span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 no-padding-right">
-                            <div class="form-group">
-                                <div>
-                                    <div class="control-label">Diện tích</div>
-                                    <div class="input-group">
-                                        <input type="text" id="acreage" value="" class="form-control" placeholder="nhập số, viết liền">
-                                        <span class="input-group-addon">M<sup>2</sup></span>
-                                        <span class="help-block"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="control-label">Tỉnh/Thành phố</div>
-                                    <div>
-                                        <select name="province_id" id="province" class="form-control address_input" size="1">
-                                            <option value="">Chọn</option>
-                                            <option value="1">Hà Nội</option>
-                                            <option value="2">Hải Phòng</option>
-                                            <option value="3">Hồ Chí Minh</option>
-                                            <option value="4">Bắc Giang</option>
-                                            <option value="5">Đã Nẵng</option>
-                                        </select>
-                                        <span class="help-block"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="control-label">Quận/Huyện</div>
-                                    <div>
-                                        <select name="district_id" id="district" class="form-control address_input" size="1">
-                                            <option value="">Chọn Tỉnh/Thành trước</option>
-                                        </select>
-                                        <span class="help-block"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <dv class="clearfix"></dv>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="control-label">Xã/Phường</div>
-                                    <div>
-                                        <select id="street_id" name="ward_id" class="form-control address_input" size="1">
-                                            <option value="">Chọn Quận/huyện trước</option>
-                                        </select>
-                                        <span class="help-block"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="control-label">Đường/Phố</div>
-                                    <div>
-                                        <select id="street" name="street_id" class="form-control address_input" size="1">
-                                            <option value="">Chọn Quận/huyện trước</option>
-                                        </select>
-                                        <span class="help-block"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="control-label">Địa chỉ cụ thể</div>
-                                    <div>
-                                        <input type="text" id="addressDetails" name="detail" class="form-control address_input" value="">
-                                        <span class="help-block"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="additional-row" style="display: none;">
-                    </div>
-                    <div class="clearfix" style="height: 5px;"></div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <div id="image-group">
-                                <label for="summary">
-                                    <div class="control-label">Ảnh chi tiết của phòng </div>
-                                    <input type='file' multiple id='fileUpload' name="files[]" data-url="@Url.Action("Upload","Dangtin")" />
-                                </label>
-                                <div id="upload-error"></div>
-                                <div class="clearfix"><p></p></div>
-                                <div class="qq-uploader checkbox checkbox-success" id="list-image">
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-md-12 submit-btn-room">
-                        <a id="submit_form" class="btn btn-send-room" href=""><span class="fa fa-send"></span>Đăng tin</a>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="control-label">Tỉnh/Thành phố</div>
+                                <div>
+                                    <select name="province_id" id="province" class="form-control address_input" size="1">
+                                        <option value="">Chọn</option>
+                                        <option value="1">Hà Nội</option>
+                                        <option value="2">Hải Phòng</option>
+                                        <option value="3">Hồ Chí Minh</option>
+                                        <option value="4">Bắc Giang</option>
+                                        <option value="5">Đã Nẵng</option>
+                                    </select>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="control-label">Quận/Huyện</div>
+                                <div>
+                                    <select name="district_id" id="district" class="form-control address_input" size="1">
+                                        <option value="">Chọn Tỉnh/Thành trước</option>
+                                    </select>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <dv class="clearfix"></dv>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="control-label">Xã/Phường</div>
+                                <div>
+                                    <select id="street_id" name="ward_id" class="form-control address_input" size="1">
+                                        <option value="">Chọn Quận/huyện trước</option>
+                                    </select>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="control-label">Đường/Phố</div>
+                                <div>
+                                    <select id="street" name="street_id" class="form-control address_input" size="1">
+                                        <option value="">Chọn Quận/huyện trước</option>
+                                    </select>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="control-label">Địa chỉ cụ thể</div>
+                                <div>
+                                    <input type="text" id="addressDetails" name="detail" class="form-control address_input" value="">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="additional-row" style="display: none;">
+                </div>
+                <div class="clearfix" style="height: 5px;"></div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div id="image-group">
+                            <label for="summary">
+                                <div class="control-label"> Ảnh chi tiết của phòng </div>
+
+                                <input type="file" id="fileInput" multiple />
+                                <input type="button" id="fileButton" value="Upload Files" /><br />
+                                <img src="~/Content/Image/loading.gif" style="display: none;" id="loadingImg" />
+                            </label>
+                            <div id="upload-error"></div>
+                            <div class="clearfix"><p></p></div>
+                            <div class="qq-uploader checkbox checkbox-success" id="list-image">
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 submit-btn-room">
+                    <a id="submit_form" class="btn btn-send-room" href=""><span class="fa fa-send"></span>Đăng tin</a>
+                </div>
             </div>
-        </form>
+        </div>
         <div class="hide">
             <div id="room-detail-1">
                 <div class="col-md-12">
@@ -1059,17 +1060,42 @@
                     });
                 });
 
-                // Upload
-                $(function () {
-                    $('#fileUpload').fileupload({
-                        dataType: 'json',
-                        done: function (e, data) {
-                            $.each(data.result.files, function (index, file) {
-                                $('<p/>').text(file.name).appendTo(document.body);
-                            });
+                //
+                $("#fileButton").click(function () {
+                    var files = $("#fileInput").get(0).files;
+                    var fileData = new FormData();
+
+                    for (var i = 0; i < files.length; i++) {
+                        fileData.append("fileInput", files[i]);
+                    }
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/DangTin/UploadFiles",
+                        dataType: "json",
+                        contentType: false, // Not to set any content header
+                        processData: false, // Not to process data
+                        data: fileData,
+                        success: function (result, status, xhr) {
+                            alert(result);
+                        },
+                        error: function (xhr, status, error) {
+                            alert(status);
                         }
                     });
                 });
+
+            $(document).ajaxStart(function () {
+                $("#loadingImg").show();
+                $("#fileButton").prop('disabled', true);
+            });
+
+            $(document).ajaxStop(function () {
+                    $("#loadingImg").hide();
+                $("#fileButton").prop('disabled', false);
+                $("#fileInput").val("");
+            });
+
             });
         </script>
     </div>

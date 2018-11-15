@@ -102,20 +102,63 @@ namespace DOANTOTNGHIEP.Controllers
         }
 
         //Upload image
+        //[HttpPost]
+        //public JsonResult Upload(Picture picture)
+        //{
+        //    var result = true;
+        //    foreach(var file in picture.Files)
+        //    {
+        //        if(file.ContentLength > 0)
+        //        {
+        //            var fileName = Path.GetFileName(file.FileName) + DateTime.Now.ToString("yyyymmddMMss");
+        //            var path = Path.Combine(Server.MapPath("~/Content/images"), fileName);
+        //            file.SaveAs(path);
+        //            try
+        //            {
+        //                Image image = new Image();
+        //                image.Link = "~/Content/images" + fileName;
+        //                image.IdProduct = 5;
+        //                db.Image.Add(image);
+        //                db.SaveChanges();
+        //            }
+        //            catch
+        //            {
+        //                result = false;
+        //            }
+                    
+        //        }             
+        //    }
+        //    return Json(new { result }, JsonRequestBehavior.AllowGet);
+        //}
+
         [HttpPost]
-        public JsonResult Upload()
+        public ActionResult UploadFiles()
         {
-            var result = true;
-            foreach(var file in Request.Files)
+            var result = "Upload fails";
+            string path = Server.MapPath("~/Content/images/");
+            HttpFileCollectionBase files = Request.Files;
+            for (int i = 0; i < files.Count; i++)
             {
-                if(file.ContentLength > 0)
+                HttpPostedFileBase file = files[i];
+                file.SaveAs(path + file.FileName + DateTime.Now.ToString("yyyymmddMMss"));
+
+                try
                 {
-                    var fileName = Path.GetFileName(file.FileName);
-                    var path = Path.Combine(Server.MapPath("~/Content/Images"), fileName);
-                    file.SaveAs(path);
+                    Image image = new Image();
+                    image.Link = "~/Content/images/" + file.FileName + DateTime.Now.ToString("yyyymmddMMss");
+                    image.IdProduct = 5;
+                    db.Image.Add(image);
+                    db.SaveChanges();
+                    result = files.Count + " Đã Upload!";
                 }
+
+                catch
+                {
+                    result = "Upload fails";
+                }
+                
             }
-            return Json(new { result }, JsonRequestBehavior.AllowGet);
+            return Json(result);
         }
     }
 }

@@ -38,6 +38,9 @@ namespace DOANTOTNGHIEP.Controllers
 
             var result = false;
             var product = db.Product.OrderByDescending(p => p.Id).FirstOrDefault();
+            var image = (from i in db.Image
+                         where i.IdProduct == 5
+                         select i).ToList();
             if (ModelState.IsValid)
             {
                 //save in Transaction
@@ -55,8 +58,16 @@ namespace DOANTOTNGHIEP.Controllers
                 productsave.IsActive = 1;
                 productsave.IsLevel = IsLevel;
                 db.SaveChanges();
-                result = true;
+                
                 // RedirectToAction("ThanhToan", "ThanhToan", new { @Idproduct = _idProduct });
+
+                // save in image
+                foreach(Image item in image)
+                {
+                    item.IdProduct = product.Id;
+                    db.SaveChanges();
+                }
+                result = true;
             }
 
             return Json(new { result }, JsonRequestBehavior.AllowGet);
