@@ -159,7 +159,11 @@
     <Compile Include="Controllers\DangTinController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhongTroController.cs" />
+    <Compile Include="Controllers\SuaTinController.cs" />
     <Compile Include="Controllers\ThanhToanController.cs" />
+    <Compile Include="Controllers\TinDaDangController.cs" />
+    <Compile Include="Controllers\TinDaLuuController.cs" />
+    <Compile Include="Controllers\TrangCaNhanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -464,6 +468,10 @@
     <Content Include="Views\ChiTiet\ChiTiet.cshtml" />
     <Content Include="Views\DangTin\DangTin.cshtml" />
     <Content Include="Views\ThanhToan\ThanhToan.cshtml" />
+    <Content Include="Views\TrangCaNhan\TrangCaNhan.cshtml" />
+    <Content Include="Views\TinDaDang\TinDaDang.cshtml" />
+    <Content Include="Views\TinDaLuu\TinDaLuu.cshtml" />
+    <Content Include="Views\SuaTin\SuaTin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

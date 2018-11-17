@@ -41,6 +41,9 @@ namespace DOANTOTNGHIEP.Controllers
             var image = (from i in db.Image
                          where i.IdProduct == 5
                          select i).ToList();
+            var user = (from u in db.User
+                        where u.Id == UserId
+                        select u).FirstOrDefault();
             if (ModelState.IsValid)
             {
                 //save in Transaction
@@ -68,6 +71,11 @@ namespace DOANTOTNGHIEP.Controllers
                     db.SaveChanges();
                 }
                 result = true;
+
+                //save User
+                User usersave = user;
+                usersave.Balance = user.Balance - TotalPrice;
+                db.SaveChanges();
             }
 
             return Json(new { result }, JsonRequestBehavior.AllowGet);
