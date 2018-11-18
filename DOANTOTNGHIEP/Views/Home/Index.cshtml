@@ -44,7 +44,7 @@
                                                 <div class="col-sm-6 col-md-4 thumbnail-item">
                                                     <div class="thumbnail">
                                                         <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
-                                                            <img src="~/Content/themes/client/img/cho-thue-nha-so-25b-ngach-106-ngo-goc-de-pho-minh-khai-ha-noi-thumb-ajyfm.jpg" alt="" class="cover img-reponsive">
+                                                            <img src="~/Content/images/@item.Image" alt="" class="cover img-reponsive">
                                                         </a>
                                                         <div class="room-item-price">
                                                             <a href="#">@item.Price /tháng</a>
@@ -277,21 +277,6 @@
                                         <li class="province" value="48">Bách Khoa</li>
                                         <li class="province" value="79">Minh Khai</li>
                                         <li class="province" value="92">Cầu Giấy</li>
-                                    </ul>
-                                </a>
-                            </div>
-                            <div class="form-group">
-                                <a class="btn btn-select btn-select-light btn-tp">
-                                    <input type="hidden" class="btn-select-input" id="district" name="district" value="">
-                                    <span id="district-select" class="btn-select-value">Chọn đường</span>
-                                    <span class="btn-select-arrow fa fa-angle-down"></span>
-                                    <ul id="districtGroup">
-                                        <li class="province" value="1">Phòng trọ, nhà trọ</li>
-                                        <li class="province" value="31">Nhà nguyên căn</li>
-                                        <li class="province" value="48">Nhà mặt phố</li>
-                                        <li class="province" value="79">Văn phòng</li>
-                                        <li class="province" value="92">Chung cư, căn hộ</li>
-                                        <li class="province" value="92">Mặt bằng, cửa hàng</li>
                                     </ul>
                                 </a>
                             </div>

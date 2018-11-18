@@ -15,7 +15,9 @@
     <script src="~/Content/themes/client/js/multiple-select.js"></script>
     <script src="~/Content/themes/client/js/owl.carousel.min.js"></script>
     <script src="~/Content/themes/client/js/ion.rangeSlider.js"></script>
-    <script src="~/Content/themes/client/js/jquery-gmaps-latlon-picker.js"></script>
+    @*<script src="~/Content/themes/client/js/jquery-gmaps-latlon-picker.js"></script>*@
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider-min.js"></script>
     <!-- Load WysiBB JS and Theme -->
     <script src="~/Content/themes/client/js/wysibb/jquery.wysibb.min.js"></script>
     <link href="~/Content/themes/client/js/wysibb/theme/default/wbbtheme.css" rel="stylesheet" />
@@ -126,8 +128,8 @@
                                         <hr>
                                         <div class="row">
                                             <div class="col-md-12 text-center">
-                                                <a href="https://www.facebook.com/v2.9/dialog/oauth?client_id=810519435625421&amp;redirect_uri=http%3A%2F%2Fphongtot.vn%2Fsocial%2Ffacebook%2F&amp;scope=email&amp;response_type=code&amp;state=ERFzA1Zjje2efZap4qER10y9uZAtqiwS1cpcOLl1" class="btn btn-md btn-social btn-facebook"> <i class="fa fa-facebook"></i> Đăng nhập bằng Facebook </a>
-                                                <a href="https://accounts.google.com/o/oauth2/auth?client_id=354105350296-kcsi32tpijp59eca2ii2edffr595ikbv.apps.googleusercontent.com&amp;redirect_uri=http%3A%2F%2Fphongtot.vn%2Fsocial%2Fgoogle&amp;scope=openid+profile+email&amp;response_type=code&amp;state=ebIw06YH3mLWPjgavOJpJaKikh0hYqKeKnfgt4it" class="btn btn-md btn-social btn-google-plus"> <i class="fa fa-google-plus"></i> Đăng nhập bằng Google </a>
+                                                <a href="#" class="btn btn-md btn-social btn-facebook"> <i class="fa fa-facebook"></i> Đăng nhập bằng Facebook </a>
+                                                <a href="#" class="btn btn-md btn-social btn-google-plus"> <i class="fa fa-google-plus"></i> Đăng nhập bằng Google </a>
                                             </div>
                                         </div>
                                         <hr>
@@ -172,7 +174,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="txt_confirm" class="col-sm-4 control-label">Xác nhận</label>
+                                            @*<label for="txt_confirm" class="col-sm-4 control-label">Xác nhận</label>
                                             <div class="col-sm-6">
                                                 <input type="text" name="captcha" class="form-control" id="captcha" placeholder="Mã xác nhận ..." value="">
                                                 <span class="help-block"></span>
@@ -181,9 +183,9 @@
                                                     <img src="captcha/default6c0a.png?pL5Oq4i4" alt="captcha" class="captcha-img" data-refresh-config="default">
                                                     <span class="pull-right"><a title="Lấy mã xác nhận mới" class="recapcha enable-tooltip" href="javascript:void(0);"><i class="fa fa-refresh fa-2x text-success"></i></a></span>
                                                 </div>
-                                            </div>
+                                            </div>*@
                                         </div>
-                                        <script type="text/javascript">
+                                        @*<script type="text/javascript">
                                             $('.recapcha').on('click', function () {
                                                 var captcha = $('img.captcha-img');
                                                 var config = captcha.data('refresh-config');
@@ -194,7 +196,7 @@
                                                     captcha.prop('src', response);
                                                 });
                                             });
-                                        </script>
+                                        </script>*@
                                         <div class="form-group">
                                             <div class="col-sm-offset-4 col-sm-8">
                                                 <button type="submit" class="btn btn-auth-submit">Đăng ký tài khoản</button>
@@ -203,8 +205,8 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a href="https://www.facebook.com/v2.9/dialog/oauth?client_id=810519435625421&amp;redirect_uri=http%3A%2F%2Fphongtot.vn%2Fsocial%2Ffacebook%2F&amp;scope=email&amp;response_type=code&amp;state=ERFzA1Zjje2efZap4qER10y9uZAtqiwS1cpcOLl1" class="btn btn-md btn-social btn-facebook"> <i class="fa fa-facebook"></i> Đăng ký bằng Facebook </a>
-                                        <a href="https://www.facebook.com/v2.9/dialog/oauth?client_id=810519435625421&amp;redirect_uri=http%3A%2F%2Fphongtot.vn%2Fsocial%2Ffacebook%2F&amp;scope=email&amp;response_type=code&amp;state=ERFzA1Zjje2efZap4qER10y9uZAtqiwS1cpcOLl1" class="btn btn-md btn-social btn-google-plus"> <i class="fa fa-google-plus"></i> Đăng ký bằng Google </a>
+                                        <a href="#" class="btn btn-md btn-social btn-facebook"> <i class="fa fa-facebook"></i> Đăng ký bằng Facebook </a>
+                                        <a href="#" class="btn btn-md btn-social btn-google-plus"> <i class="fa fa-google-plus"></i> Đăng ký bằng Google </a>
                                     </div>
                                 </div>
                             </div>
@@ -215,10 +217,10 @@
             </div>
         </div>
     </div>
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    @*<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="themes/client/js/jquery-gmaps-latlon-picker.js"></script>
-    <script src="../apis.google.com/js/platform.js" async defer></script>
-    <script>
+    <script src="../apis.google.com/js/platform.js" async defer></script>*@
+    @*<script>
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
@@ -233,8 +235,8 @@
             }
             $("#editor").wysibb(wbbOpt);
         });
-    </script>
-    <script>
+    </script>*@
+    @*<script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
@@ -245,8 +247,8 @@
         ga('create', 'UA-75912345-1', 'auto');
         ga('send', 'pageview');
 
-    </script>
-    <script src="themes/client/js/app.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+    </script>*@
+    @*<script src="themes/client/js/app.js"></script>*@
+    @*<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>*@
 </body>
 </html>

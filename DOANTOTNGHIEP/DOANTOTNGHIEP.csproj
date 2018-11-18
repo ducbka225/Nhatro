@@ -168,61 +168,62 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs">
-      <DependentUpon>NhaTroModel.tt</DependentUpon>
+      <DependentUpon>NhaTro.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\District.cs">
-      <DependentUpon>NhaTroModel.tt</DependentUpon>
+      <DependentUpon>NhaTro.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Image.cs">
-      <DependentUpon>NhaTroModel.tt</DependentUpon>
+      <DependentUpon>NhaTro.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Location.cs">
-      <DependentUpon>NhaTroModel.tt</DependentUpon>
+      <DependentUpon>NhaTro.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NeedFor.cs">
-      <DependentUpon>NhaTroModel.tt</DependentUpon>
+      <DependentUpon>NhaTro.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NhaTroModel.Context.cs">
+    <Compile Include="Models\NhaTro.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NhaTroModel.Context.tt</DependentUpon>
+      <DependentUpon>NhaTro.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NhaTroModel.cs">
+    <Compile Include="Models\NhaTro.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NhaTroModel.tt</DependentUpon>
+      <DependentUpon>NhaTro.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NhaTroModel.Designer.cs">
+    <Compile Include="Models\NhaTro.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NhaTroModel.edmx</DependentUpon>
+      <DependentUpon>NhaTro.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>NhaTroModel.tt</DependentUpon>
+      <DependentUpon>NhaTro.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductDetails.cs">
-      <DependentUpon>NhaTroModel.tt</DependentUpon>
+      <DependentUpon>NhaTro.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductType.cs">
-      <DependentUpon>NhaTroModel.tt</DependentUpon>
+      <DependentUpon>NhaTro.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Province.cs">
-      <DependentUpon>NhaTroModel.tt</DependentUpon>
+      <DependentUpon>NhaTro.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Street.cs">
-      <DependentUpon>NhaTroModel.tt</DependentUpon>
+      <DependentUpon>NhaTro.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>NhaTroModel.tt</DependentUpon>
+      <DependentUpon>NhaTro.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Transaction.cs">
-      <DependentUpon>NhaTroModel.tt</DependentUpon>
+      <DependentUpon>NhaTro.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>NhaTroModel.tt</DependentUpon>
+      <DependentUpon>NhaTro.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\DangTinModel.cs" />
     <Compile Include="ViewModels\DistrictModel.cs" />
+    <Compile Include="ViewModels\ImageModel.cs" />
     <Compile Include="ViewModels\Picture.cs" />
     <Compile Include="ViewModels\ProductDetailsModel.cs" />
     <Compile Include="ViewModels\ProductModel.cs" />
@@ -236,6 +237,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\image004.jpg" />
+    <Content Include="Content\images\jagica.png" />
+    <Content Include="Content\images\lao-cai-01min-3821.jpg" />
+    <Content Include="Content\images\tfd_171222030600_789772.jpg" />
     <Content Include="Content\themes\client\css\AjaxLoader.html" />
     <Content Include="Content\themes\client\css\app.css" />
     <Content Include="Content\themes\client\css\bootstrap.min.css" />
@@ -351,15 +356,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\NhaTroModel.Context.tt">
+    <Content Include="Models\NhaTro.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NhaTroModel.edmx</DependentUpon>
-      <LastGenOutput>NhaTroModel.Context.cs</LastGenOutput>
+      <DependentUpon>NhaTro.edmx</DependentUpon>
+      <LastGenOutput>NhaTro.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\NhaTroModel.tt">
+    <Content Include="Models\NhaTro.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NhaTroModel.edmx</DependentUpon>
-      <LastGenOutput>NhaTroModel.cs</LastGenOutput>
+      <DependentUpon>NhaTro.edmx</DependentUpon>
+      <LastGenOutput>NhaTro.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -429,12 +434,39 @@
     <Content Include="Content\themes\client\img\Thumbs.db" />
     <Content Include="Content\themes\client\js\wysibb\theme\fonts\wysibbiconfont-wb.eot" />
     <Content Include="Content\themes\client\js\wysibb\theme\fonts\wysibbiconfont-wb.ttf" />
-    <EntityDeploy Include="Models\NhaTroModel.edmx">
+    <Content Include="Content\images\aaaa.jpg" />
+    <Content Include="Content\images\aaaa.jpg201824151113" />
+    <Content Include="Content\images\image004.jpg201811151107" />
+    <Content Include="Content\images\image004.jpg201814151156" />
+    <Content Include="Content\images\image004.jpg201816151144" />
+    <Content Include="Content\images\image004.jpg201824151100" />
+    <Content Include="Content\images\image004.jpg201824151113" />
+    <Content Include="Content\images\image004.jpg201839171144" />
+    <Content Include="Content\images\image004.jpg201840171100" />
+    <Content Include="Content\images\jagica.png201811151108" />
+    <Content Include="Content\images\jagica.png201814151156" />
+    <Content Include="Content\images\jagica.png201815151122" />
+    <Content Include="Content\images\jagica.png201824151100" />
+    <Content Include="Content\images\jagica.png201839171107" />
+    <Content Include="Content\images\jagica.png201840171100" />
+    <Content Include="Content\images\lao-cai-01min-3821.jpg201811151108" />
+    <Content Include="Content\images\lao-cai-01min-3821.jpg201814151156" />
+    <Content Include="Content\images\lao-cai-01min-3821.jpg201824151100" />
+    <Content Include="Content\images\lao-cai-01min-3821.jpg201839171107" />
+    <Content Include="Content\images\lao-cai-01min-3821.jpg201839171138" />
+    <Content Include="Content\images\lao-cai-01min-3821.jpg201840171100" />
+    <Content Include="Content\images\tfd_171222030600_789772.jpg201811151108" />
+    <Content Include="Content\images\tfd_171222030600_789772.jpg201814151156" />
+    <Content Include="Content\images\tfd_171222030600_789772.jpg201824151100" />
+    <Content Include="Content\images\tfd_171222030600_789772.jpg201839171107" />
+    <Content Include="Content\images\tfd_171222030600_789772.jpg201839171138" />
+    <Content Include="Content\images\tfd_171222030600_789772.jpg201840171100" />
+    <EntityDeploy Include="Models\NhaTro.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NhaTroModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>NhaTro.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\NhaTroModel.edmx.diagram">
-      <DependentUpon>NhaTroModel.edmx</DependentUpon>
+    <Content Include="Models\NhaTro.edmx.diagram">
+      <DependentUpon>NhaTro.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -475,7 +507,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\" />
     <Folder Include="Views\Auth\" />
   </ItemGroup>
   <ItemGroup>

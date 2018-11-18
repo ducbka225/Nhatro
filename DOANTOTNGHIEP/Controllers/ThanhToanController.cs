@@ -27,13 +27,26 @@ namespace DOANTOTNGHIEP.Controllers
                             Balance = u.Balance,
                         }).FirstOrDefault();
 
+            var product = db.Product.OrderByDescending(p => p.Id).FirstOrDefault();
+
+            var image = (from i in db.Image
+                         join p in db.Product on i.IdProduct equals p.Id
+                         where p.Id == product.Id
+                         select new ImageModel()
+                         {
+                             IdProduct = p.Id,
+                             Link = i.Link,
+                         }).ToList();
+
             ViewBag.User = user;
+            ViewBag.Image = image;
+            ViewBag.Product = product;
             return View();
         }
 
         // thanh toán
         [HttpPost]
-        public JsonResult PostThanhToan(DateTime ExpireDate, float TotalPrice, int UserId, int IsLevel)
+        public JsonResult PostThanhToan(DateTime ExpireDate, float TotalPrice, int UserId, int IsLevel, string Image)
         {
 
             var result = false;
@@ -60,6 +73,7 @@ namespace DOANTOTNGHIEP.Controllers
                 Product productsave = product;
                 productsave.IsActive = 1;
                 productsave.IsLevel = IsLevel;
+                productsave.Image = Image;
                 db.SaveChanges();
                 
                 // RedirectToAction("ThanhToan", "ThanhToan", new { @Idproduct = _idProduct });

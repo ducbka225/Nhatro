@@ -66,6 +66,7 @@
           <Property Name="IdLocation" Type="int" />
           <Property Name="Owner" Type="nvarchar" MaxLength="50" />
           <Property Name="Phone" Type="int" />
+          <Property Name="Image" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="ProductDetails">
           <Key>
@@ -138,6 +139,8 @@
           <Property Name="Avatar" Type="nvarchar" MaxLength="100" />
           <Property Name="Balance" Type="float" />
           <Property Name="IsActive" Type="int" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_District_Province">
           <End Role="Province" Type="Self.Province" Multiplicity="1" />
@@ -401,7 +404,8 @@
           <Property Name="IdLocation" Type="Int32" />
           <Property Name="Owner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="Int32" />
-          <NavigationProperty Name="Image" Relationship="Self.FK_Image_Product" FromRole="Product" ToRole="Image" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Image1" Relationship="Self.FK_Image_Product" FromRole="Product" ToRole="Image" />
           <NavigationProperty Name="Location" Relationship="Self.FK_Product_Location" FromRole="Product" ToRole="Location" />
           <NavigationProperty Name="NeedFor" Relationship="Self.FK_Product_NeedFor" FromRole="Product" ToRole="NeedFor" />
           <NavigationProperty Name="ProductType" Relationship="Self.FK_Product_ProductType" FromRole="Product" ToRole="ProductType" />
@@ -489,6 +493,8 @@
           <Property Name="Avatar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Balance" Type="Double" />
           <Property Name="IsActive" Type="Int32" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Transaction" Relationship="Self.FK_Transaction_User" FromRole="User" ToRole="Transaction" />
         </EntityType>
         <Association Name="FK_District_Province">
@@ -753,6 +759,7 @@
                 <ScalarProperty Name="IdLocation" ColumnName="IdLocation" />
                 <ScalarProperty Name="Owner" ColumnName="Owner" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -832,6 +839,8 @@
                 <ScalarProperty Name="Avatar" ColumnName="Avatar" />
                 <ScalarProperty Name="Balance" ColumnName="Balance" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

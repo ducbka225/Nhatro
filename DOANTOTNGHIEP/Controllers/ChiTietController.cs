@@ -14,6 +14,25 @@ namespace DOANTOTNGHIEP.Controllers
         // GET: ChiTiet
         public ActionResult ChiTiet(int ProductId)
         {
+            // get user
+            //var Email = Session["Email"].ToString();
+            //var user = (from u in db.User
+            //            where u.Email == Email
+            //            select new UserModel()
+            //            {
+            //                Id = u.Id,
+            //                Balance = u.Balance,
+            //            }).FirstOrDefault();        
+
+            // get Image
+            var image = (from i in db.Image
+                         join p in db.Product on i.IdProduct equals p.Id
+                         where p.Id == ProductId
+                         select new ImageModel()
+                         {
+                             Link = i.Link,
+                         }).ToList();
+            // get details
             var details = (from p in db.Product
                            join pt in db.ProductType on p.IdProductType equals pt.Id
                            join s in db.Street on p.IdStreet equals s.Id
@@ -44,6 +63,8 @@ namespace DOANTOTNGHIEP.Controllers
                                PhoneNumber = p.Phone,                             
                            }).FirstOrDefault();
             ViewBag.Details = details;
+            ViewBag.Image = image;
+            //ViewBag.User = user;
             return View();
         }
     }

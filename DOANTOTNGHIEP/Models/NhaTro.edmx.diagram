@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f1311e02a54f491ab9bb21cada59d6fe" Name="Diagram1">
+        <EntityTypeShape EntityType="NhaTroModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NhaTroModel.District" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NhaTroModel.Image" Width="1.5" PointX="9.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NhaTroModel.Location" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NhaTroModel.NeedFor" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NhaTroModel.Product" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NhaTroModel.ProductDetails" Width="1.5" PointX="9.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NhaTroModel.ProductType" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NhaTroModel.Province" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NhaTroModel.Street" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NhaTroModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NhaTroModel.Transaction" Width="1.5" PointX="12.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NhaTroModel.User" Width="1.5" PointX="10.5" PointY="11.25" IsExpanded="true" />
+        <AssociationConnector Association="NhaTroModel.FK_District_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="NhaTroModel.FK_Street_District" ManuallyRouted="false" />
+        <AssociationConnector Association="NhaTroModel.FK_Image_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="NhaTroModel.FK_Product_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="NhaTroModel.FK_Product_NeedFor" ManuallyRouted="false" />
+        <AssociationConnector Association="NhaTroModel.FK_Product_ProductType" ManuallyRouted="false" />
+        <AssociationConnector Association="NhaTroModel.FK_Product_Street" ManuallyRouted="false" />
+        <AssociationConnector Association="NhaTroModel.FK_ProductDetails_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="NhaTroModel.FK_Transaction_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="NhaTroModel.FK_Transaction_Product1" ManuallyRouted="false" />
+        <AssociationConnector Association="NhaTroModel.FK_Transaction_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

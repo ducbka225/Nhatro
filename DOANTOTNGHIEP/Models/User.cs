@@ -27,6 +27,8 @@ namespace DOANTOTNGHIEP.Models
         public string Avatar { get; set; }
         public Nullable<double> Balance { get; set; }
         public Nullable<int> IsActive { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
+        public string Address { get; set; }
     
         public virtual ICollection<Transaction> Transaction { get; set; }
     }

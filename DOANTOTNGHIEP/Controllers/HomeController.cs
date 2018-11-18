@@ -29,6 +29,7 @@ namespace DOANTOTNGHIEP.Controllers
                                Islevel = p.IsLevel,
                                ProducType = pt.Name,
                                District = dt.Name,
+                               Image = p.Image,
                            }).ToList();
             ViewBag.ListAll = listAll;
 
@@ -37,7 +38,7 @@ namespace DOANTOTNGHIEP.Controllers
                            join pt in db.ProductType on p.IdProductType equals pt.Id
                            join s in db.Street on p.IdStreet equals s.Id
                            join dt in db.District on s.IdDistrict equals dt.Id
-                           where p.IsActive == 1 && pt.Id == 1
+                          where p.IsActive == 1 && pt.Id == 1
                            select new ProductModel
                            {
                                Id = p.Id,
@@ -48,6 +49,7 @@ namespace DOANTOTNGHIEP.Controllers
                                Islevel = p.IsLevel,
                                ProducType = pt.Name,
                                District = dt.Name,
+                               Image = p.Image
                            }).ToList();
             ViewBag.NhaTro = NhaTro;
 
@@ -56,7 +58,7 @@ namespace DOANTOTNGHIEP.Controllers
                           join pt in db.ProductType on p.IdProductType equals pt.Id
                           join s in db.Street on p.IdStreet equals s.Id
                           join dt in db.District on s.IdDistrict equals dt.Id
-                          where p.IsActive == 1 && pt.Id == 4
+                            where p.IsActive == 1 && pt.Id == 4
                           select new ProductModel
                           {
                               Id = p.Id,
@@ -67,6 +69,7 @@ namespace DOANTOTNGHIEP.Controllers
                               Islevel = p.IsLevel,
                               ProducType = pt.Name,
                               District = dt.Name,
+                              Image = p.Image
                           }).ToList();
             ViewBag.NhaNguyencan = NhaNguyencan;
 
@@ -75,7 +78,7 @@ namespace DOANTOTNGHIEP.Controllers
                           join pt in db.ProductType on p.IdProductType equals pt.Id
                           join s in db.Street on p.IdStreet equals s.Id
                           join dt in db.District on s.IdDistrict equals dt.Id
-                          where p.IsActive == 1 && pt.Id == 5
+                            where p.IsActive == 1 && pt.Id == 5
                           select new ProductModel
                           {
                               Id = p.Id,
@@ -86,6 +89,7 @@ namespace DOANTOTNGHIEP.Controllers
                               Islevel = p.IsLevel,
                               ProducType = pt.Name,
                               District = dt.Name,
+                              Image = p.Image
                           }).ToList();
             ViewBag.VanPhong = VanPhong;
 
@@ -94,7 +98,7 @@ namespace DOANTOTNGHIEP.Controllers
                           join pt in db.ProductType on p.IdProductType equals pt.Id
                           join s in db.Street on p.IdStreet equals s.Id
                           join dt in db.District on s.IdDistrict equals dt.Id
-                          where p.IsActive == 1 && pt.Id == 3
+                           where p.IsActive == 1 && pt.Id == 3
                           select new ProductModel
                           {
                               Id = p.Id,
@@ -105,6 +109,7 @@ namespace DOANTOTNGHIEP.Controllers
                               Islevel = p.IsLevel,
                               ProducType = pt.Name,
                               District = dt.Name,
+                              Image = p.Image
                           }).ToList();
             ViewBag.ChungCu = ChungCu;
             return View();

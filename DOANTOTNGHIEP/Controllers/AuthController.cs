@@ -26,9 +26,11 @@ namespace DOANTOTNGHIEP.Controllers
                     var obj = db.User.Where(a => a.Email == email && a.Password == password).FirstOrDefault();
                     if (obj != null)
                     {
-                        Session["UserID"] = obj.Id.ToString();
+                        Session["UserID"] = Convert.ToInt32(obj.Id.ToString());
                         Session["UserName"] = obj.LoginId.ToString();
                         Session["Email"] = obj.Email.ToString();
+                        Session["Balance"] = obj.Balance;
+
                         result = true;
                     }
                     else

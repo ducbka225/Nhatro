@@ -4,8 +4,53 @@
     Layout = "~/Views/Layout/_LayoutNhatro.cshtml";
 
     var user = @ViewBag.User;
+    var product = ViewBag.Product;
 }
 <div class="container" style="margin-top: 20px;">
+    <div class="group_fields_body col-md-12">
+        <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Thông tin Bài Viết </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Chủ Nhà</th>
+                    <th>Số Điện thoại</th>
+                    <th>Giá Phòng</th>
+                    <th>Diện tích</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@product.Title</td>
+                    <td>@product.Owner</td>
+                    <td>+84 @product.Phone</td>
+                    <td>@product.Price Vnđ</td>
+                    <td>@product.Acreage m2</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Hình Ảnh</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @foreach (var item in ViewBag.Image)
+                        {
+                            <div style="float:left">
+                                <img src="~/Content/images/@item.Link" class="img-rounded" alt="Cinque Terre" width="150" height="100">
+                                <br />
+                                <input type="radio" name="linkimage" value="@item.Link" />
+                            </div>
+                        }
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <div class="group_fields_body col-md-8">
         <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Bảng giá đăng tin</div>
         <div class="table-responsive">
@@ -136,7 +181,7 @@
                     </tr>
                     <tr>
                         <td>Đơn giá:</td>
-                        <td class="js-package-price"></td> 
+                        <td class="js-package-price"></td>
                     </tr>
                     <tr>
                         <td>Số ngày:</td>
@@ -283,6 +328,7 @@
             var TotalPrice = $(".js-package-grand-total").html();
             var UserId = @user.Id;
             var IsLevel = $("#package_id").val();
+            var Image = $("input[name='linkimage']:checked").val();
             if (@user.Balance < TotalPrice ) {
                 alert('Tài Khoản bạn không đủ');
             }
@@ -297,6 +343,7 @@
                     TotalPrice: TotalPrice,
                     UserId: UserId,
                     IsLevel: IsLevel,
+                    Image: Image,
                 })
             }).success(function (response) {
                 if (response.result == true) {

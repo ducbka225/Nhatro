@@ -16,7 +16,7 @@ namespace DOANTOTNGHIEP.Models
     {
         public Product()
         {
-            this.Image = new HashSet<Image>();
+            this.Image1 = new HashSet<Image>();
             this.ProductDetails = new HashSet<ProductDetails>();
             this.Transaction = new HashSet<Transaction>();
             this.Transaction1 = new HashSet<Transaction>();
@@ -36,8 +36,9 @@ namespace DOANTOTNGHIEP.Models
         public Nullable<int> IdLocation { get; set; }
         public string Owner { get; set; }
         public Nullable<int> Phone { get; set; }
+        public string Image { get; set; }
     
-        public virtual ICollection<Image> Image { get; set; }
+        public virtual ICollection<Image> Image1 { get; set; }
         public virtual Location Location { get; set; }
         public virtual NeedFor NeedFor { get; set; }
         public virtual ProductType ProductType { get; set; }

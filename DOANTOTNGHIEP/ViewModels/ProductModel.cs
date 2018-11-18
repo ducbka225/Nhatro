@@ -14,6 +14,7 @@ namespace DOANTOTNGHIEP.Models
         public int? IsActive { get; set; }
         public int? Islevel { get; set; }
         public string ProducType { get; set; }
-        public string District { get; set; }   
+        public string District { get; set; }
+        public string Image { get; set; }
     }
 }
