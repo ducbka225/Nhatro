@@ -140,16 +140,16 @@ namespace DOANTOTNGHIEP.Controllers
             for (int i = 0; i < files.Count; i++)
             {
                 HttpPostedFileBase file = files[i];
-                file.SaveAs(path + file.FileName + DateTime.Now.ToString("yyyymmddMMss"));
+                file.SaveAs(path + DateTime.Now.ToString("yyyymmddMMss") + file.FileName);
 
                 try
                 {
                     Image image = new Image();
-                    image.Link = "~/Content/images/" + file.FileName + DateTime.Now.ToString("yyyymmddMMss");
+                    image.Link = DateTime.Now.ToString("yyyymmddMMss") + file.FileName;
                     image.IdProduct = 5;
                     db.Image.Add(image);
                     db.SaveChanges();
-                    result = files.Count + " Đã Upload!";
+                    result = " Đã Upload " + files.Count + "Ảnh";
                 }
 
                 catch

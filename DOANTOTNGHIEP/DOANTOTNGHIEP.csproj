@@ -168,58 +168,58 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs">
-      <DependentUpon>NhaTro.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\District.cs">
-      <DependentUpon>NhaTro.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Image.cs">
-      <DependentUpon>NhaTro.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Location.cs">
-      <DependentUpon>NhaTro.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NeedFor.cs">
-      <DependentUpon>NhaTro.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NhaTro.Context.cs">
+    <Compile Include="Models\NhaTroModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NhaTro.Context.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NhaTro.cs">
+    <Compile Include="Models\NhaTroModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NhaTro.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NhaTro.Designer.cs">
+    <Compile Include="Models\NhaTroModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NhaTro.edmx</DependentUpon>
+      <DependentUpon>NhaTroModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>NhaTro.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductDetails.cs">
-      <DependentUpon>NhaTro.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductType.cs">
-      <DependentUpon>NhaTro.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Province.cs">
-      <DependentUpon>NhaTro.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Street.cs">
-      <DependentUpon>NhaTro.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>NhaTro.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Transaction.cs">
-      <DependentUpon>NhaTro.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>NhaTro.tt</DependentUpon>
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\DangTinModel.cs" />
     <Compile Include="ViewModels\DistrictModel.cs" />
@@ -356,15 +356,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\NhaTro.Context.tt">
+    <Content Include="Models\NhaTroModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NhaTro.edmx</DependentUpon>
-      <LastGenOutput>NhaTro.Context.cs</LastGenOutput>
+      <DependentUpon>NhaTroModel.edmx</DependentUpon>
+      <LastGenOutput>NhaTroModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\NhaTro.tt">
+    <Content Include="Models\NhaTroModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NhaTro.edmx</DependentUpon>
-      <LastGenOutput>NhaTro.cs</LastGenOutput>
+      <DependentUpon>NhaTroModel.edmx</DependentUpon>
+      <LastGenOutput>NhaTroModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -461,12 +461,12 @@
     <Content Include="Content\images\tfd_171222030600_789772.jpg201839171107" />
     <Content Include="Content\images\tfd_171222030600_789772.jpg201839171138" />
     <Content Include="Content\images\tfd_171222030600_789772.jpg201840171100" />
-    <EntityDeploy Include="Models\NhaTro.edmx">
+    <EntityDeploy Include="Models\NhaTroModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NhaTro.Designer.cs</LastGenOutput>
+      <LastGenOutput>NhaTroModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\NhaTro.edmx.diagram">
-      <DependentUpon>NhaTro.edmx</DependentUpon>
+    <Content Include="Models\NhaTroModel.edmx.diagram">
+      <DependentUpon>NhaTroModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

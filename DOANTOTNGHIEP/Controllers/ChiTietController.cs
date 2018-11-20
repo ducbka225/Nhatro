@@ -67,5 +67,27 @@ namespace DOANTOTNGHIEP.Controllers
             //ViewBag.User = user;
             return View();
         }
+
+        // Lưu tin
+        [HttpPost]
+        public JsonResult LuuTin(string email)
+        {
+            var result = false;
+            if (ModelState.IsValid)
+            {
+                var user = (from u in db.User
+                            where u.Email == email
+                            select u).FirstOrDefault();
+                //save User
+                User usersave = user;
+                usersave.Balance = user.Balance - 5000;
+                db.SaveChanges();
+                result = true;
+            }
+
+            return Json(new { result }, JsonRequestBehavior.AllowGet);
+        }
+
+
     }
 }

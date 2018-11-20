@@ -149,11 +149,9 @@
                             $("#luutin").click(function () {
                                 var r = confirm("Bạn phải trả 5000đ để lưu tin!");
                                 if (r == true) {
-                                    $("#hiddenPhone").show();
-                                    $("#showPhone").hide();
                                     var email = $("#ssemail").val();
                                     var balance = $("#balance").val();
-                                    if (balance < 5000000) {
+                                    if (balance < 5000) {
                                         alert('Tài Khoản bạn không đủ');
                                     }
 
@@ -169,6 +167,8 @@
                                         if (response.result == true) {
                                             alert("Đã Lưu Tin");
                                             $("#luutin").attr('disabled', 'disabled');
+                                            $("#hiddenPhone").show();
+                                            $("#showPhone").hide();
                                         }
 
                                         else {

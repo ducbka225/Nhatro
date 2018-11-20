@@ -31,7 +31,7 @@ namespace DOANTOTNGHIEP.Controllers
 
             var image = (from i in db.Image
                          join p in db.Product on i.IdProduct equals p.Id
-                         where p.Id == product.Id
+                         where p.Id == 5
                          select new ImageModel()
                          {
                              IdProduct = p.Id,

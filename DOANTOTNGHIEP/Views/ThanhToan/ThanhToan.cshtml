@@ -205,6 +205,9 @@
     </div>
 </div>
 
+<input type="hidden" id="ssemail" value="@Session["Email"]" />
+<input type="hidden" id="balance" value="@Session["Balance"]" />
+
 <script>
     $(document).ready(function () {
         $("#byweek").hide();
@@ -320,8 +323,8 @@
             $(".js-package-deadline").append(today);
 
 
-        }); 
-        
+        });
+
         // click button
         $("#thanhtoan").click(function () {
             var ExpireDate = $(".js-package-deadline").html();
@@ -329,38 +332,42 @@
             var UserId = @user.Id;
             var IsLevel = $("#package_id").val();
             var Image = $("input[name='linkimage']:checked").val();
-            if (@user.Balance < TotalPrice ) {
+
+            var balance = $("#balance").val();
+            if (balance < TotalPrice) {
                 alert('Tài Khoản bạn không đủ');
             }
 
-            $.ajax({
-                type: 'POST',
-                url: "/ThanhToan/PostThanhToan/",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                data: JSON.stringify({
-                    ExpireDate: ExpireDate,
-                    TotalPrice: TotalPrice,
-                    UserId: UserId,
-                    IsLevel: IsLevel,
-                    Image: Image,
-                })
-            }).success(function (response) {
-                if (response.result == true) {
-                    alert("Thành Công!");
-                    window.location.href = '/Home/Index';
-                }
+            else {
+                $.ajax({
+                    type: 'POST',
+                    url: "/ThanhToan/PostThanhToan/",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify({
+                        ExpireDate: ExpireDate,
+                        TotalPrice: TotalPrice,
+                        UserId: UserId,
+                        IsLevel: IsLevel,
+                        Image: Image,
+                    })
+                }).success(function (response) {
+                    if (response.result == true) {
+                        alert("Thành Công!");
+                        window.location.href = '/Home/Index';
+                    }
 
-                else {
-                    alert("Thất Bại");
-                }
-            }).error(function () {
-                alert("Lỗi serve!");
-                window.location.reload();
-            });
+                    else {
+                        alert("Thất Bại");
+                    }
+                }).error(function () {
+                    alert("Lỗi serve!");
+                    window.location.reload();
+                });
+            }
+            
         });
     })
 
-   
 
 </script>

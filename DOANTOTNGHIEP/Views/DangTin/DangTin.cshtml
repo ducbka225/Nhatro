@@ -1010,54 +1010,57 @@
                         alert('Vui long nhập tiêu đề');
                     }
 
-                    if (phone.length == 0) {
+                    else if (phone.length == 0) {
                         alert('Vui long nhập Số điện thoại');
                     }
 
-                    if (price.length == 0) {
+                    else if (price.length == 0) {
                         alert('Vui long nhập giá');
                     }
 
-                    if (addressDetails.length == 0) {
+                    else if (addressDetails.length == 0) {
                         alert('Vui long nhập Địa chỉ');
                     }
 
-                    $.ajax({
-                        type: 'POST',
-                        url: "/DangTin/DangTin/",
-                        contentType: "application/json; charset=utf-8",
-                        dataType: "json",
-                        data: JSON.stringify({
-                            need: need,
-                            type: type,
-                            title: title,
-                            phone: phone,
-                            price: price,
-                            acreage: acreage,
-                            province: province,
-                            district: district,
-                            street: street,
-                            addressDetails: addressDetails,
-                            floor: floor,
-                            wc: wc,
-                            numberPeople: numberPeople,
-                            priceElectric: priceElectric,
-                            priceWater: priceWater,
-                            description: description
+                    else {
+                        $.ajax({
+                            type: 'POST',
+                            url: "/DangTin/DangTin/",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            data: JSON.stringify({
+                                need: need,
+                                type: type,
+                                title: title,
+                                phone: phone,
+                                price: price,
+                                acreage: acreage,
+                                province: province,
+                                district: district,
+                                street: street,
+                                addressDetails: addressDetails,
+                                floor: floor,
+                                wc: wc,
+                                numberPeople: numberPeople,
+                                priceElectric: priceElectric,
+                                priceWater: priceWater,
+                                description: description
 
-                        })
-                    }).success(function (response) {
-                        if (response.result == true) {
-                            window.location.href = '/ThanhToan/ThanhToan'
-                        }
+                            })
+                        }).success(function (response) {
+                            if (response.result == true) {
+                                window.location.href = '/ThanhToan/ThanhToan'
+                            }
 
-                        else {
-                            alert("Đăng ký Thất bại");
-                        }
-                    }).error(function () {
-                        alert("Lỗi serve!");
-                        window.location.reload();
-                    });
+                            else {
+                                alert("Đăng ký Thất bại");
+                            }
+                        }).error(function () {
+                            alert("Lỗi serve!");
+                           
+                        });
+                    }
+                    
                 });
 
                 //
