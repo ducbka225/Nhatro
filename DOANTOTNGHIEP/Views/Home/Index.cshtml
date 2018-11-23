@@ -44,7 +44,7 @@
                                                 <div class="col-sm-6 col-md-4 thumbnail-item">
                                                     <div class="thumbnail">
                                                         <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
-                                                            <img src="~/Content/images/@item.Image" alt="" class="cover img-reponsive">
+                                                            <img src="~/Content/images/@item.Image" alt="" class="cover img-reponsive" style="height: 170px;">
                                                         </a>
                                                         <div class="room-item-price">
                                                             <a href="#">@item.Price /tháng</a>
@@ -52,6 +52,7 @@
                                                         <div class="caption">
                                                             <div class="title">
                                                                 <h2><a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})">@item.Title</a></h2>
+                                                                <h2><a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})">@item.Price / tháng</a></h2>
                                                             </div>
                                                             <div class="extra">
                                                                 <div class="pull-left">

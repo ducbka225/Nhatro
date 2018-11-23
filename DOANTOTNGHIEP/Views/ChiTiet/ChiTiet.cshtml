@@ -21,10 +21,6 @@
                             <a href="javascript: void(0);"><h1>@productDetail.Title </h1></a>
                         </div>
                         <div class="social">
-                            <div class="pull-left facebook">
-                                <span> <div class="fb-like fb_iframe_widget" data-href="#" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=464576090336755&amp;container_width=0&amp;href=http%3A%2F%2Fphongtot.vn%2Fchung-cu-can-ho%2Fcan-cho-thue-ch-citygarden-3pn-145m2-full-nt-gia-43trthang&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=false"><span style="vertical-align: bottom; width: 106px; height: 20px;"><iframe name="f1cc68ab1a6ce98" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/v2.5/plugins/like.php?action=like&amp;app_id=464576090336755&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2F__Bz3h5RzMx.js%3Fversion%3D42%23cb%3Df36258e83ae786c%26domain%3Dphongtot.vn%26origin%3Dhttp%253A%252F%252Fphongtot.vn%252Ff3076214d6bfbcc%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2Fphongtot.vn%2Fchung-cu-can-ho%2Fcan-cho-thue-ch-citygarden-3pn-145m2-full-nt-gia-43trthang&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=false" style="border: none; visibility: visible; width: 106px; height: 20px;" class=""></iframe></span></div></span>
-                                <span> <div class="fb-send" data-href="#"></div></span>
-                            </div>
                             <div class="pull-left gplus">
                                 <span>
                                     <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1540183260508" name="I0_1540183260508" src="#" data-gapiattached="true" title="G+"></iframe></div>
@@ -40,7 +36,9 @@
                                 <div class="col-md-8 left-info no-padding-right">
                                     <div class="address">
                                         <span class="btn info-label">Địa chỉ</span>
-                                        <a class="" href="#">@productDetail.LocationName</a>
+                                      
+                                        <a class="" href="#">@productDetail.District</a> 
+                                        <a class="hiddenPhone" href="#"> -  @productDetail.LocationName</a>
                                     </div>
                                     <div class="size">
                                         <span class="btn info-label">Diện tích</span>
@@ -56,7 +54,7 @@
                                     </div>
                                     <div class="bed-room">
                                         <span class="btn info-label">Phòng ngủ</span>
-                                        <a href="" class="btn info-data">@productDetail.BedRoomNumber</a>
+                                        <a href="" class="btn info-data">@productDetail.BedRoomNumber phòng</a>
                                         <span class="btn info-label">Hướng nhà</span>
                                         <a href="">Đông nam</a>
                                     </div>
@@ -80,14 +78,14 @@
                                     </div>
                                     <div class="info-phone">
                                         <a id="showPhone"><span class="fa fa-mobile-phone"></span>Bấm lưu tin để hiện số điện thoại</a>
-                                        <a id="hiddenPhone"><span class="fa fa-mobile-phone"></span>@productDetail.PhoneNumber</a>
+                                        <a class="hiddenPhone"><span class="fa fa-mobile-phone"></span>@productDetail.PhoneNumber</a>
                                     </div>
                                     <div class="info-feedback">
                                         @if (Session["UserName"] != null)
                                         {
                                             <a class="btn btn-report-room clearfix" href="#tab_auth_login" data-toggle="modal" data-target="#modal_auth">Phản hồi tình trạng</a>
-                                            <a class="btn btn-save-room clearfix" href="#" id="luutin">Lưu tin</a>
                                         }
+                                        <a class="btn btn-save-room clearfix" href="#" id="luutin">Lưu tin</a>
 
                                     </div>
                                 </div>
@@ -145,39 +143,46 @@
                     <script type="text/javascript">
                         $(document).ready(function () {
                             // show phonenumber
-                            $("#hiddenPhone").hide();
+                            $(".hiddenPhone").hide();
                             $("#luutin").click(function () {
                                 var r = confirm("Bạn phải trả 5000đ để lưu tin!");
                                 if (r == true) {
                                     var email = $("#ssemail").val();
                                     var balance = $("#balance").val();
-                                    if (balance < 5000) {
-                                        alert('Tài Khoản bạn không đủ');
+
+                                    if (email.length == 0) {
+                                        alert('Bạn phải đăng nhập!');
+                                    }
+                                    else if (balance < 5000) {
+                                        alert('Tài Khoản bạn không đủ!');
                                     }
 
-                                    $.ajax({
-                                        type: 'POST',
-                                        url: "/ChiTiet/LuuTin/",
-                                        contentType: "application/json; charset=utf-8",
-                                        dataType: "json",
-                                        data: JSON.stringify({
-                                            email: email
-                                        })
-                                    }).success(function (response) {
-                                        if (response.result == true) {
-                                            alert("Đã Lưu Tin");
-                                            $("#luutin").attr('disabled', 'disabled');
-                                            $("#hiddenPhone").show();
-                                            $("#showPhone").hide();
-                                        }
+                                    else {
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: "/ChiTiet/LuuTin/",
+                                            contentType: "application/json; charset=utf-8",
+                                            dataType: "json",
+                                            data: JSON.stringify({
+                                                email: email
+                                            })
+                                        }).success(function (response) {
+                                            if (response.result == true) {
+                                                alert("Đã Lưu Tin");
+                                                $("#luutin").attr('disabled', 'disabled');
+                                                $(".hiddenPhone").show();
+                                                $("#showPhone").hide();
+                                            }
 
-                                        else {
-                                            alert("Tài Khoản Bạn Không đủ");
-                                        }
-                                    }).error(function () {
-                                        alert("Lỗi serve!");
-                                        window.location.reload();
-                                    });
+                                            else {
+                                                alert("Tài Khoản Bạn Không đủ");
+                                            }
+                                        }).error(function () {
+                                            alert("Lỗi serve!");
+                                            window.location.reload();
+                                        });
+                                    }
+                                    
                                 }
                             });
                         });

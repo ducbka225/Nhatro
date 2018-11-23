@@ -154,10 +154,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Admin_addProductController.cs" />
+    <Compile Include="Controllers\Admin_addUserController.cs" />
+    <Compile Include="Controllers\Admin_DashBoardController.cs" />
+    <Compile Include="Controllers\Admin_editProductController.cs" />
+    <Compile Include="Controllers\Admin_listProductController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\ChiTietController.cs" />
     <Compile Include="Controllers\DangTinController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListUserController.cs" />
     <Compile Include="Controllers\LoginAdminController.cs" />
     <Compile Include="Controllers\PhongTroController.cs" />
     <Compile Include="Controllers\SuaTinController.cs" />
@@ -1237,6 +1243,12 @@
     <Content Include="Views\SuaTin\SuaTin.cshtml" />
     <Content Include="Views\Admin\layout_admin\_LayoutAdmin.cshtml" />
     <Content Include="Views\LoginAdmin\LoginAdmin.cshtml" />
+    <Content Include="Views\ListUser\ListUser.cshtml" />
+    <Content Include="Views\Admin_listProduct\listProduct.cshtml" />
+    <Content Include="Views\Admin_addProduct\addProduct.cshtml" />
+    <Content Include="Views\Admin_editProduct\editProduct.cshtml" />
+    <Content Include="Views\Admin_DashBoard\DashBoard.cshtml" />
+    <Content Include="Views\Admin_addUser\addUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
