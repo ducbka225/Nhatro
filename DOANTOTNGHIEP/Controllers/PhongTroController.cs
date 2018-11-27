@@ -1,5 +1,6 @@
 ﻿using DOANTOTNGHIEP.Models;
 using DOANTOTNGHIEP.ViewModels;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace DOANTOTNGHIEP.Controllers
     {
         NhaTroEntities db = new NhaTroEntities(); 
 
-        public ActionResult PhongTro(int ProductTypeId)
+        public ActionResult PhongTro(int ProductTypeId, int? page)
         {
             var productType = (from pt in db.ProductType
                                where pt.Id == ProductTypeId
@@ -20,6 +21,10 @@ namespace DOANTOTNGHIEP.Controllers
                                {
                                    Name = pt.Name
                                }).FirstOrDefault();
+
+            if (page == null) page = 1;
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
 
             var Product = (from p in db.Product
                           join pt in db.ProductType on p.IdProductType equals pt.Id
@@ -36,10 +41,12 @@ namespace DOANTOTNGHIEP.Controllers
                               Islevel = p.IsLevel,
                               ProducType = pt.Name,
                               District = dt.Name,
-                          }).ToList();
+                              Image = p.Image,
+                              CreatedDate = p.CreatedDate,
+                          }).OrderBy(x => x.Id);
 
             ViewBag.ProductType = productType;
-            ViewBag.Product = Product;
+            ViewBag.Product = Product.ToPagedList(pageNumber, pageSize);
 
             return View();
         }

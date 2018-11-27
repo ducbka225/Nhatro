@@ -50,6 +50,12 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -166,6 +172,7 @@
     <Compile Include="Controllers\ListUserController.cs" />
     <Compile Include="Controllers\LoginAdminController.cs" />
     <Compile Include="Controllers\PhongTroController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SuaTinController.cs" />
     <Compile Include="Controllers\ThanhToanController.cs" />
     <Compile Include="Controllers\TinDaDangController.cs" />
@@ -680,6 +687,7 @@
     <Content Include="Content\images\jagica.png" />
     <Content Include="Content\images\lao-cai-01min-3821.jpg" />
     <Content Include="Content\images\tfd_171222030600_789772.jpg" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\themes\client\css\AjaxLoader.html" />
     <Content Include="Content\themes\client\css\app.css" />
     <Content Include="Content\themes\client\css\bootstrap.min.css" />
@@ -1249,6 +1257,7 @@
     <Content Include="Views\Admin_editProduct\editProduct.cshtml" />
     <Content Include="Views\Admin_DashBoard\DashBoard.cshtml" />
     <Content Include="Views\Admin_addUser\addUser.cshtml" />
+    <Content Include="Views\Search\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

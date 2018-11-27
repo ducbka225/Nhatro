@@ -1,9 +1,7 @@
 ﻿
 @{
-    ViewBag.Title = "PhongTro";
+    ViewBag.Title = "Search";
     Layout = "~/Views/Layout/_LayoutNhatro.cshtml";
-    var ProductType = @ViewBag.ProductType;
-    var product = @ViewBag.Product;
 }
 
 <div class="container">
@@ -14,52 +12,52 @@
                     <div class="pt-breadcrumb">
                         <ol class="breadcrumb">
                             <li><a href="#">Trang chủ</a></li>
-                            <li class="active">@ProductType.Name</li>
+                            <li class="active">Tìm Kiếm</li>
                         </ol>
                     </div><div class="room-list-category">
                         <div class="pull-left">
-                            <a href=""><h3><span>@ProductType.Name</span> <i class="fa fa-angle-right"></i></h3></a>
+                            <a href=""><h3><span>Kết Quả Tìm Kiếm</span> <i class="fa fa-angle-right"></i></h3></a>
                         </div>
                         @*<div class="pull-right">
-                            <form id="order_form" class="form-inline form-oder-category" method="post" action="#">
-                                <input type="hidden" name="_token" value="7GSbASzO7NQ8MKYGsTbABtkVYBe05nHbfcbqpIpb">
-                                <div class="form-group">
-                                    <div class="btn btn-select btn-select-light">
-                                        <span class="btn-select-value">Chọn thành phố</span>
-                                        <span class="btn-select-arrow fa fa-angle-down"></span>
-                                        <ul>
-                                            <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=1">Hà Nội</a></li>
-                                            <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=31">Hải Phòng</a></li>
-                                            <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=48">Đà Nẵng</a></li>
-                                            <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=79">Hồ Chí Minh</a></li>
-                                            <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=92">Cần Thơ</a></li>
-                                        </ul>
+                                <form id="order_form" class="form-inline form-oder-category" method="post" action="#">
+                                    <input type="hidden" name="_token" value="7GSbASzO7NQ8MKYGsTbABtkVYBe05nHbfcbqpIpb">
+                                    <div class="form-group">
+                                        <div class="btn btn-select btn-select-light">
+                                            <span class="btn-select-value">Chọn thành phố</span>
+                                            <span class="btn-select-arrow fa fa-angle-down"></span>
+                                            <ul>
+                                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=1">Hà Nội</a></li>
+                                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=31">Hải Phòng</a></li>
+                                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=48">Đà Nẵng</a></li>
+                                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=79">Hồ Chí Minh</a></li>
+                                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=92">Cần Thơ</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <a class="btn btn-select btn-select-light btn-oder-price">
-                                        <input type="hidden" class="btn-select-input" id="price" name="price" value="null">
-                                        <span class="btn-select-value">Sắp xếp giá</span>
-                                        <span class="btn-select-arrow fa fa-angle-down"></span>
-                                        <ul>
-                                            <li class="get_price">Giá tăng dần</li>
-                                            <li class="get_price">Giá giảm dần</li>
-                                        </ul>
-                                    </a>
-                                </div>
-                                <div class="form-group">
-                                    <a class="btn btn-select btn-select-light btn-oder-time">
-                                        <input type="hidden" class="btn-select-input" id="time" name="time" value="">
-                                        <span class="btn-select-value">Sắp xếp thời gian</span>
-                                        <span class="btn-select-arrow fa fa-angle-down"></span>
-                                        <ul>
-                                            <li class="get_time">Cũ nhất</li>
-                                            <li class="get_time">Mới nhất</li>
-                                        </ul>
-                                    </a>
-                                </div>
-                            </form>
-                        </div>*@
+                                    <div class="form-group">
+                                        <a class="btn btn-select btn-select-light btn-oder-price">
+                                            <input type="hidden" class="btn-select-input" id="price" name="price" value="null">
+                                            <span class="btn-select-value">Sắp xếp giá</span>
+                                            <span class="btn-select-arrow fa fa-angle-down"></span>
+                                            <ul>
+                                                <li class="get_price">Giá tăng dần</li>
+                                                <li class="get_price">Giá giảm dần</li>
+                                            </ul>
+                                        </a>
+                                    </div>
+                                    <div class="form-group">
+                                        <a class="btn btn-select btn-select-light btn-oder-time">
+                                            <input type="hidden" class="btn-select-input" id="time" name="time" value="">
+                                            <span class="btn-select-value">Sắp xếp thời gian</span>
+                                            <span class="btn-select-arrow fa fa-angle-down"></span>
+                                            <ul>
+                                                <li class="get_time">Cũ nhất</li>
+                                                <li class="get_time">Mới nhất</li>
+                                            </ul>
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>*@
                         <div class="clearfix"></div>
                         <hr>
                     </div>
@@ -112,7 +110,7 @@
                                                 </div>
                                                 <div class="pull-right item-info-date">
                                                     <a>
-                                                       @item.CreatedDate
+                                                        @item.CreatedDate
                                                     </a>
                                                 </div>
                                                 <div class="item-info-vs">
@@ -155,9 +153,9 @@
                     </script>
                     <!-- Thêm mã phân trang -->
                     <br />
-                    Trang @(product.PageCount < product.PageNumber ? 0 : product.PageNumber) / @product.PageCount
+                    @*Trang @(product.PageCount < product.PageNumber ? 0 : product.PageNumber) / @product.PageCount*@
 
-                   
+
                     <!-- Kết thúc -->
                     <div class="row">
                         <div class="col-md-12">
@@ -256,7 +254,7 @@
                     </div>
                 </div>
             </div>
-                                    
+
             <div class="row">
                 <div class="col-sm-6 col-md-12 sidebar-ads">
                     <img class="img-responsive" src="http://ngoaingu.net/themes/client/img/ads1.png" alt="">
@@ -286,9 +284,10 @@
                     <div class="clearfix"></div>
                     <hr>
                 </div>
-                
+
             </div>
         </div>
     </div>
 </div>
+
 

@@ -5,12 +5,12 @@
 
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 search-bar">
-            <form class="form" action="" method="GET">
+            <form action="@Url.Action("Search", "Search")" method="post">
                 <div class="group-arena pull-left">
                     <div class="group-title">Chọn khu vực</div>
-                    <input class="ip-room-where" type="text" name="k" placeholder="Bạn muốn tìm phòng ở đâu ?">
+                    <input class="ip-room-where" id="location" type="text" name="location" placeholder="Bạn muốn tìm phòng ở đâu ?">
                     <a class="btn btn-select btn-select-light btn-select-city">
-                        <input type="hidden" class="btn-select-input" id="province" name="province" value="" />
+                        <input type="hidden" class="btn-select-input" id="province" name="province" value="1" />
                         <span class="btn-select-value">Thành Phố</span>
                         <span class='btn-select-arrow fa fa-angle-down'></span>
                         <ul>
@@ -22,15 +22,15 @@
                         </ul>
                     </a>
                     <a class="btn btn-select btn-select-light btn-select-city">
-                        <input type="hidden" class="btn-select-input" id="province" name="province" value="" />
+                        <input type="hidden" class="btn-select-input" id="district" name="district" value="1" />
                         <span class="btn-select-value">Phường -Quận</span>
                         <span class='btn-select-arrow fa fa-angle-down'></span>
                         <ul>
-                            <li class="province" value="1">Hai Bà Tưng</li>
-                            <li class="province" value="31">Hoàng Mai</li>
-                            <li class="province" value="48">Bách Khoa</li>
-                            <li class="province" value="79">Minh Khai</li>
-                            <li class="province" value="92">Cầu Giấy</li>
+                            <li class="district" value="1">Hai Bà Tưng</li>
+                            <li class="district" value="31">Hoàng Mai</li>
+                            <li class="district" value="48">Bách Khoa</li>
+                            <li class="district" value="79">Minh Khai</li>
+                            <li class="district" value="92">Cầu Giấy</li>
                         </ul>
                     </a>
                 </div>
@@ -38,32 +38,26 @@
                 <div class="group-arena pull-left">
                     <div class="group-title">Diện Tích</div>
                     <a class="btn btn-select btn-select-light btn-select-city">
-                        <input type="hidden" class="btn-select-input" id="province" name="province" value="" />
+                        <input type="hidden" class="btn-select-input" id="dientich" name="dientich" value="1" />
                         <span class="btn-select-value">Chọn diện tích</span>
                         <span class='btn-select-arrow fa fa-angle-down'></span>
                         <ul>
-                            <li class="province" value="1">Dưới 20m2</li>
-                            <li class="province" value="31">20m2 - 30m2</li>
-                            <li class="province" value="48">30m2 - 40m2</li>
-                            <li class="province" value="79">40m2 - 50m2</li>
-                            <li class="province" value="92">Trên 50m2</li>
+                            <li class="dientich" value="1">Dưới 20m2</li>
+                            <li class="dientich" value="2">20m2 - 30m2</li>
+                            <li class="dientich" value="3">Trên 30m2</li>
                         </ul>
                     </a>
                 </div>
                 <div class="group-arena pull-left" style="height: 172px">
                     <div class="group-title">Chọn khoảng giá</div>
                     <a class="btn btn-select btn-select-light btn-select-city">
-                        <input type="hidden" class="btn-select-input" id="province" name="province" value="" />
+                        <input type="hidden" class="btn-select-input" id="price" name="price" value="1" />
                         <span class="btn-select-value">Chọn Giá</span>
                         <span class='btn-select-arrow fa fa-angle-down'></span>
                         <ul>
-                            <li class="province" value="1">Dưới 1 triệu</li>
-                            <li class="province" value="31">1 triệu - 2 triệu</li>
-                            <li class="province" value="48">2 triệu - 3 triệu</li>
-                            <li class="province" value="79">3 triệu - 5 triệu</li>
-                            <li class="province" value="92">5 triệu - 7 triệu</li>
-                            <li class="province" value="92">7 triệu - 10 triệu</li>
-                            <li class="province" value="92">Trên 10 triệu</li>
+                            <li class="price" value="1">Dưới 2 triệu</li>
+                            <li class="price" value="2">2 triệu - 5 triệu</li>
+                            <li class="price" value="3">Trên 5 triệu</li>
                         </ul>
                     </a>
                 </div>
@@ -74,10 +68,42 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="group-btn-submit">
-                    <button type="submit" class="btn btn-slide-search"><span class="fa fa-search"></span>Tìm kiếm</button>
+                    <button type="submit" class="btn btn-slide-search" id="search"><span class="fa fa-search"></span>Tìm kiếm</button>
+                    @*<input type="button" name="name" class="btn btn-slide-search" id="search" value=" Tìm Kiếm" />*@
                 </div>
             </form>
         </div>
     </div>
-</div>            
+</div>
 <!-- End slider -->
+@*<script>
+    //Tìm kiếm
+$(document).ready(function () {
+    $('#search').click(function () {
+        var location = $("#location").val();
+        var province = $("#province").val();
+        var district = $("#district").val();
+        var dientich = $("#dientich").val();
+        var price = $("#price").val();
+        $.ajax({
+            type: 'POST',
+            url: "/Search/Search/",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify({
+                location: location,
+                province: province,
+                district: district,
+                dientich: dientich,
+                price: price,
+            })
+        }).success(function () {
+            
+        }).error(function () {
+
+        });
+
+        });
+});
+
+</script>*@

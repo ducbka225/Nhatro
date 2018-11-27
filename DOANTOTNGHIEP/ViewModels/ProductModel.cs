@@ -16,5 +16,6 @@ namespace DOANTOTNGHIEP.Models
         public string ProducType { get; set; }
         public string District { get; set; }
         public string Image { get; set; }
+        public DateTime? CreatedDate { get; set; }
     }
 }
