@@ -1,6 +1,7 @@
 ﻿using DOANTOTNGHIEP.Models;
 using DOANTOTNGHIEP.ViewModels;
 using PagedList;
+using PagedList.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +20,12 @@ namespace DOANTOTNGHIEP.Controllers
                                where pt.Id == ProductTypeId
                                select new ProductTypeModel()
                                {
+                                   Id = pt.Id,
                                    Name = pt.Name
                                }).FirstOrDefault();
 
             if (page == null) page = 1;
-            int pageSize = 3;
+            int pageSize = 6;
             int pageNumber = (page ?? 1);
 
             var Product = (from p in db.Product

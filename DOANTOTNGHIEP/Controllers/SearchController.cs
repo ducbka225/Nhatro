@@ -14,7 +14,7 @@ namespace DOANTOTNGHIEP.Controllers
         NhaTroEntities db = new NhaTroEntities();
         // GET: Search
         [HttpPost]
-        public ActionResult Search(FormCollection f)
+        public ActionResult Search(FormCollection f, int? Page)
         {
             string location = f["location"].ToString();
             string prv = f["province"].ToString();
@@ -47,9 +47,16 @@ namespace DOANTOTNGHIEP.Controllers
                                          District = dt.Name,
                                          Image = p.Image,
                                          CreatedDate = p.CreatedDate,
-                                     }).OrderBy(x => x.Id);
+                                     }).ToList();
 
-                ViewBag.Product = productResult;
+                // phân trang
+                int pageNumber = (Page ?? 1);
+                int pageSize = 6;
+                if (productResult.Count == 0)
+                {
+                    ViewBag.Message = "Không tìm thấy!";
+                }
+                ViewBag.Product = productResult.OrderByDescending(x => x.Id).ToPagedList(pageNumber, pageSize);
             }
 
             else if (dientich == 1 && location == null && price == 2)
@@ -73,9 +80,16 @@ namespace DOANTOTNGHIEP.Controllers
                                          District = dt.Name,
                                          Image = p.Image,
                                          CreatedDate = p.CreatedDate,
-                                     }).OrderBy(x => x.Id);
+                                     }).ToList();
 
-                ViewBag.Product = productResult;
+                // phân trang
+                int pageNumber = (Page ?? 1);
+                int pageSize = 6;
+                if (productResult.Count == 0)
+                {
+                    ViewBag.Message = "Không tìm thấy!";
+                }
+                ViewBag.Product = productResult.OrderByDescending(x => x.Id).ToPagedList(pageNumber, pageSize);
             }
 
             else if (dientich == 1 && location == null && price == 3)
@@ -99,9 +113,16 @@ namespace DOANTOTNGHIEP.Controllers
                                          District = dt.Name,
                                          Image = p.Image,
                                          CreatedDate = p.CreatedDate,
-                                     }).OrderBy(x => x.Id);
+                                     }).ToList();
 
-                ViewBag.Product = productResult;
+                // phân trang
+                int pageNumber = (Page ?? 1);
+                int pageSize = 6;
+                if (productResult.Count == 0)
+                {
+                    ViewBag.Message = "Không tìm thấy!";
+                }
+                ViewBag.Product = productResult.OrderByDescending(x => x.Id).ToPagedList(pageNumber, pageSize);
             }
 
             else if (dientich == 2 && location == null && price == 1)
@@ -125,9 +146,16 @@ namespace DOANTOTNGHIEP.Controllers
                                          District = dt.Name,
                                          Image = p.Image,
                                          CreatedDate = p.CreatedDate,
-                                     }).OrderBy(x => x.Id);
+                                     }).ToList();
 
-                ViewBag.Product = productResult;
+                // phân trang
+                int pageNumber = (Page ?? 1);
+                int pageSize = 6;
+                if (productResult.Count == 0)
+                {
+                    ViewBag.Message = "Không tìm thấy!";
+                }
+                ViewBag.Product = productResult.OrderByDescending(x => x.Id).ToPagedList(pageNumber, pageSize);
             }
 
             else if (dientich == 2 && location == null && price == 2)
@@ -151,9 +179,16 @@ namespace DOANTOTNGHIEP.Controllers
                                          District = dt.Name,
                                          Image = p.Image,
                                          CreatedDate = p.CreatedDate,
-                                     }).OrderBy(x => x.Id);
+                                     }).ToList();
 
-                ViewBag.Product = productResult;
+                // phân trang
+                int pageNumber = (Page ?? 1);
+                int pageSize = 6;
+                if (productResult.Count == 0)
+                {
+                    ViewBag.Message = "Không tìm thấy!";
+                }
+                ViewBag.Product = productResult.OrderByDescending(x => x.Id).ToPagedList(pageNumber, pageSize);
             }
 
             else if (dientich == 2 && location == null && price == 3)
@@ -177,9 +212,15 @@ namespace DOANTOTNGHIEP.Controllers
                                          District = dt.Name,
                                          Image = p.Image,
                                          CreatedDate = p.CreatedDate,
-                                     }).OrderBy(x => x.Id);
-
-                ViewBag.Product = productResult;
+                                     }).ToList();
+                // phân trang
+                int pageNumber = (Page ?? 1);
+                int pageSize = 6;
+                if (productResult.Count == 0)
+                {
+                    ViewBag.Message = "Không tìm thấy!";
+                }
+                ViewBag.Product = productResult.OrderByDescending(x => x.Id).ToPagedList(pageNumber, pageSize);
             }
 
             else if (dientich == 3 && location == null && price == 1)
@@ -203,9 +244,16 @@ namespace DOANTOTNGHIEP.Controllers
                                          District = dt.Name,
                                          Image = p.Image,
                                          CreatedDate = p.CreatedDate,
-                                     }).OrderBy(x => x.Id);
+                                     }).ToList();
 
-                ViewBag.Product = productResult;
+                // phân trang
+                int pageNumber = (Page ?? 1);
+                int pageSize = 6;
+                if (productResult.Count == 0)
+                {
+                    ViewBag.Message = "Không tìm thấy!";
+                }
+                ViewBag.Product = productResult.OrderByDescending(x => x.Id).ToPagedList(pageNumber, pageSize);
             }
 
             else if (dientich == 3 && location == null && price == 2)
@@ -229,9 +277,16 @@ namespace DOANTOTNGHIEP.Controllers
                                          District = dt.Name,
                                          Image = p.Image,
                                          CreatedDate = p.CreatedDate,
-                                     }).OrderBy(x => x.Id);
+                                     }).ToList();
 
-                ViewBag.Product = productResult;
+                // phân trang
+                int pageNumber = (Page ?? 1);
+                int pageSize = 6;
+                if (productResult.Count == 0)
+                {
+                    ViewBag.Message = "Không tìm thấy!";
+                }
+                ViewBag.Product = productResult.OrderByDescending(x => x.Id).ToPagedList(pageNumber, pageSize);
             }
 
             else if (dientich == 3 && location == null && price == 3)
@@ -255,9 +310,16 @@ namespace DOANTOTNGHIEP.Controllers
                                          District = dt.Name,
                                          Image = p.Image,
                                          CreatedDate = p.CreatedDate,
-                                     }).OrderBy(x => x.Id);
+                                     }).ToList();
 
-                ViewBag.Product = productResult;
+                // phân trang
+                int pageNumber = (Page ?? 1);
+                int pageSize = 6;
+                if (productResult.Count == 0)
+                {
+                    ViewBag.Message = "Không tìm thấy!";
+                }
+                ViewBag.Product = productResult.OrderByDescending(x => x.Id).ToPagedList(pageNumber, pageSize);
             }
 
 
@@ -269,7 +331,7 @@ namespace DOANTOTNGHIEP.Controllers
                                      join dt in db.District on s.IdDistrict equals dt.Id
                                      join l in db.Location on p.IdLocation equals l.Id
                                      join pv in db.Province on dt.IdProvince equals pv.Id
-                                     where p.IsActive == 1 && l.Name == location
+                                     where p.IsActive == 1 && l.Name.Contains(location)
                                      select new ProductModel
                                      {
                                          Id = p.Id,
@@ -282,10 +344,17 @@ namespace DOANTOTNGHIEP.Controllers
                                          District = dt.Name,
                                          Image = p.Image,
                                          CreatedDate = p.CreatedDate,
-                                     }).OrderBy(x => x.Id);
-                ViewBag.Product = productResult;
+                                     }).ToList();
+ 
+                // phân trang
+                int pageNumber = (Page ?? 1);
+                int pageSize = 6;
+                if (productResult.Count == 0)
+                {
+                    ViewBag.Message = "Không tìm thấy!";
+                }
+                ViewBag.Product = productResult.OrderByDescending(x => x.Id).ToPagedList(pageNumber, pageSize);
             }
-
             return View();
         }
 

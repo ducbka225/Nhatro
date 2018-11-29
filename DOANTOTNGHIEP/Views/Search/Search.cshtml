@@ -1,7 +1,10 @@
-﻿
+﻿@using PagedList.Mvc;
+@using PagedList;
+
 @{
     ViewBag.Title = "Search";
     Layout = "~/Views/Layout/_LayoutNhatro.cshtml";
+    var product = @ViewBag.Product;
 }
 
 <div class="container">
@@ -19,45 +22,45 @@
                             <a href=""><h3><span>Kết Quả Tìm Kiếm</span> <i class="fa fa-angle-right"></i></h3></a>
                         </div>
                         @*<div class="pull-right">
-                                <form id="order_form" class="form-inline form-oder-category" method="post" action="#">
-                                    <input type="hidden" name="_token" value="7GSbASzO7NQ8MKYGsTbABtkVYBe05nHbfcbqpIpb">
-                                    <div class="form-group">
-                                        <div class="btn btn-select btn-select-light">
-                                            <span class="btn-select-value">Chọn thành phố</span>
-                                            <span class="btn-select-arrow fa fa-angle-down"></span>
-                                            <ul>
-                                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=1">Hà Nội</a></li>
-                                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=31">Hải Phòng</a></li>
-                                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=48">Đà Nẵng</a></li>
-                                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=79">Hồ Chí Minh</a></li>
-                                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=92">Cần Thơ</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <a class="btn btn-select btn-select-light btn-oder-price">
-                                            <input type="hidden" class="btn-select-input" id="price" name="price" value="null">
-                                            <span class="btn-select-value">Sắp xếp giá</span>
-                                            <span class="btn-select-arrow fa fa-angle-down"></span>
-                                            <ul>
-                                                <li class="get_price">Giá tăng dần</li>
-                                                <li class="get_price">Giá giảm dần</li>
-                                            </ul>
-                                        </a>
-                                    </div>
-                                    <div class="form-group">
-                                        <a class="btn btn-select btn-select-light btn-oder-time">
-                                            <input type="hidden" class="btn-select-input" id="time" name="time" value="">
-                                            <span class="btn-select-value">Sắp xếp thời gian</span>
-                                            <span class="btn-select-arrow fa fa-angle-down"></span>
-                                            <ul>
-                                                <li class="get_time">Cũ nhất</li>
-                                                <li class="get_time">Mới nhất</li>
-                                            </ul>
-                                        </a>
-                                    </div>
-                                </form>
-                            </div>*@
+                <form id="order_form" class="form-inline form-oder-category" method="post" action="#">
+                    <input type="hidden" name="_token" value="7GSbASzO7NQ8MKYGsTbABtkVYBe05nHbfcbqpIpb">
+                    <div class="form-group">
+                        <div class="btn btn-select btn-select-light">
+                            <span class="btn-select-value">Chọn thành phố</span>
+                            <span class="btn-select-arrow fa fa-angle-down"></span>
+                            <ul>
+                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=1">Hà Nội</a></li>
+                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=31">Hải Phòng</a></li>
+                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=48">Đà Nẵng</a></li>
+                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=79">Hồ Chí Minh</a></li>
+                                <li class="fill-target"><a style="text-decoration: none;" href="#/phong-tro-nha-tro?fill=92">Cần Thơ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn-select btn-select-light btn-oder-price">
+                            <input type="hidden" class="btn-select-input" id="price" name="price" value="null">
+                            <span class="btn-select-value">Sắp xếp giá</span>
+                            <span class="btn-select-arrow fa fa-angle-down"></span>
+                            <ul>
+                                <li class="get_price">Giá tăng dần</li>
+                                <li class="get_price">Giá giảm dần</li>
+                            </ul>
+                        </a>
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn-select btn-select-light btn-oder-time">
+                            <input type="hidden" class="btn-select-input" id="time" name="time" value="">
+                            <span class="btn-select-value">Sắp xếp thời gian</span>
+                            <span class="btn-select-arrow fa fa-angle-down"></span>
+                            <ul>
+                                <li class="get_time">Cũ nhất</li>
+                                <li class="get_time">Mới nhất</li>
+                            </ul>
+                        </a>
+                    </div>
+                </form>
+            </div>*@
                         <div class="clearfix"></div>
                         <hr>
                     </div>
@@ -154,14 +157,13 @@
                     <!-- Thêm mã phân trang -->
                     <br />
                     @*Trang @(product.PageCount < product.PageNumber ? 0 : product.PageNumber) / @product.PageCount*@
+                    Trang @(product.PageCount < product.PageNumber ? 0 : product.PageNumber) / @product.PageCount
+                    @Html.PagedListPager((IPagedList)product, page => Url.Action("Search", new { Page = page }))
+                    <!-- Thêm mã phân trang -->
+                    <br />
 
 
                     <!-- Kết thúc -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="pull-right"><ul class="pagination"><li class="disabled"><span>«</span></li> <li class="active"><span>1</span></li><li><a href="#/phong-tro-nha-tro?page=2">2</a></li><li><a href="#/phong-tro-nha-tro?page=3">3</a></li><li><a href="#/phong-tro-nha-tro?page=4">4</a></li><li><a href="#/phong-tro-nha-tro?page=5">5</a></li><li><a href="#/phong-tro-nha-tro?page=6">6</a></li><li><a href="#/phong-tro-nha-tro?page=7">7</a></li><li></li> <li><a href="#/phong-tro-nha-tro?page=2" rel="next">»</a></li></ul></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
