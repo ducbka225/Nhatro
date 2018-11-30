@@ -16,7 +16,7 @@
                     </ol>
                 </div><div class="user_panel col-md-2 no-padding-vertical">
                     <div class="user-avatar">
-                        <a href="#"><img class="img-responsive" src="http://media.phongtot.vn/xc5tx4cj/hinh-nen-cute-dang-yeu-8.jpg"></a>
+                        <a href="#"><img class="img-responsive" src="~/Content/themes/client/img/avarta.jpg"></a>
                     </div>
                     <div class="user-panel-menu">
                         <div class="user-panel-menu-item active"><a href="#">Tổng quan</a></div>
@@ -29,7 +29,7 @@
                     <div class="user-panel-info">
                         <div class="user-panel-name"><a href="#">@user.LoginId</a></div>
                         <div class="user-panel-email"><a href="#">@user.Email</a></div>
-                        <div class="alert alert-danger" ><a href="#">Số Dư: @user.Balance Đ</a></div>
+                        <div class="alert alert-danger"><a href="#">Số Dư: @user.Balance Đ</a></div>
                         <a class="btn btn-submit-room" href="">Đăng tin</a>
                     </div><div class="user-panel-main-container">
                         <!-- Nav tabs -->
@@ -41,24 +41,23 @@
                             <!-- Tab panes -->
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="home">
-                                    <form class="user-panel-main-container-info" method="POST" action="#" enctype="multipart/form-data">
+                                    @*<form class="user-panel-main-container-info">*@
                                         <input type="hidden" name="_token" value="Nb8ddljqiUD0orER2x4PDkqzodValBUert4ZEd3Y">
                                         <div class="user-panel-info-title">Ảnh đại diện</div>
-                                        <div class="user-avatar"><a href="#"><img class="img-responsive" src="http://media.phongtot.vn/xc5tx4cj/hinh-nen-cute-dang-yeu-8.jpg"></a></div>
+                                        <div class="user-avatar"><a href="#"><img class="img-responsive" src="~/Content/themes/client/img/avarta.jpg"></a></div>
                                         <div class="user-panel-upload-avatar">
                                             <input type="file" name="avatar" value="">
-                                            <span class="help-block"><div style="color:red;"></div>Kích thước ảnh tối đa 1MB.</span>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="hoten">Họ tên</label>
-                                                    <input type="text" class="form-control" name="fullname" value="@user.LoginId">
+                                                    <input type="text" class="form-control" id="loginIdupdate" value="@user.LoginId">
                                                     <span class="help-block" style="color:red;"></span>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="ngaysinh">Ngày sinh</label>
-                                                    <input type="text" class="form-control" name="birth" value="" placeholder="dd/mm/yyyy">
+                                                    <input type="text" class="form-control" name="birth" id="dateOfBirth" value="@user.DateOfBirth" placeholder="dd/mm/yyyy">
                                                     <span class="help-block" style="color:red;"></span>
                                                 </div>
                                                 <div class="form-group">
@@ -74,41 +73,41 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Địa chỉ</label>
-                                                    <input type="text" class="form-control" name="address" value="" placeholder="Địa chỉ">
+                                                    <input type="datetime" class="form-control"  id="addressupdate" value="@user.Address" placeholder="Địa chỉ">
                                                     <span class="help-block" style="color:red;"></span>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Điện thoại liên hệ</label>
-                                                    <input type="text" class="form-control" name="phone" value="@user.Phone">
+                                                    <input type="text" class="form-control" id="phoneupdate" value="@user.Phone">
                                                     <span class="help-block" style="color:red;"></span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-actions">
-                                            <button type="submit" class="btn center-block">Submit</button>
+                                            <input type="button" class="btn center-block" id="updateinfo" value="Cập nhật" />
                                         </div>
-                                    </form>
+                                    @*</form>*@
                                 </div>
                                 <div role="tabpanel" class="tab-pane " id="profile">
-                                    <form class="user-panel-main-container-info" method="POST" action="#" enctype="multipart/form-data">
+                                    @*<form class="user-panel-main-container-info">*@
                                         <input type="hidden" name="_token" value="Nb8ddljqiUD0orER2x4PDkqzodValBUert4ZEd3Y">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Mật khẩu cũ</label>
-                                            <input type="password" class="form-control" name="oldpassword" placeholder="Mật khẩu cũ">
+                                            <input type="password" class="form-control" name="oldpassword" id="oldpassword" placeholder="Mật khẩu cũ">
                                             <span class="help-block" style="color:red;"></span>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Mật khẩu mới</label>
-                                            <input type="password" class="form-control" name="password" placeholder="Mật khẩu mới">
+                                            <input type="password" class="form-control" name="password" id="passwordnew" placeholder="Mật khẩu mới">
                                             <span class="help-block" style="color:red;"></span>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Nhập lại mật khẩu</label>
-                                            <input type="password" class="form-control" name="repassword" placeholder="Nhập lại mật khẩu">
+                                            <input type="password" class="form-control" name="repassword" id="repasswordnew"  placeholder="Nhập lại mật khẩu">
                                             <span class="help-block" style="color:red;"></span>
                                         </div>
-                                        <button type="submit" class="btn">Submit</button>
-                                    </form>
+                                        <input type="button" id="changePass" class="btn center-block" value="Đổi mật khẩu" />
+                                    @*</form>*@
                                 </div>
                             </div>
                         </div>
@@ -119,3 +118,74 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+            $(document).ready(function () {
+                //Update
+                $('#updateinfo').click(function () {
+                    var loginId = $("#loginIdupdate").val();
+                    var dateOfBirth = $("#dateOfBirth").val();
+                    var phoneupdate = $("#phoneupdate").val();
+                    var addressupdate = $("#addressupdate").val();
+                    $.ajax({
+                        type: 'POST',
+                        url: "/TrangCaNhan/Update/",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify({
+                            loginId: loginId,
+                            dateOfBirth: dateOfBirth,
+                            phone: phoneupdate,
+                            address: addressupdate,
+                        })
+                    }).success(function (response) {
+                        if (response.result == true) {
+                            alert("Cập nhật thành công!")
+                        }
+
+                        else {
+                            alert("Cập nhật Thất bại");
+                        }
+                    }).error(function () {
+                        alert("Lỗi serve!");
+
+                    });
+                });
+
+                //Đổi mật khẩu
+                $('#changePass').click(function () {
+                    var oldpassword = $("#oldpassword").val();
+                    var passwordnew = $("#passwordnew").val();
+                    var repasswordnew = $("#repasswordnew").val();
+
+                    if (passwordnew != repasswordnew) {
+                        alert(" mật khẩu nhập lại không khớp!")
+                    }
+                    else {
+                        $.ajax({
+                            type: 'POST',
+                            url: "/TrangCaNhan/ChangePass/",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            data: JSON.stringify({
+                                oldpassword: oldpassword,
+                                passwordnew: passwordnew,
+                                repasswordnew: repasswordnew,
+                            })
+                        }).success(function (response) {
+                            if (response.result == true) {
+                                alert("Đổi mật khẩu thành công!")
+                            }
+
+                            else {
+                                alert("Cập nhật Thất bại");
+                            }
+                        }).error(function () {
+                            alert("Lỗi serve!");
+
+                        });
+                    }
+                    
+                });
+            });
+</script>

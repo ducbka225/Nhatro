@@ -20,5 +20,55 @@ namespace DOANTOTNGHIEP.Controllers
             ViewBag.User = user;
             return View();
         }
+
+        // Cập nhât
+        [HttpPost]
+        public JsonResult Update( string loginId, DateTime dateOfBirth, int phone, string address)
+                               
+        {
+            var User = Session["Email"].ToString();
+            var result = false;
+            if (ModelState.IsValid)
+            {
+                var user = (from u in db.User
+                             where u.Email == User
+                             select u).FirstOrDefault();
+
+                user.DateOfBirth = dateOfBirth;
+                user.LoginId = loginId;
+                user.Phone = phone;
+                user.Address = address;
+
+                db.User.Add(user);
+                db.SaveChanges();
+                result = true;
+               
+            }
+
+            return Json(new { result }, JsonRequestBehavior.AllowGet);
+        }
+
+        // Đổi pass
+        [HttpPost]
+        public JsonResult ChangePass(string passwordnew)
+
+        {
+            var User = Session["Email"].ToString();
+            var result = false;
+            if (ModelState.IsValid)
+            {
+                var user = (from u in db.User
+                            where u.Email == User
+                            select u).FirstOrDefault();
+
+                user.Password = passwordnew;
+                db.User.Add(user);
+                db.SaveChanges();
+                result = true;
+
+            }
+
+            return Json(new { result }, JsonRequestBehavior.AllowGet);
+        }
     }
 }
