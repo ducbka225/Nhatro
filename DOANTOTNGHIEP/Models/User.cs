@@ -29,6 +29,7 @@ namespace DOANTOTNGHIEP.Models
         public Nullable<int> IsActive { get; set; }
         public Nullable<System.DateTime> DateOfBirth { get; set; }
         public string Address { get; set; }
+        public Nullable<int> IdProduct { get; set; }
     
         public virtual ICollection<Transaction> Transaction { get; set; }
     }

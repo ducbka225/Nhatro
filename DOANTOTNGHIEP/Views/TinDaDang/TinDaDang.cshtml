@@ -17,11 +17,11 @@
                 </div>
                 <div class="user_panel col-md-2 no-padding-vertical">
                     <div class="user-avatar">
-                        <a href="#"><img class="img-responsive" src="http://media.phongtot.vn/xc5tx4cj/hinh-nen-cute-dang-yeu-8.jpg"></a>
+                        <a href="#"><img class="img-responsive" src="~/Content/themes/client/img/avarta.jpg"></a>
                     </div>
                     <div class="user-panel-menu">
-                        <div class="user-panel-menu-item active"><a href="#">Tổng quan</a></div>
-                        <div class="user-panel-menu-item "><a href="@Url.Action("TinDaDang", "TinDaDang")">Tin đã đăng</a></div>
+                        <div class="user-panel-menu-item "><a href="#">Tổng quan</a></div>
+                        <div class="user-panel-menu-item active"><a href="@Url.Action("TinDaDang", "TinDaDang")">Tin đã đăng</a></div>
                         <div class="user-panel-menu-item "><a href="@Url.Action("TinDaLuu","TinDaLuu")">Tin đã lưu</a></div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                                                     <td class="text-center">
                                                         <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})" class="btn">Xem Tin</a>
                                                         <a href="#" class="btn btn-success" style="background-color:green">Gia Hạn</a>
-                                                        <a href="#" class="btn btn-danger" style="background-color:red">Xóa tin</a>
+                                                        <a href="@Url.Action("TinDaDang", "XoaTin", new { @ProductId = @item.Id})" class="btn btn-danger" style="background-color:red">Xóa tin</a>
                                                     </td>
 
 

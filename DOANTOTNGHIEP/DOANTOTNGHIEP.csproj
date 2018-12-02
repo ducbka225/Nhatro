@@ -223,6 +223,9 @@
     <Compile Include="Models\Province.cs">
       <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SaveProduct.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Street.cs">
       <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
@@ -908,13 +911,6 @@
     <Content Include="Content\images\tfd_171222030600_789772.jpg201839171107" />
     <Content Include="Content\images\tfd_171222030600_789772.jpg201839171138" />
     <Content Include="Content\images\tfd_171222030600_789772.jpg201840171100" />
-    <EntityDeploy Include="Models\NhaTroModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NhaTroModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\NhaTroModel.edmx.diagram">
-      <DependentUpon>NhaTroModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\bower_components\bootstrap-social\.bower.json" />
     <Content Include="Content\bower_components\bootstrap-social\.editorconfig" />
     <Content Include="Content\bower_components\bootstrap-social\bootstrap-social.less" />
@@ -1213,6 +1209,13 @@
     <Content Include="Content\bower_components\morrisjs\spec\viz\run.sh" />
     <Content Include="Content\bower_components\raphael\.bower.json" />
     <Content Include="Content\bower_components\raphael\bower.json" />
+    <EntityDeploy Include="Models\NhaTroModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NhaTroModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NhaTroModel.edmx.diagram">
+      <DependentUpon>NhaTroModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

@@ -38,5 +38,6 @@ namespace DOANTOTNGHIEP.Models
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<Transaction> Transaction { get; set; }
         public DbSet<User> User { get; set; }
+        public DbSet<SaveProduct> SaveProduct { get; set; }
     }
 }

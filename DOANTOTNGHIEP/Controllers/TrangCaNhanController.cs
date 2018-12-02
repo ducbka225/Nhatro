@@ -13,7 +13,7 @@ namespace DOANTOTNGHIEP.Controllers
         // GET: TrangCaNhan
         public ActionResult TrangCaNhan()
         {
-            var email = Session["Email"];
+            var email = Session["Email"].ToString();
             var user = (from u in db.User
                         where u.Email == email
                         select u).FirstOrDefault();
@@ -38,8 +38,6 @@ namespace DOANTOTNGHIEP.Controllers
                 user.LoginId = loginId;
                 user.Phone = phone;
                 user.Address = address;
-
-                db.User.Add(user);
                 db.SaveChanges();
                 result = true;
                
@@ -62,7 +60,6 @@ namespace DOANTOTNGHIEP.Controllers
                             select u).FirstOrDefault();
 
                 user.Password = passwordnew;
-                db.User.Add(user);
                 db.SaveChanges();
                 result = true;
 

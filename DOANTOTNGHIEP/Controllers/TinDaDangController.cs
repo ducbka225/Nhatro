@@ -13,7 +13,7 @@ namespace DOANTOTNGHIEP.Controllers
         // GET: TinDaDang
         public ActionResult TinDaDang()
         {
-            var email = Session["Email"];
+            var email = Session["Email"].ToString();
             var user = (from u in db.User
                         where u.Email == email
                         select u).FirstOrDefault();
@@ -28,6 +28,22 @@ namespace DOANTOTNGHIEP.Controllers
                         }).ToList();
             ViewBag.User = user;
             ViewBag.Data = data;
+            return View();
+        }
+
+        // Xóa tin
+        [HttpPost]
+        public ActionResult XoaTin(int ProductId)
+
+        {
+            if (ModelState.IsValid)
+            {
+                var product = (from p in db.Product
+                            where p.Id == ProductId
+                            select p).FirstOrDefault();
+                db.Product.Remove(product);
+                db.SaveChanges();
+            }
             return View();
         }
     }
