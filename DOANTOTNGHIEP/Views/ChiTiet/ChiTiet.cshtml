@@ -23,7 +23,7 @@
                         <div class="social">
                             <div class="pull-left gplus">
                                 <span>
-                                    <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1540183260508" name="I0_1540183260508" src="#" data-gapiattached="true" title="G+"></iframe></div>
+                                    @*<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1540183260508" name="I0_1540183260508" src="#" data-gapiattached="true" title="G+"></iframe></div>*@
                                 </span>
                             </div>
                             <div class="pull-right">
@@ -36,8 +36,8 @@
                                 <div class="col-md-8 left-info no-padding-right">
                                     <div class="address">
                                         <span class="btn info-label">Địa chỉ</span>
-                                      
-                                        <a class="" href="#">@productDetail.District</a> 
+
+                                        <a class="" href="#">@productDetail.District</a>
                                         <a class="hiddenPhone" href="#"> -  @productDetail.LocationName</a>
                                     </div>
                                     <div class="size">
@@ -140,6 +140,8 @@
                     </div>
                     <input type="hidden" id="ssemail" value="@Session["Email"]" />
                     <input type="hidden" id="balance" value="@Session["Balance"]" />
+                    <input type="hidden" id="priceluutin" value="@productDetail.Price" />
+                    <input type="hidden" id="IdProduct" value="@productDetail.IdProduct" />
                     <script type="text/javascript">
                         $(document).ready(function () {
                             // show phonenumber
@@ -149,11 +151,13 @@
                                 if (r == true) {
                                     var email = $("#ssemail").val();
                                     var balance = $("#balance").val();
-
+                                    var priceluutin1 = $('#priceluutin').val();
+                                    var priceluutin = priceluutin1 * 1 / 100;
+                                    var IdProduct = $("#IdProduct").val();
                                     if (email.length == 0) {
                                         alert('Bạn phải đăng nhập!');
                                     }
-                                    else if (balance < 5000) {
+                                    else if (balance - priceluutin < 0) {
                                         alert('Tài Khoản bạn không đủ!');
                                     }
 
@@ -164,7 +168,10 @@
                                             contentType: "application/json; charset=utf-8",
                                             dataType: "json",
                                             data: JSON.stringify({
-                                                email: email
+                                                email: email,
+                                                priceluutin: priceluutin,
+                                                IdProduct: IdProduct,
+
                                             })
                                         }).success(function (response) {
                                             if (response.result == true) {
@@ -173,7 +180,6 @@
                                                 $(".hiddenPhone").show();
                                                 $("#showPhone").hide();
                                             }
-
                                             else {
                                                 alert("Tài Khoản Bạn Không đủ");
                                             }
@@ -182,7 +188,6 @@
                                             window.location.reload();
                                         });
                                     }
-                                    
                                 }
                             });
                         });
@@ -272,7 +277,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-6 col-md-12 sidebar-social">
-                    <div class="fb-page fb_iframe_widget" data-href="#" data-width="275" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=464576090336755&amp;container_width=275&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FPhongtotvn-Thu%25C3%25AA-V%25C3%25A0-Cho-Thu%25C3%25AA-Ph%25C3%25B2ng-Ch%25C3%25ADnh-Ch%25E1%25BB%25A7-726759860760692%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false&amp;width=275"><span style="vertical-align: bottom; width: 0px; height: 0px;"><iframe name="f1dd7f52af2e0cc" width="275px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:page Facebook Social Plugin" src="https://www.facebook.com/v2.5/plugins/page.php?adapt_container_width=true&amp;app_id=464576090336755&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2F__Bz3h5RzMx.js%3Fversion%3D42%23cb%3Df30057159ca6e18%26domain%3Dphongtot.vn%26origin%3Dhttp%253A%252F%252Fphongtot.vn%252Ff3076214d6bfbcc%26relation%3Dparent.parent&amp;container_width=275&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FPhongtotvn-Thu%25C3%25AA-V%25C3%25A0-Cho-Thu%25C3%25AA-Ph%25C3%25B2ng-Ch%25C3%25ADnh-Ch%25E1%25BB%25A7-726759860760692%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false&amp;width=275" style="border: none; visibility: visible; width: 0px; height: 0px;" class=""></iframe></span></div>
+                    @*<div class="fb-page fb_iframe_widget" data-href="#" data-width="275" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=464576090336755&amp;container_width=275&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FPhongtotvn-Thu%25C3%25AA-V%25C3%25A0-Cho-Thu%25C3%25AA-Ph%25C3%25B2ng-Ch%25C3%25ADnh-Ch%25E1%25BB%25A7-726759860760692%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false&amp;width=275"><span style="vertical-align: bottom; width: 0px; height: 0px;"><iframe name="f1dd7f52af2e0cc" width="275px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:page Facebook Social Plugin" src="https://www.facebook.com/v2.5/plugins/page.php?adapt_container_width=true&amp;app_id=464576090336755&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2F__Bz3h5RzMx.js%3Fversion%3D42%23cb%3Df30057159ca6e18%26domain%3Dphongtot.vn%26origin%3Dhttp%253A%252F%252Fphongtot.vn%252Ff3076214d6bfbcc%26relation%3Dparent.parent&amp;container_width=275&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FPhongtotvn-Thu%25C3%25AA-V%25C3%25A0-Cho-Thu%25C3%25AA-Ph%25C3%25B2ng-Ch%25C3%25ADnh-Ch%25E1%25BB%25A7-726759860760692%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false&amp;width=275" style="border: none; visibility: visible; width: 0px; height: 0px;" class=""></iframe></span></div>*@
                 </div>
             </div>
             <div class="row">

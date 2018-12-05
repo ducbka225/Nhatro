@@ -44,7 +44,19 @@
                                                 <th class="table-title text-center">Tác vụ</th>
                                             </tr>
                                         </thead>
-                                        <tbody></tbody>
+                                        <tbody>
+                                            @foreach (var item in ViewBag.Data)
+                                            {
+                                                <tr>
+
+                                                    <td>@item.Title - Sđt: @item.Phone</td>
+                                                    <td class="text-center">
+                                                        <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.IdProduct})" class="btn">Xem Tin</a>
+                                                        <a href="#" class="btn btn-danger xoatin" style="background-color:red" data-ProductId ="@item.Id" >Xóa tin</a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
                                         <tfoot>
                                             <tr>
                                                 <td colspan="2">
@@ -65,4 +77,32 @@
     </div>
 </div>
 
+<script type="text/javascript">
+            $(document).ready(function () {
+                //delete
+                $('.xoatin').click(function () {
+                    var ProductId = $(".xoatin").attr("data-ProductId");
+                    $.ajax({
+                        type: 'POST',
+                        url: "/TinDaLuu/XoaTin/",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify({
+                            ProductId: ProductId,
+                        })
+                    }).success(function (response) {
+                        if (response.result == true) {
+                            alert("Xóa thành công!");
+                            window.location.reload();
+                        }
 
+                        else {
+                            alert("Xóa Thất bại");
+                        }
+                    }).error(function () {
+                        alert("Lỗi serve!");
+
+                    });
+                });
+            });
+</script>

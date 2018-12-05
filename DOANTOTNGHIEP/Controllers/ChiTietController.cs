@@ -60,7 +60,8 @@ namespace DOANTOTNGHIEP.Controllers
                                PriceWater = pdt.PriceWater,
                                BedRoomNumber = pdt.BedRoomNumber,
                                UserName = p.Owner,
-                               PhoneNumber = p.Phone,                             
+                               PhoneNumber = p.Phone,
+                               IdProduct = ProductId
                            }).FirstOrDefault();
             ViewBag.Details = details;
             ViewBag.Image = image;
@@ -70,7 +71,7 @@ namespace DOANTOTNGHIEP.Controllers
 
         // Lưu tin
         [HttpPost]
-        public JsonResult LuuTin(string email)
+        public JsonResult LuuTin(string email, double priceluutin, int IdProduct)
         {
             var result = false;
             if (ModelState.IsValid)
@@ -80,7 +81,13 @@ namespace DOANTOTNGHIEP.Controllers
                             select u).FirstOrDefault();
                 //save User
                 User usersave = user;
-                usersave.Balance = user.Balance - 5000;
+                usersave.Balance = user.Balance - priceluutin;
+                db.SaveChanges();
+
+                SaveProduct saveProduct = new SaveProduct();
+                saveProduct.IdUser = user.Id;
+                saveProduct.IdProduct = IdProduct;
+                db.SaveProduct.Add(saveProduct);
                 db.SaveChanges();
                 result = true;
             }

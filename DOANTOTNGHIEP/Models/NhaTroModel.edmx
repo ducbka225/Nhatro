@@ -97,8 +97,6 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'NhaTro.dbo.SaveProduct' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SaveProduct">
           <Key>
             <PropertyRef Name="Id" />
@@ -295,17 +293,11 @@ warning 6002: The table/view 'NhaTro.dbo.SaveProduct' does not have a primary ke
           <EntitySet Name="ProductDetails" EntityType="Self.ProductDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Province" EntityType="Self.Province" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SaveProduct" EntityType="Self.SaveProduct" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Street" EntityType="Self.Street" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transaction" EntityType="Self.Transaction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SaveProduct" EntityType="Self.SaveProduct" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-[SaveProduct].[Id] AS [Id], 
-[SaveProduct].[IdUser] AS [IdUser], 
-[SaveProduct].[IdProduct] AS [IdProduct]
-FROM [dbo].[SaveProduct] AS [SaveProduct]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_District_Province" Association="Self.FK_District_Province">
             <End Role="Province" EntitySet="Province" />
             <End Role="District" EntitySet="District" />
@@ -464,6 +456,14 @@ FROM [dbo].[SaveProduct] AS [SaveProduct]</DefiningQuery>
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="District" Relationship="Self.FK_District_Province" FromRole="Province" ToRole="District" />
         </EntityType>
+        <EntityType Name="SaveProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUser" Type="Int32" />
+          <Property Name="IdProduct" Type="Int32" />
+        </EntityType>
         <EntityType Name="Street">
           <Key>
             <PropertyRef Name="Id" />
@@ -515,14 +515,6 @@ FROM [dbo].[SaveProduct] AS [SaveProduct]</DefiningQuery>
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IdProduct" Type="Int32" />
           <NavigationProperty Name="Transaction" Relationship="Self.FK_Transaction_User" FromRole="User" ToRole="Transaction" />
-        </EntityType>
-        <EntityType Name="SaveProduct">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdUser" Type="Int32" />
-          <Property Name="IdProduct" Type="Int32" />
         </EntityType>
         <Association Name="FK_District_Province">
           <End Role="Province" Type="Self.Province" Multiplicity="1" />
@@ -666,11 +658,11 @@ FROM [dbo].[SaveProduct] AS [SaveProduct]</DefiningQuery>
           <EntitySet Name="ProductDetails" EntityType="Self.ProductDetails" />
           <EntitySet Name="ProductType" EntityType="Self.ProductType" />
           <EntitySet Name="Province" EntityType="Self.Province" />
+          <EntitySet Name="SaveProduct" EntityType="Self.SaveProduct" />
           <EntitySet Name="Street" EntityType="Self.Street" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Transaction" EntityType="Self.Transaction" />
           <EntitySet Name="User" EntityType="Self.User" />
-          <EntitySet Name="SaveProduct" EntityType="Self.SaveProduct" />
           <AssociationSet Name="FK_District_Province" Association="Self.FK_District_Province">
             <End Role="Province" EntitySet="Province" />
             <End Role="District" EntitySet="District" />
@@ -823,6 +815,15 @@ FROM [dbo].[SaveProduct] AS [SaveProduct]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="SaveProduct">
+            <EntityTypeMapping TypeName="NhaTroModel.SaveProduct">
+              <MappingFragment StoreEntitySet="SaveProduct">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Street">
             <EntityTypeMapping TypeName="NhaTroModel.Street">
               <MappingFragment StoreEntitySet="Street">
@@ -869,15 +870,6 @@ FROM [dbo].[SaveProduct] AS [SaveProduct]</DefiningQuery>
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SaveProduct">
-            <EntityTypeMapping TypeName="NhaTroModel.SaveProduct">
-              <MappingFragment StoreEntitySet="SaveProduct">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
               </MappingFragment>
             </EntityTypeMapping>

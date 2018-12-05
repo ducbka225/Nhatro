@@ -34,10 +34,10 @@ namespace DOANTOTNGHIEP.Models
         public DbSet<ProductDetails> ProductDetails { get; set; }
         public DbSet<ProductType> ProductType { get; set; }
         public DbSet<Province> Province { get; set; }
+        public DbSet<SaveProduct> SaveProduct { get; set; }
         public DbSet<Street> Street { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<Transaction> Transaction { get; set; }
         public DbSet<User> User { get; set; }
-        public DbSet<SaveProduct> SaveProduct { get; set; }
     }
 }

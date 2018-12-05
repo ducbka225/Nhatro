@@ -33,18 +33,19 @@ namespace DOANTOTNGHIEP.Controllers
 
         // Xóa tin
         [HttpPost]
-        public ActionResult XoaTin(int ProductId)
-
+        public JsonResult XoaTin(int ProductId)        
         {
+            var result = false;
             if (ModelState.IsValid)
             {
                 var product = (from p in db.Product
-                            where p.Id == ProductId
-                            select p).FirstOrDefault();
+                               where p.Id == ProductId
+                               select p).FirstOrDefault();
                 db.Product.Remove(product);
                 db.SaveChanges();
+                result = true;
             }
-            return View();
+            return Json(new { result }, JsonRequestBehavior.AllowGet);
         }
     }
 }

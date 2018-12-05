@@ -26,6 +26,7 @@ namespace DOANTOTNGHIEP.ViewModels
         public int? BedRoomNumber { get; set; }
         public string UserName { get; set; }
         public int? PhoneNumber { get; set; }
+        public int IdProduct { get; set; }
 
     }
 }

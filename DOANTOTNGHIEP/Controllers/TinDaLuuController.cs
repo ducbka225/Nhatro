@@ -1,4 +1,5 @@
 ﻿using DOANTOTNGHIEP.Models;
+using DOANTOTNGHIEP.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,14 +23,35 @@ namespace DOANTOTNGHIEP.Controllers
                         join s in db.SaveProduct on u.Id equals s.IdUser
                         join p in db.Product on s.IdProduct equals p.Id
                         where u.Email == email
-                        select new ProductModel
+                        select new SaveProductModel
                         {
-                            Id = p.Id,
-                            Title = p.Title
+                            Id = s.Id,
+                            IdProduct = p.Id,
+                            Title = p.Title,
+                            Phone = p.Phone,
                         }).ToList();
             ViewBag.User = user;
             ViewBag.Data = data;
             return View();
+        }
+
+
+        // Xóa tin
+        [HttpPost]
+        public JsonResult XoaTin(int ProductId)
+
+        {
+            var result = false;
+            if (ModelState.IsValid)
+            {
+                var saveProduct = (from s in db.SaveProduct
+                               where s.Id == ProductId
+                               select s).FirstOrDefault();
+                db.SaveProduct.Remove(saveProduct);
+                db.SaveChanges();
+                result = true;
+            }
+            return Json(new { result }, JsonRequestBehavior.AllowGet);
         }
     }
 }

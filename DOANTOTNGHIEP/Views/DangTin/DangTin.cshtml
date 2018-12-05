@@ -5,7 +5,7 @@
 }
 <div class="container">
     <div class="row">
-        <script src="#/themes/client/js/fileuploader.js"></script>
+        @*<script src="#/themes/client/js/fileuploader.js"></script>*@
         <input type="hidden" name="_token" value="oZTfWcuCbtOwBIEtos7tpCT6fovSeuSzIa5d8GWV">
         <div class="row">
             <div class="col-md-12 submit-room-breadcrumb">
@@ -28,10 +28,10 @@
                             <input type="radio" name="needed" id="radio_needed_lease" value="1">
                             <label for="radio_needed_lease"> Cho Thuê</label>
                         </li>
-                        <li>
+                        @*<li>
                             <input type="radio" name="needed" id="radio_needed_share" value="2">
                             <label for="radio_needed_share"> Ở ghép</label>
-                        </li>
+                        </li>*@
                     </ul>
                 </div>
             </div>
@@ -156,13 +156,13 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <div id="image-group">
-                            <label for="summary">
-                                <div class="control-label"> Ảnh chi tiết của phòng </div>
+                                <div class="control-label">
+                                    <label for="summary">Ảnh chi tiết của phòng </label>
+                                </div>
 
                                 <input type="file" id="fileInput" multiple />
                                 <input type="button" id="fileButton" value="Upload Files" /><br />
                                 <img src="~/Content/Image/loading.gif" style="display: none;" id="loadingImg" />
-                            </label>
                             <div id="upload-error"></div>
                             <div class="clearfix"><p></p></div>
                             <div class="qq-uploader checkbox checkbox-success" id="list-image">
@@ -266,7 +266,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="submit-room-map">
+                    @*<div class="submit-room-map">
                         <div class="submit-info-title">Kéo thả vị trí trên bản đồ để chỉnh địa điểm chính xác hơn</div>
                         <fieldset class="gllpLatlonPicker" id="_MAP_3086">
                             <input type="hidden" class="gllpSearchField" value="">
@@ -281,7 +281,7 @@
                             <!-- zoom: --> <input type="hidden" class="gllpZoom" value="15">
                             <input type="hidden" class="gllpUpdateButton" value="update map">
                         </fieldset>
-                    </div>
+                    </div>*@
                 </div>
             </div>
             <div id="room-detail-2">
@@ -372,7 +372,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="submit-room-map">
+                    @*<div class="submit-room-map">
                         <div class="submit-info-title">Kéo thả vị trí trên bản đồ để chỉnh địa điểm chính xác hơn</div>
                         <fieldset class="gllpLatlonPicker" id="_MAP_3086">
                             <input type="hidden" class="gllpSearchField" value="">
@@ -387,7 +387,7 @@
                             <!-- zoom: --> <input type="hidden" class="gllpZoom" value="15">
                             <input type="hidden" class="gllpUpdateButton" value="update map">
                         </fieldset>
-                    </div>
+                    </div>*@
                 </div>
             </div>
             <div id="room-detail-6">
@@ -478,7 +478,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="submit-room-map">
+                    @*<div class="submit-room-map">
                         <div class="submit-info-title">Kéo thả vị trí trên bản đồ để chỉnh địa điểm chính xác hơn</div>
                         <fieldset class="gllpLatlonPicker" id="_MAP_3086">
                             <input type="hidden" class="gllpSearchField" value="">
@@ -493,7 +493,7 @@
                             <!-- zoom: --> <input type="hidden" class="gllpZoom" value="15">
                             <input type="hidden" class="gllpUpdateButton" value="update map">
                         </fieldset>
-                    </div>
+                    </div>*@
                 </div>
             </div>
             <div id="room-detail-3">
@@ -584,7 +584,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="submit-room-map">
+                    @*<div class="submit-room-map">
                         <div class="submit-info-title">Kéo thả vị trí trên bản đồ để chỉnh địa điểm chính xác hơn</div>
                         <fieldset class="gllpLatlonPicker" id="_MAP_3086">
                             <input type="hidden" class="gllpSearchField" value="">
@@ -599,7 +599,7 @@
                             <!-- zoom: --> <input type="hidden" class="gllpZoom" value="15">
                             <input type="hidden" class="gllpUpdateButton" value="update map">
                         </fieldset>
-                    </div>
+                    </div>*@
                 </div>
             </div>
             <div id="room-detail-7">
@@ -690,7 +690,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="submit-room-map">
+                    @*<div class="submit-room-map">
                         <div class="submit-info-title">Kéo thả vị trí trên bản đồ để chỉnh địa điểm chính xác hơn</div>
                         <fieldset class="gllpLatlonPicker" id="_MAP_3086">
                             <input type="hidden" class="gllpSearchField" value="">
@@ -705,7 +705,7 @@
                             <!-- zoom: --> <input type="hidden" class="gllpZoom" value="15">
                             <input type="hidden" class="gllpUpdateButton" value="update map">
                         </fieldset>
-                    </div>
+                    </div>*@
                 </div>
             </div>
             <div id="room-detail-4">
@@ -796,7 +796,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="submit-room-map">
+                    @*<div class="submit-room-map">
                         <div class="submit-info-title">Kéo thả vị trí trên bản đồ để chỉnh địa điểm chính xác hơn</div>
                         <fieldset class="gllpLatlonPicker" id="_MAP_3086">
                             <input type="hidden" class="gllpSearchField" value="">
@@ -811,7 +811,7 @@
                             <!-- zoom: --> <input type="hidden" class="gllpZoom" value="15">
                             <input type="hidden" class="gllpUpdateButton" value="update map">
                         </fieldset>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
