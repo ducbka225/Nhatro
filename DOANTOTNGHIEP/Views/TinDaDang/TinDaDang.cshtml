@@ -20,7 +20,7 @@
                         <a href="#"><img class="img-responsive" src="~/Content/themes/client/img/avarta.jpg"></a>
                     </div>
                     <div class="user-panel-menu">
-                        <div class="user-panel-menu-item "><a href="#">Tổng quan</a></div>
+                        <div class="user-panel-menu-item "><a href="@Url.Action("TrangCaNhan", "TrangCaNhan")">Trang Cá Nhân</a></div>
                         <div class="user-panel-menu-item active"><a href="@Url.Action("TinDaDang", "TinDaDang")">Tin đã đăng</a></div>
                         <div class="user-panel-menu-item "><a href="@Url.Action("TinDaLuu","TinDaLuu")">Tin đã lưu</a></div>
                     </div>
@@ -57,8 +57,7 @@
                                                     <td class="text-center">
                                                         <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})" class="btn">Xem Tin</a>
                                                         <a href="@Url.Action("GiaHan", "GiaHan", new { @ProductId = @item.Id})" class="btn btn-success" style="background-color:green">Gia Hạn</a>
-                                                        @*<a href="@Url.Action("XoaTin", "TinDaDang", new { @ProductId = @item.Id})" class="btn btn-success" style="background-color:green">Gia Hạn</a>*@
-                                                        <input type="button" class="btn btn-danger xoatin" data-ProductId="@item.Id" style="background-color:red" value="Xóa Tin">
+                                                        @*<input type="button" class="btn btn-danger xoatin" data-ProductId="@item.Id" style="background-color:red" value="Xóa Tin">*@
                                                     </td>
 
 

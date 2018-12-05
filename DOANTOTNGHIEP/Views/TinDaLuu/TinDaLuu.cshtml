@@ -18,9 +18,9 @@
                         <a href="#"><img class="img-responsive" src="~/Content/themes/client/img/avarta.jpg"></a>
                     </div>
                     <div class="user-panel-menu">
-                        <div class="user-panel-menu-item "><a href="#">Tổng quan</a></div>
+                        <div class="user-panel-menu-item "><a href="@Url.Action("TrangCaNhan", "TrangCaNhan")">Trang Cá Nhân</a></div>
                         <div class="user-panel-menu-item "><a href="@Url.Action("TinDaDang", "TinDaDang")">Tin đã đăng</a></div>
-                        <div class="user-panel-menu-item "><a href="@Url.Action("TinDaLuu","TinDaLuu")">Tin đã lưu</a></div>
+                        <div class="user-panel-menu-item active"><a href="@Url.Action("TinDaLuu","TinDaLuu")">Tin đã lưu</a></div>
                     </div>
                 </div>
                 <!-- End left menu -->
@@ -52,7 +52,7 @@
                                                     <td>@item.Title - Sđt: @item.Phone</td>
                                                     <td class="text-center">
                                                         <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.IdProduct})" class="btn">Xem Tin</a>
-                                                        <a href="#" class="btn btn-danger xoatin" style="background-color:red" data-ProductId ="@item.Id" >Xóa tin</a>
+                                                        @*<a href="#" class="btn btn-danger xoatin" style="background-color:red" data-ProductId ="@item.Id" >Xóa tin</a>*@
                                                     </td>
                                                 </tr>
                                             }
