@@ -164,6 +164,7 @@
     <Compile Include="Controllers\Admin_addUserController.cs" />
     <Compile Include="Controllers\Admin_DashBoardController.cs" />
     <Compile Include="Controllers\Admin_editProductController.cs" />
+    <Compile Include="Controllers\Admin_edituserController.cs" />
     <Compile Include="Controllers\Admin_listProductController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\ChiTietController.cs" />
@@ -239,6 +240,8 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AddProductModel.cs" />
+    <Compile Include="ViewModels\AddUserModel.cs" />
     <Compile Include="ViewModels\DangTinModel.cs" />
     <Compile Include="ViewModels\DistrictModel.cs" />
     <Compile Include="ViewModels\GiahanProductModel.cs" />
@@ -1478,6 +1481,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\ScriptView\addProduct.js" />
+    <Content Include="Scripts\ScriptView\addUser.js" />
+    <Content Include="Scripts\ScriptView\editUser.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1513,6 +1519,7 @@
     <Content Include="Views\Admin_addUser\addUser.cshtml" />
     <Content Include="Views\Search\Search.cshtml" />
     <Content Include="Views\GiaHan\GiaHan.cshtml" />
+    <Content Include="Views\Admin_edituser\EditUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,6 +1,8 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Admin";
     Layout = "~/Views/Admin/layout_admin/_LayoutAdmin.cshtml";
+    var user = @ViewBag.User;
 }
 
 <!-- Page Content -->
@@ -9,7 +11,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Thêm
+                    Sửa
                     <small>User</small>
                 </h1>
             </div>
@@ -17,15 +19,15 @@
             <div class="col-lg-7" style="padding-bottom:120px">
                 <div class="form-group">
                     <label>Họ Tên</label>
-                    <input class="form-control" id="txtUser" />
+                    <input class="form-control" id="txtUser" value="@user.LoginId"/>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" class="form-control" id="txtEmail" placeholder="Please Enter Email" />
+                    <input type="email" class="form-control" id="editEmail" value="Email" readonly />
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" class="form-control" id="txtPass" placeholder="Please Enter Password" />
+                    <input type="password" class="form-control" value="Password" id="txtPass" />
                 </div>
 
                 <div class="form-group">
@@ -37,8 +39,9 @@
                         <input name="rdoLevel" value="2" type="radio">Admin
                     </label>
                 </div>
-                <input type="button" class="btn btn-default" id="themuser" value="Thêm User" />
-                <button type="reset" class="btn btn-default">Reset</button>
+                <input type="hidden" id="userid" value="@user.Id" />
+                <input type="button" class="btn btn-default" id="suauser" value="Sửa User" />
+                <input type="button" class="btn btn-default" id="xoauser" value="Xóa User" />
             </div>
         </div>
         <!-- /.row -->

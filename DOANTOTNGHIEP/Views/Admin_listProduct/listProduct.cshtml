@@ -22,6 +22,7 @@
                             <th>Loại Phòng</th>
                             <th>Giá</th>
                             <th>Diện Tích</th>
+                            <th>Hình ảnh</th>
                             <th>Khu Vực</th>
                             <th>Ngày Đăng</th>
                             <th>Trạng Thái</th>
@@ -37,13 +38,19 @@
                             <td>@item.ProducType</td>
                             <td>@item.Price Vnđ</td>
                             <td>@item.Acreage m2</td>
+                            <td>
+                                <img src="~/Content/images/@item.Image" alt="" class="cover img-reponsive" width="40" height="40"><br />
+                                <a href="#">Xem Thêm</a>
+                            </td>
                             <td>@item.District</td>
                             <td>@item.CreatedDate</td>
-                            @if(@item.IsActive == 1){
-                            <td><button type="button" class="btn btn-success">Hiện</button></td>
+                            @if (@item.IsActive == 1)
+                            {
+                                <td><button type="button" class="btn btn-success">Hiện</button></td>
                             }
-                            else{
-                            <td><button type="button" class="btn btn-danger">Ẩn</button></td>
+                            else
+                            {
+                                <td><button type="button" class="btn btn-danger">Ẩn</button></td>
                             }
 
                             <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Sửa</a></td>

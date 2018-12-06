@@ -3,63 +3,123 @@
     Layout = "~/Views/Admin/layout_admin/_LayoutAdmin.cshtml";
 }
 
-    <!-- Page Content -->
-    <div id="page-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">
-                        Product
-                        <small>Add</small>
-                    </h1>
-                </div>
-                <!-- /.col-lg-12 -->
-                <div class="col-lg-7" style="padding-bottom:120px">
-                    <form action="" method="POST">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input class="form-control" name="txtName" placeholder="Please Enter Username" />
-                        </div>
-                        <div class="form-group">
-                            <label>Price</label>
-                            <input class="form-control" name="txtPrice" placeholder="Please Enter Password" />
-                        </div>
-                        <div class="form-group">
-                            <label>Intro</label>
-                            <textarea class="form-control" rows="3" name="txtIntro"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Content</label>
-                            <textarea class="form-control" rows="3" name="txtContent"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Images</label>
-                            <input type="file" name="fImages">
-                        </div>
-                        <div class="form-group">
-                            <label>Product Keywords</label>
-                            <input class="form-control" name="txtOrder" placeholder="Please Enter Category Keywords" />
-                        </div>
-                        <div class="form-group">
-                            <label>Product Description</label>
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Product Status</label>
-                            <label class="radio-inline">
-                                <input name="rdoStatus" value="1" checked="" type="radio">Visible
-                            </label>
-                            <label class="radio-inline">
-                                <input name="rdoStatus" value="2" type="radio">Invisible
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-default">Product Add</button>
-                        <button type="reset" class="btn btn-default">Reset</button>
-                        <form>
-                </div>
+<!-- Page Content -->
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Thêm
+                    <small>Nhà Trọ</small>
+                </h1>
             </div>
-            <!-- /.row -->
+            <!-- /.col-lg-12 -->
+            <div class="col-lg-7" style="padding-bottom:120px">
+                    <div class="form-group">
+                        <label>Tiêu Đề</label>
+                        <input class="form-control" name="txtName" id="title" />
+                    </div>
+                    <div class="form-group">
+                        <label>Loại phòng</label>
+                        <select class="form-control" id="typeproduct">
+                            <option value="">Chọn</option>
+                            <option value="1">Phòng trọ, nhà trọ</option>
+                            <option value="2">Nhà nguyên căn</option>
+                            <option value="3">Nhà mặt phố</option>
+                            <option value="4">Văn phòng</option>
+                            <option value="5">Chung cư, căn hộ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tỉnh Thành Phố</label>
+                        <select class="form-control" id="province">
+                            <option value="">Chọn</option>
+                            <option value="1">Hà Nội</option>
+                            <option value="2">Hải Phòng</option>
+                            <option value="3">Hồ Chí Minh</option>
+                            <option value="4">Bắc Giang</option>
+                            <option value="5">Đã Nẵng</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Quận/Huyện</label>
+                        <select class="form-control" id="district">
+                            <option value="">Chọn Tỉnh/Thành trước</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Đường/Phố</label>
+                        <select class="form-control" id="street">
+                            <option value="">Chọn Quận/huyện trước</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Địa Chỉ</label>
+                        <input class="form-control" name="txtName" id="location" />
+                    </div>
+                    <div class="form-group">
+                        <label>Số Điện Thoại</label>
+                        <input type="number" class="form-control" name="txtName" id="phone" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Chủ Nhà</label>
+                        <input class="form-control" name="txtName" id="owner" />
+                    </div>
+                    <div class="form-group">
+                        <label>Diện Tích</label>
+                        <input class="form-control" name="txtName" id="acreage" />
+                    </div>
+                    <div class="form-group">
+                        <label>Giá</label>
+                        <input type="number" class="form-control" name="txtName" id="price" />
+                    </div>
+                    <div class="form-group">
+                        <label>Tầng</label>
+                        <input type="number" class="form-control" name="txtName" id="floor" />
+                    </div>
+                    <div class="form-group">
+                        <label>Vệ Sinh</label>
+                        <input class="form-control" name="txtPrice" id="wc" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Số Người tối đa</label>
+                        <input type="number" class="form-control" name="txtPrice" id="peoplenum" placeholder="Please Enter Password" />
+                    </div>
+                    <div class="form-group">
+                        <label>Giá Điện</label>
+                        <input type="number" class="form-control" name="txtPrice" id="priceelectric" placeholder="Please Enter Password" />
+                    </div>
+                    <div class="form-group">
+                        <label>Giá Nước</label>
+                        <input type="number" class="form-control" name="txtPrice" id="pricewater" placeholder="Please Enter Password" />
+                    </div>
+                    @*<div class="form-group">
+            <label>Images</label>
+            <input type="file" name="fImages">
+        </div>*@
+                    <div class="form-group">
+                        <label>Mô tả Chi Tiết</label>
+                        <textarea class="form-control" id="description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Loại Phòng</label>
+                        <select class="form-control" id="islevel">
+                            <option value="0">Tin Thường</option>
+                            <option value="1">Tin Hot</option>
+                            <option value="2">Tin Vip Nổi Bật</option>
+                            
+                        </select>
+                    </div>
+                    <input type="button" id="dangtin" value="Thêm" />
+                    <button type="reset" class="btn btn-default">Reset</button>
+            </div>
         </div>
-        <!-- /.container-fluid -->
+        <!-- /.row -->
     </div>
-    <!-- /#page-wrapper -->
+    <!-- /.container-fluid -->
+</div>
+<!-- /#page-wrapper -->
+
+

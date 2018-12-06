@@ -27,6 +27,7 @@ namespace DOANTOTNGHIEP.Controllers
                                ProducType = pt.Name,
                                District = dt.Name,
                                CreatedDate = p.CreatedDate,
+                               Image = p.Image,
                            }).ToList();
             ViewBag.ListAll = listAll;
             return View();
