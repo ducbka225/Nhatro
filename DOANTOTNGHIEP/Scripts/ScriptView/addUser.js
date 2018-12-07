@@ -32,7 +32,7 @@
                 })
             }).success(function (response) {
                 if (response.result == true) {
-                    alert("Thêm Thành Công!")
+                    alert("Thêm Thành Công!");
                     window.location.href = '/ListUser/ListUser';
                 }
 

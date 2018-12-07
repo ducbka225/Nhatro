@@ -40,7 +40,7 @@
                             <td>@item.Acreage m2</td>
                             <td>
                                 <img src="~/Content/images/@item.Image" alt="" class="cover img-reponsive" width="40" height="40"><br />
-                                <a href="#">Xem Thêm</a>
+                                <a href="@Url.Action("Image", "ListImage", new {@productid = item.Id })">Xem Thêm</a>
                             </td>
                             <td>@item.District</td>
                             <td>@item.CreatedDate</td>

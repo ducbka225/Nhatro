@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Admin/layout_admin/_LayoutAdmin.cshtml";
+}
+
+<!-- Page Content -->
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Quản lý
+                    <small>Ảnh</small>
+                </h1>
+            </div>
+            <!-- /.col-lg-12 -->
+            <div class="col-lg-12" style="padding-bottom:120px">
+                @foreach (var item in ViewBag.Image)
+                {
+                <div style="float:left; text-align:center" >
+                    <img src="~/Content/images/@item.Link" class="img-rounded" alt="Cinque Terre" width="200" height="150">
+                    <br />
+                    <input type="radio" name="linkimage" value="@item.Link" />
+                    
+
+                </div>
+                    <input type="hidden" class="productid" value="@item.IdProduct" />
+                }
+            </div>
+            <div>
+                <input type="file" id="fileInput" multiple />
+                <br />
+                <input type="button" class="btn btn-primary" id="fileButton" value="Thêm Ảnh" />
+                <button type="button" id="deleteimage" class="btn btn-danger">Xóa Ảnh</button>
+                <button type="button" id="setimage" class="btn btn-warning">Đặt Làm ảnh đại diện</button>
+                <br />
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /#page-wrapper -->
