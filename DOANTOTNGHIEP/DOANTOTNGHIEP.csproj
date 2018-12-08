@@ -1484,6 +1484,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\ScriptView\addProduct.js" />
     <Content Include="Scripts\ScriptView\addUser.js" />
+    <Content Include="Scripts\ScriptView\editProduct.js" />
     <Content Include="Scripts\ScriptView\editUser.js" />
     <Content Include="Scripts\ScriptView\uploadImage.js" />
     <Content Include="Web.config" />

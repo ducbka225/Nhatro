@@ -134,6 +134,7 @@ namespace DOANTOTNGHIEP.Controllers
         [HttpPost]
         public ActionResult UploadFiles()
         {
+            var product1 = db.Product.OrderBy(p => p.Id).FirstOrDefault();
             var result = "Upload fails";
             string path = Server.MapPath("~/Content/images/");
             HttpFileCollectionBase files = Request.Files;
@@ -146,7 +147,7 @@ namespace DOANTOTNGHIEP.Controllers
                 {
                     Image image = new Image();
                     image.Link = DateTime.Now.ToString("yyyymmddMMss") + file.FileName;
-                    image.IdProduct = 5;
+                    image.IdProduct = product1.Id;
                     db.Image.Add(image);
                     db.SaveChanges();
                     result = " Đã Upload " + files.Count + "Ảnh";

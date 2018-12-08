@@ -28,10 +28,11 @@ namespace DOANTOTNGHIEP.Controllers
                         }).FirstOrDefault();
 
             var product = db.Product.OrderByDescending(p => p.Id).FirstOrDefault();
+            var product1 = db.Product.OrderBy(p => p.Id).FirstOrDefault();
 
             var image = (from i in db.Image
                          join p in db.Product on i.IdProduct equals p.Id
-                         where p.Id == 5
+                         where p.Id == product1.Id
                          select new ImageModel()
                          {
                              IdProduct = p.Id,
@@ -51,8 +52,9 @@ namespace DOANTOTNGHIEP.Controllers
 
             var result = false;
             var product = db.Product.OrderByDescending(p => p.Id).FirstOrDefault();
+            var product1 = db.Product.OrderBy(p => p.Id).FirstOrDefault();
             var image = (from i in db.Image
-                         where i.IdProduct == 5
+                         where i.IdProduct == product1.Id
                          select i).ToList();
             var user = (from u in db.User
                         where u.Id == UserId

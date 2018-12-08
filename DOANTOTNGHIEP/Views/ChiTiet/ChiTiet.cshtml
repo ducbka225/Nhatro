@@ -97,7 +97,7 @@
                                     <div class="w3-content w3-display-container">
                                         @foreach (var image in ViewBag.Image)
                                         {
-                                            <img class="mySlides" src="~/Content/images/@image.Link" style="width:100%">
+                                            <img class="mySlides" src="~/Content/images/@image.Link" style="width:100%" height="300px">
                                         }
 
                                         <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
@@ -121,7 +121,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="room-detail-map">
+                        @*<div class="room-detail-map">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="map-label room-list-category">
@@ -132,11 +132,11 @@
                                         <hr>
                                     </div>
                                     <div class="map-content">
-                                        @* Bản đồ *@
+                                        Bản đồ 
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>*@
                     </div>
                     <input type="hidden" id="ssemail" value="@Session["Email"]" />
                     <input type="hidden" id="balance" value="@Session["Balance"]" />

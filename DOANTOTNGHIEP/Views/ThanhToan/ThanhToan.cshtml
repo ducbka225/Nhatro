@@ -334,7 +334,7 @@
             var Image = $("input[name='linkimage']:checked").val();
 
             var balance = $("#balance").val();
-            if (balance < TotalPrice) {
+            if (balance - TotalPrice < 0) {
                 alert('Tài Khoản bạn không đủ');
             }
 
