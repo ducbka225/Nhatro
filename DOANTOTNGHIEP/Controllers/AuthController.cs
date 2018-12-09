@@ -30,7 +30,11 @@ namespace DOANTOTNGHIEP.Controllers
                         Session["UserName"] = obj.LoginId.ToString();
                         Session["Email"] = obj.Email.ToString();
                         Session["Balance"] = obj.Balance;
-
+                        if(obj.IsActive == 1)
+                        {
+                            Session["IsAdmin"] = obj.IsActive;
+                        }
+                        
                         result = true;
                     }
                     else

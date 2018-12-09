@@ -43,11 +43,11 @@
 
         $.ajax({
             type: 'POST',
-            url: "/Admin_edituser/Xoa/",
+            url: "/Admin_editProduct/Xoa/",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             data: JSON.stringify({
-                Id: productid,
+                productid: productid,
             })
         }).success(function (response) {
             if (response.result == true) {
