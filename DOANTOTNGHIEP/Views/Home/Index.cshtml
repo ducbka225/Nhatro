@@ -43,11 +43,16 @@
                                             {
                                                 <div class="col-sm-6 col-md-4 thumbnail-item">
                                                     <div class="thumbnail">
-                                                        <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})" title="Cho thu&ecirc; nh&agrave; số 25B /Ng&aacute;ch 106 Ng&otilde; Gốc Đề - Phố Minh Khai &ndash; H&agrave; Nội.">
+                                                        <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})" title="">
                                                             <img src="~/Content/images/@item.Image" alt="" class="cover img-reponsive" style="height: 170px;">
                                                         </a>
                                                         <div class="room-item-price">
-                                                            <a href="#">@item.Price /tháng</a>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            <span class="fa fa-star checked"></span>
+                                                            @*<a href="#">@item.Price /tháng</a>*@
                                                         </div>
                                                         <div class="caption">
                                                             <div class="title">

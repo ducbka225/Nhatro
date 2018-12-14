@@ -18,7 +18,7 @@ namespace DOANTOTNGHIEP.Controllers
                            join pt in db.ProductType on p.IdProductType equals pt.Id
                            join s in db.Street on p.IdStreet equals s.Id
                            join dt in db.District on s.IdDistrict equals dt.Id
-                           where p.IsActive == 1
+                           where p.IsActive == 1 && p.IsLevel == 2
                            select new ProductModel
                            {
                                Id = p.Id,
@@ -38,8 +38,8 @@ namespace DOANTOTNGHIEP.Controllers
                            join pt in db.ProductType on p.IdProductType equals pt.Id
                            join s in db.Street on p.IdStreet equals s.Id
                            join dt in db.District on s.IdDistrict equals dt.Id
-                          where p.IsActive == 1 && pt.Id == 1
-                           select new ProductModel
+                          where p.IsActive == 1 && pt.Id == 1 && p.IsLevel == 2
+                          select new ProductModel
                            {
                                Id = p.Id,
                                Title = p.Title,
@@ -58,8 +58,8 @@ namespace DOANTOTNGHIEP.Controllers
                           join pt in db.ProductType on p.IdProductType equals pt.Id
                           join s in db.Street on p.IdStreet equals s.Id
                           join dt in db.District on s.IdDistrict equals dt.Id
-                            where p.IsActive == 1 && pt.Id == 4
-                          select new ProductModel
+                            where p.IsActive == 1 && pt.Id == 4 && p.IsLevel == 2
+                                select new ProductModel
                           {
                               Id = p.Id,
                               Title = p.Title,
@@ -78,8 +78,8 @@ namespace DOANTOTNGHIEP.Controllers
                           join pt in db.ProductType on p.IdProductType equals pt.Id
                           join s in db.Street on p.IdStreet equals s.Id
                           join dt in db.District on s.IdDistrict equals dt.Id
-                            where p.IsActive == 1 && pt.Id == 5
-                          select new ProductModel
+                            where p.IsActive == 1 && pt.Id == 5 && p.IsLevel == 2
+                            select new ProductModel
                           {
                               Id = p.Id,
                               Title = p.Title,
@@ -98,8 +98,8 @@ namespace DOANTOTNGHIEP.Controllers
                           join pt in db.ProductType on p.IdProductType equals pt.Id
                           join s in db.Street on p.IdStreet equals s.Id
                           join dt in db.District on s.IdDistrict equals dt.Id
-                           where p.IsActive == 1 && pt.Id == 3
-                          select new ProductModel
+                           where p.IsActive == 1 && pt.Id == 3 && p.IsLevel == 2
+                           select new ProductModel
                           {
                               Id = p.Id,
                               Title = p.Title,

@@ -50,6 +50,9 @@ namespace DOANTOTNGHIEP.Controllers
         public ActionResult Logout()
         {
             Session["UserName"] = null;
+            Session["UserID"] = null;
+            Session["Email"] = null ;
+            Session["Balance"] = null;
             return RedirectToAction("Index", "Home");
         }
 

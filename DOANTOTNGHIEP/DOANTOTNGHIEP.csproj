@@ -174,6 +174,7 @@
     <Compile Include="Controllers\ListImageController.cs" />
     <Compile Include="Controllers\ListUserController.cs" />
     <Compile Include="Controllers\LoginAdminController.cs" />
+    <Compile Include="Controllers\NapTienController.cs" />
     <Compile Include="Controllers\PhongTroController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SuaTinController.cs" />
@@ -185,6 +186,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs">
+      <DependentUpon>NhaTroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Card.cs">
       <DependentUpon>NhaTroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\District.cs">
@@ -1371,13 +1375,6 @@
     <Content Include="Content\bower_components\morrisjs\spec\viz\run.sh" />
     <Content Include="Content\bower_components\raphael\.bower.json" />
     <Content Include="Content\bower_components\raphael\bower.json" />
-    <EntityDeploy Include="Models\NhaTroModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NhaTroModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\NhaTroModel.edmx.diagram">
-      <DependentUpon>NhaTroModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Scripts\DataTables\extensions\AutoFill\js\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\extensions\AutoFill\js\autoFill.bootstrap.min.js" />
     <Content Include="Scripts\DataTables\extensions\AutoFill\js\autoFill.bootstrap4.js" />
@@ -1454,6 +1451,13 @@
     <Content Include="Content\DataTables\extensions\RowReorder\css\semanticui.scss" />
     <Content Include="Content\DataTables\extensions\Buttons\css\mixins.scss" />
     <Content Include="Content\DataTables\extensions\Buttons\css\common.scss" />
+    <EntityDeploy Include="Models\NhaTroModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NhaTroModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NhaTroModel.edmx.diagram">
+      <DependentUpon>NhaTroModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\DataTables\media\js\dataTables.bootstrap.js" />
     <Content Include="Scripts\DataTables\media\js\dataTables.bootstrap.min.js" />
@@ -1526,6 +1530,7 @@
     <Content Include="Views\Admin\layout_admin\_LayoutLogin.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\NapTien\NapTien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

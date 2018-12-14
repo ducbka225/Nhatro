@@ -26,6 +26,7 @@ namespace DOANTOTNGHIEP.Models
         }
     
         public DbSet<Admin> Admin { get; set; }
+        public DbSet<Card> Card { get; set; }
         public DbSet<District> District { get; set; }
         public DbSet<Image> Image { get; set; }
         public DbSet<Location> Location { get; set; }

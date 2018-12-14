@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "DangTin";
+    Layout = "~/Views/Layout/_LayoutNhatro.cshtml";
+}
+<div class="container" style="margin-top: 20px;">
+    <div class="group_fields_body col-md-12">
+        <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Nạp Tiền Qua Thẻ</div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <span>Loại thẻ</span>
+                    <select class="form-control js-choose-package-vip" id="type" name="package_id">
+                        <option value="">Chọn loại thẻ</option>
+                        <option value="0">Viettel</option>
+                        <option value="1">Vinaphone</option>
+                        <option value="2">Mobilephone</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <span>Mệnh Giá</span>
+                    <select class="form-control js-goi-thoi-gian" id="menhgia" name="package_time">
+                        <option value="50000">50.000</option>
+                        <option value="100000">100.000</option>
+                        <option value="500000">500.000</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <span>Mã thẻ</span>
+                <input type="text" class="form-control"  id="seri" value="" />
+            </div>
+
+            <div class="col-md-2">
+                <span></span> <br />
+                <input type="button" id="xacnhan" class="form-control btn-primary" value="Xác Nhận" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="ssemail" value="@Session["Email"]" />
+<input type="hidden" id="balance" value="@Session["Balance"]" />
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // nạp tiền
+        $("#xacnhan").click(function () {
+            var r = confirm("Bạn có muốn nạp tiền không?");
+            if (r == true) {
+                var email = $("#ssemail").val();
+                var balance = $("#balance").val();
+                var type = $('#type').val();
+                var menhgia = $('#menhgia').val();
+                var seri = $('#seri').val();
+                if (email.length == 0) {
+                    alert('Bạn phải đăng nhập!');
+                }
+                
+                else {
+                    $.ajax({
+                        type: 'POST',
+                        url: "/NapTien/PostNapTien/",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify({
+                            email: email,
+                            balance: balance,
+                            type: type,
+                            menhgia: menhgia,
+                            seri: seri,
+                        })
+                    }).success(function (response) {
+                        if (response.result == true) {
+                            alert("Nạp thành công");
+                         
+                        }
+                        else {
+                            alert("Mã thẻ cào không hợp lệ");
+                        }
+                    }).error(function () {
+                        alert("Lỗi serve!");
+                        window.location.reload();
+                    });
+                }
+            }
+        });
+    });
+</script>

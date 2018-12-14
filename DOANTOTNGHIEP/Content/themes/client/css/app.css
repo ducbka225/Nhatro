@@ -2819,3 +2819,7 @@ Detail Css
 .mySlides {
     display: none;
 }
+
+.checked {
+    color: orange;
+}
