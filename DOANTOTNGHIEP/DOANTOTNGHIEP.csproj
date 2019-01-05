@@ -248,6 +248,7 @@
     <Compile Include="ViewModels\AddProductModel.cs" />
     <Compile Include="ViewModels\AddUserModel.cs" />
     <Compile Include="ViewModels\DangTinModel.cs" />
+    <Compile Include="ViewModels\DataPoint.cs" />
     <Compile Include="ViewModels\DistrictModel.cs" />
     <Compile Include="ViewModels\GiahanProductModel.cs" />
     <Compile Include="ViewModels\ImageModel.cs" />
@@ -258,6 +259,7 @@
     <Compile Include="ViewModels\ProductTypeModel.cs" />
     <Compile Include="ViewModels\SaveProductModel.cs" />
     <Compile Include="ViewModels\StreetModel.cs" />
+    <Compile Include="ViewModels\TransactionModel.cs" />
     <Compile Include="ViewModels\UserModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1492,7 +1494,9 @@
     <Content Include="Scripts\ScriptView\editProduct.js" />
     <Content Include="Scripts\ScriptView\editUser.js" />
     <Content Include="Scripts\ScriptView\uploadImage.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

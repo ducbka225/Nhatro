@@ -15,7 +15,7 @@ namespace DOANTOTNGHIEP.Models
     public partial class Transaction
     {
         public int Id { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
         public Nullable<System.DateTime> ExpireDate { get; set; }
         public Nullable<double> TotalPrice { get; set; }
         public Nullable<double> IsAction { get; set; }

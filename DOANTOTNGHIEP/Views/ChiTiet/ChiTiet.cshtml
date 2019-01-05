@@ -93,7 +93,7 @@
                         </div>
                         <div class="room-detail-img">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-8 showimg">
                                     <div class="w3-content w3-display-container">
                                         @foreach (var image in ViewBag.Image)
                                         {
@@ -146,6 +146,7 @@
                         $(document).ready(function () {
                             // show phonenumber
                             $(".hiddenPhone").hide();
+                            $(".showimg").hide();
                             $("#luutin").click(function () {
                                 var r = confirm("Bạn phải trả 5000đ để lưu tin!");
                                 if (r == true) {
@@ -178,6 +179,7 @@
                                                 alert("Đã Lưu Tin");
                                                 $("#luutin").attr('disabled', 'disabled');
                                                 $(".hiddenPhone").show();
+                                                $(".showimg").show()
                                                 $("#showPhone").hide();
                                             }
                                             else {
@@ -193,30 +195,32 @@
 
                             //Phản hồi tình trạng
                             $('#response').click(function () {
-                                var productid = $("#IdProduct").val();
+                                var r = confirm("Xác Nhận Phòng nãy đã cho thuê!");
+                                if (r == true) {
+                                    var productid = $("#IdProduct").val();
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: "/Admin_editProduct/Xoa/",
+                                        contentType: "application/json; charset=utf-8",
+                                        dataType: "json",
+                                        data: JSON.stringify({
+                                            productid: productid,
+                                        })
+                                    }).success(function (response) {
+                                        if (response.result == true) {
+                                            alert("Thành Công!");
+                                            window.location.href = '/Home/index';
+                                        }
 
+                                        else {
+                                            alert("Thất bại");
+                                        }
+                                    }).error(function () {
+                                        alert("Lỗi serve!");
 
-                                $.ajax({
-                                    type: 'POST',
-                                    url: "/Admin_editProduct/Xoa/",
-                                    contentType: "application/json; charset=utf-8",
-                                    dataType: "json",
-                                    data: JSON.stringify({
-                                        productid: productid,
-                                    })
-                                }).success(function (response) {
-                                    if (response.result == true) {
-                                        alert("Xóa Thành Công!");
-                                        window.location.href = '/Home/index';
-                                    }
-
-                                    else {
-                                        alert("Xóa Thất bại");
-                                    }
-                                }).error(function () {
-                                    alert("Lỗi serve!");
-
-                                });
+                                    });
+                                }
+                                
                             });
                         });
                     </script>
