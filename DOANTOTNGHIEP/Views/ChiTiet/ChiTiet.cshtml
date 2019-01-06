@@ -12,7 +12,7 @@
                 <div class="col-md-12 room-main-content">
                     <div class="pt-breadcrumb">
                         <ol class="breadcrumb">
-                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="@Url.Action("index", "Home")">Trang chủ</a></li>
                             <li><a href="#"> @productDetail.ProducType </a></li>
                             <li class="active">@productDetail.Title </li>
                         </ol>
@@ -81,7 +81,7 @@
                                         <a class="hiddenPhone"><span class="fa fa-mobile-phone"></span>@productDetail.PhoneNumber</a>
                                     </div>
                                     <div class="info-feedback">
-                                        @if (Session["IsAdmin"] != null)
+                                        @if (Session["IsAdmin"] != null || Session["userlogin"] != null)
                                         {
                                             <a class="btn btn-report-room clearfix" id="response">Phản hồi tình trạng</a>
                                         }

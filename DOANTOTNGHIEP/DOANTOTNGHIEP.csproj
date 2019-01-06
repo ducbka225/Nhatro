@@ -172,10 +172,12 @@
     <Compile Include="Controllers\GiaHanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListImageController.cs" />
+    <Compile Include="Controllers\ListImageUserController.cs" />
     <Compile Include="Controllers\ListUserController.cs" />
     <Compile Include="Controllers\LoginAdminController.cs" />
     <Compile Include="Controllers\NapTienController.cs" />
     <Compile Include="Controllers\PhongTroController.cs" />
+    <Compile Include="Controllers\Search1Controller.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SuaTinController.cs" />
     <Compile Include="Controllers\ThanhToanController.cs" />
@@ -1535,10 +1537,13 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\NapTien\NapTien.cshtml" />
+    <Content Include="Views\Search1\Search1.cshtml" />
+    <Content Include="Views\ListImageUser\Image.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Auth\" />
+    <Folder Include="Views\User_editProduct\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

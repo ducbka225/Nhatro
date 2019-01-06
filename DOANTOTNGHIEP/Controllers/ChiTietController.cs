@@ -14,16 +14,30 @@ namespace DOANTOTNGHIEP.Controllers
         // GET: ChiTiet
         public ActionResult ChiTiet(int ProductId)
         {
-            // get user
-            //var Email = Session["Email"].ToString();
-            //var user = (from u in db.User
-            //            where u.Email == Email
-            //            select new UserModel()
-            //            {
-            //                Id = u.Id,
-            //                Balance = u.Balance,
-            //            }).FirstOrDefault();        
+            //get user
+            if(Session["Email"] != null)
+            {
+                var Email = Session["Email"].ToString();
+                var user = (from u in db.User
+                            join t in db.Transaction on u.Id equals t.IdUser
+                            where u.Email == Email && t.IdProduct == ProductId
+                            select new UserModel()
+                            {
+                                Id = u.Id,
+                                Balance = u.Balance,
+                            }).FirstOrDefault();
 
+                if (user == null)
+                {
+                    Session["userlogin"] = null;
+                }
+            }
+
+            else if(Session["Email"] == null)
+            {
+                Session["userlogin"] = null;
+            }
+           
             // get Image
             var image = (from i in db.Image
                          join p in db.Product on i.IdProduct equals p.Id

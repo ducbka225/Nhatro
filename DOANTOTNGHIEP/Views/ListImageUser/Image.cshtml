@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewBag.Title = "DangTin";
+    Layout = "~/Views/Layout/_LayoutNhatro.cshtml";
+}
+
+<!-- Page Content -->
+<div id="page-wrapper" class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Quản lý
+                    <small>Ảnh</small>
+                </h1>
+            </div>
+            <!-- /.col-lg-12 -->
+            <div class="col-lg-12" style="padding-bottom:120px">
+                @foreach (var item in ViewBag.Image)
+                {
+                    <div style="float:left; text-align:center">
+                        <img src="~/Content/images/@item.Link" class="img-rounded" alt="Cinque Terre" width="200" height="150">
+                        <br />
+                        <input type="radio" name="linkimage" value="@item.Link" />
+
+
+                    </div>
+                    <input type="hidden" class="productid" value="@item.IdProduct" />
+                }
+            </div>
+            <div>
+                <input type="file" id="fileInput" multiple />
+                <br />
+                <input type="button" class="btn btn-primary" id="fileButton" value="Thêm Ảnh" />
+                <button type="button" id="deleteimage" class="btn btn-danger">Xóa Ảnh</button>
+                <button type="button" id="setimage" class="btn btn-warning">Đặt Làm ảnh đại diện</button>
+                <br />
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<br />
+<!-- /#page-wrapper -->
+
+<script>
+    $("#fileButton").click(function () {
+        var files = $("#fileInput").get(0).files;
+        var fileData = new FormData();
+
+        for (var i = 0; i < files.length; i++) {
+            fileData.append("fileInput", files[i]);
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/ListImageUser/UploadFiles",
+            dataType: "json",
+            contentType: false, // Not to set any content header
+            processData: false, // Not to process data
+            data: fileData,
+            success: function (result, status, xhr) {
+                alert(result);
+                window.location.reload();
+            },
+            error: function (xhr, status, error) {
+                alert(status);
+            }
+        });
+    });
+
+    // xóa ảnh
+    $("#deleteimage").click(function () {
+        var Link = $("input[name='linkimage']:checked").val();
+        $.ajax({
+            type: 'POST',
+            url: "/ListImageUser/Xoa/",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify({
+                Link: Link,
+            })
+        }).success(function (response) {
+            if (response.result == true) {
+                alert("Xóa Thành Công!");
+                window.location.reload();
+            }
+
+            else {
+                alert("Xóa Thất bại");
+            }
+        }).error(function () {
+            alert("Lỗi serve!");
+
+        });
+    });
+
+    // set ảnh đại diện
+    $("#setimage").click(function () {
+        var Link = $("input[name='linkimage']:checked").val();
+        $.ajax({
+            type: 'POST',
+            url: "/ListImageUser/SetImage/",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify({
+                Link: Link,
+            })
+        }).success(function (response) {
+            if (response.result == true) {
+                alert("Đặt ảnh đại diện Thành Công!");
+                window.location.reload();
+            }
+
+            else {
+                alert("Set Thất bại");
+            }
+        }).error(function () {
+            alert("Lỗi serve!");
+
+        });
+    });
+</script>

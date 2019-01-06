@@ -11,7 +11,7 @@
             <div class="col-md-12 room-main-content">
                 <div class="pt-breadcrumb">
                     <ol class="breadcrumb">
-                        <li><a href="http://phongtot.vn">Trang chủ</a></li>
+                        <li><a href="#">Trang chủ</a></li>
                         <li class="active">Tin đã đăng</li>
                     </ol>
                 </div>
@@ -57,6 +57,8 @@
                                                     <td class="text-center">
                                                         <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})" class="btn">Xem Tin</a>
                                                         <a href="@Url.Action("GiaHan", "GiaHan", new { @ProductId = @item.Id})" class="btn btn-success" style="background-color:green">Gia Hạn</a>
+                                                        <a href="@Url.Action("Image", "ListImageUser", new { @productid = @item.Id })" class="btn btn-success" style="background-color:deeppink">Hình Ảnh</a>
+                                                       
                                                         @*<input type="button" class="btn btn-danger xoatin" data-ProductId="@item.Id" style="background-color:red" value="Xóa Tin">*@
                                                     </td>
 

@@ -25,7 +25,7 @@ namespace DOANTOTNGHIEP.Controllers
                                }).FirstOrDefault();
 
             if (page == null) page = 1;
-            int pageSize = 6;
+            int pageSize = 4;
             int pageNumber = (page ?? 1);
 
             var Product = (from p in db.Product

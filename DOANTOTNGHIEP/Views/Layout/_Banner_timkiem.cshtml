@@ -69,41 +69,9 @@
                 <div class="clearfix"></div>
                 <div class="group-btn-submit">
                     <button type="submit" class="btn btn-slide-search" id="search"><span class="fa fa-search"></span>Tìm kiếm</button>
-                    @*<input type="button" name="name" class="btn btn-slide-search" id="search" value=" Tìm Kiếm" />*@
                 </div>
             </form>
         </div>
     </div>
 </div>
 <!-- End slider -->
-@*<script>
-    //Tìm kiếm
-$(document).ready(function () {
-    $('#search').click(function () {
-        var location = $("#location").val();
-        var province = $("#province").val();
-        var district = $("#district").val();
-        var dientich = $("#dientich").val();
-        var price = $("#price").val();
-        $.ajax({
-            type: 'POST',
-            url: "/Search/Search/",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            data: JSON.stringify({
-                location: location,
-                province: province,
-                district: district,
-                dientich: dientich,
-                price: price,
-            })
-        }).success(function () {
-            
-        }).error(function () {
-
-        });
-
-        });
-});
-
-</script>*@

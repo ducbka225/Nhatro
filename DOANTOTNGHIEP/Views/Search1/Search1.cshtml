@@ -1,0 +1,134 @@
+﻿
+@using PagedList.Mvc;
+@using PagedList;
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Layout/_LayoutNhatro.cshtml";
+    var product = @ViewBag.Product;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12 room-main-content">
+                    <div class="pt-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li><a href="@Url.Action("index", "Home")">Trang chủ</a></li>
+                            <li class="active">Tìm Kiếm</li>
+                        </ol>
+                    </div><div class="room-list-category">
+                        <div class="pull-left">
+                            <a href=""><h3><span>Kết Quả Tìm Kiếm</span> <i class="fa fa-angle-right"></i></h3></a>
+                        </div>                      
+                        <div class="clearfix"></div>
+                        <hr>
+                    </div>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $('.get_price').on('click', function (e) {
+                                var i = $(this).text();
+                                price.value = i;
+                                time.value = '';
+                                $('#order_form').submit();
+                            });
+                            $('.get_time').on('click', function (e) {
+                                var i = $(this).text();
+                                price.value = '';
+                                time.value = i;
+                                $('#order_form').submit();
+                            });
+                            $('body').on('click', '.fill-target', function () {
+                                window.location.href = $(this).find('a').attr('href');
+
+                            });
+                        });
+                    </script>
+                    <div class="room-list">
+                        @foreach (var item in @ViewBag.Product)
+                        {
+                            <div class="room-item">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="block-room-item-title">
+                                            <a href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})">@item.Title</a>
+                                        </div>
+                                        <div class="col-md-3 room-item-thumbnail">
+                                            <div class="row">
+                                                <a class="col-md-12 thumbnail room-item-main-img" href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})">
+                                                    <img class="img-reponsive" src="~/Content/images/@item.Image" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 room-item-i">
+                                            <div class="block-room-item-address">
+                                                <span>Địa chỉ: </span>
+                                                <a>
+                                                    @item.District
+                                                </a>
+                                            </div>
+                                            <div class="block-room-item-info">
+                                                <div class="pull-left">
+                                                    <span>Diện tích: </span><a>@item.Acreage m2</a>
+                                                </div>
+                                                <div class="pull-right item-info-date">
+                                                    <a>
+                                                        @item.CreatedDate
+                                                    </a>
+                                                </div>
+                                                <div class="item-info-vs">
+                                                    <span>Vệ sinh: </span><a>Khép kín</a>
+                                                </div>
+                                            </div>
+                                            <div class="block-room-item-price">
+                                                <span>Giá cả: </span><a> @item.Price Đ/tháng</a>
+                                            </div>
+
+                                            <div class="block-room-item-btn">
+                                                <a class="btn btn-room-detail" href="@Url.Action("ChiTiet", "ChiTiet", new { @ProductId = @item.Id})">Xem chi tiết</a>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $('.btn-room-save').on('click', function (e) {
+                                var i = $(this);
+                                var div = i.parent();
+                                $.ajax({
+                                    url: i.attr('_url'),
+                                    type: 'GET',
+                                    dataType: 'json',
+                                    success: function (result) {
+                                        i.remove();
+                                        div.append(result);
+                                        setTimeout(function () { $('.flash-mesage').remove(); }, 1000);
+                                    }
+                                });
+                            });
+                        });
+                    </script>
+                    <!-- Thêm mã phân trang -->
+                    <br />
+                    @*Trang @(product.PageCount < product.PageNumber ? 0 : product.PageNumber) / @product.PageCount*@
+                    Trang @(product.PageCount < product.PageNumber ? 0 : product.PageNumber) / @product.PageCount
+                    @Html.PagedListPager((IPagedList)product, page => Url.Action("Search", new { Page = page }))
+                    <!-- Thêm mã phân trang -->
+                    <br />
+
+
+                    <!-- Kết thúc -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
